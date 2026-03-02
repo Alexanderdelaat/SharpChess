@@ -1,1 +1,36 @@
+name: CI - Backend (.NET)
 
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  DOTNET_VERSION: "8.0.x"
+  BACKEND_DIR: "."
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: dotnet restore
+
+      - name: Build
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: dotnet build --no-restore -c Release
+
+      - name: Test
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: dotnet test --no-build -c Release
