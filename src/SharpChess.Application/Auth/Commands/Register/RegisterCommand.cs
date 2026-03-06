@@ -1,17 +1,16 @@
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Text;
+using FluentResults;
+using MediatR;
 
-namespace SharpChess.Application.Auth.Command.Register;
+namespace SharpChess.Application.Auth.Commands.Register;
 
 public record RegisterCommand(
     string Username,
     string Email, 
     string Password,
-    String ConfirmPassword);
+    string ConfirmPassword) : IRequest<Result<RegisterResult>>;
 
 public record RegisterResult(
     string Id,
     string Username,
-    String Email
+    string Email
 );
