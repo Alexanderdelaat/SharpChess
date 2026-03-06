@@ -1,0 +1,21 @@
+using System.IO.Pipelines;
+using System.Runtime.InteropServices;
+using FluentResults;
+using Microsoft.AspNetCore.Identity;
+
+namespace SharpChess.Application.Auth.Commands.Register;
+
+public sealed class RegisterUser : IRegisterUser
+{
+    public Task<Result> HandleAsync (RegisterCommand registerCommand, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        if (registerCommand = null)
+        {
+            return Task.FromResult(Result.Fail(new Error("Request failed").WithMetadata("Code", "AUTH_INVALID_REGISTER_COMMAND")));
+        }               
+        return Task.FromResult(result.Ok());
+    }
+    
+}
+
