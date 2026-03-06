@@ -1,0 +1,30 @@
+services:
+  sharpchess-db:
+    image: postgres:17
+    container_name: sharpchess-db
+    environment:
+      POSTGRES_DB: sharpchess
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: devpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - sharpchess-db-data:/var/lib/postgresql/data
+
+  sharpchess-api:
+    image: sharpchess-api
+    container_name: sharpchess-api
+    build:
+      context: .
+      dockerfile: src/SharpChess.Api/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword
+    depends_on:
+      - sharpchess-db
+
+
+volumes:
+  sharpchess-db-data:
