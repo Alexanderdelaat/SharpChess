@@ -9,7 +9,7 @@ public class User
     public User(string Username, string email)
     {
         Id = Guid.NewGuid();
-        Username = Username;
+        Username = username;
         Email = email;
     }
 
