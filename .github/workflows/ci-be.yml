@@ -36,6 +36,10 @@ jobs:
         working-directory: ${{ env.BACKEND_DIR }}
         run: dotnet restore
 
+      - name: Format check
+        working-directory: ${{ env.BACKEND_DIR }}
+        run: dotnet format --verify-no-changes
+
       - name: Build
         working-directory: ${{ env.BACKEND_DIR }}
         run: dotnet build --no-restore -c Release
