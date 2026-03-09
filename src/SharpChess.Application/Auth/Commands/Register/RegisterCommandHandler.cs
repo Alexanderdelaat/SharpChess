@@ -8,7 +8,7 @@ public class RegisterUserCommandHandler : IRequestHandler<RegisterCommand, Resul
 {
     private readonly UserManager<IdentityUser> _userManager;
 
-public RegisterUserCommandHandler(UserManager<IdentityUser> userManager)
+    public RegisterUserCommandHandler(UserManager<IdentityUser> userManager)
     {
         _userManager = userManager;
     }
@@ -16,7 +16,7 @@ public RegisterUserCommandHandler(UserManager<IdentityUser> userManager)
     public async Task<Result<RegisterResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
     {
         if (command.Password != command.ConfirmPassword)
-        return  Result.Fail(AuthErrorCodes.PasswordMismatch);
+            return Result.Fail(AuthErrorCodes.PasswordMismatch);
 
         IdentityUser user = new IdentityUser
         {
@@ -26,7 +26,7 @@ public RegisterUserCommandHandler(UserManager<IdentityUser> userManager)
 
         IdentityResult result = await _userManager.CreateAsync(user, command.Password);
 
-       if (!result.Succeeded)
+        if (!result.Succeeded)
             return Result.Fail(result.Errors.Select(identityError => new Error(identityError.Code)).ToList());
 
         return Result.Ok(new RegisterResult(
@@ -35,4 +35,4 @@ public RegisterUserCommandHandler(UserManager<IdentityUser> userManager)
             Email: user.Email!));
     }
 
-} 
+}

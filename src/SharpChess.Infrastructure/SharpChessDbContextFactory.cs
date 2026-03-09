@@ -7,9 +7,9 @@ public class SharpChessDbContextFactory : IDesignTimeDbContextFactory<SharpChess
 {
     public SharpChessDbContext CreateDbContext(string[] args)
     {
-        DbContextOptionsBuilder<SharpChessDbContext> optionsBuilder = 
+        DbContextOptionsBuilder<SharpChessDbContext> optionsBuilder =
             new DbContextOptionsBuilder<SharpChessDbContext>();
-        
+
         optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword");
         return new SharpChessDbContext(optionsBuilder.Options);
     }
