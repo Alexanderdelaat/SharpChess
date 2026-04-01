@@ -3,6 +3,8 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SharpChess.Api.Contracts.Auth;
 using SharpChess.Application.Auth.Commands.Register;
+using SharpChess.Application.Auth.Commands.Login;
+
 
 namespace SharpChess.Api.Controllers;
 
@@ -35,5 +37,21 @@ public class AuthController : ControllerBase
             Id: result.Value.Id,
             Username: result.Value.Username,
             Email: result.Value.Email));
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        LoginCommand command = new LoginCommand(
+            Username: request.Username,
+            Password: request.Password);
+
+        Result<LoginResult> result = await _mediator.Send(command);
+
+        if (result.IsFailed)
+            return BadRequest(result.Errors.Select(error => error.Message));
+
+        return Ok(new LoginResponse(
+            Token: result.Value.Token));
     }
 }
