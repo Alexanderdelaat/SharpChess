@@ -393,20 +393,20 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "coverage-report/index.html",
+      "source_relative_path": "coverage-report/index.md",
       "output": {
         "resource": {
-          "relative_path": "coverage-report/index.html"
+          "relative_path": "coverage-report/index.md"
         }
       },
       "version": ""
     },
     {
-      "type": "Resource",
+      "type": "Conceptual",
       "source_relative_path": "coverage-report/index.md",
       "output": {
-        "resource": {
-          "relative_path": "coverage-report/index.md"
+        ".html": {
+          "relative_path": "coverage-report/index.html"
         }
       },
       "version": ""
@@ -432,16 +432,6 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "coverage-report/toc.yml",
-      "output": {
-        "resource": {
-          "relative_path": "coverage-report/toc.yml"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "coverage-report/toc.yml",
       "output": {
@@ -450,6 +440,16 @@
         },
         ".json": {
           "relative_path": "coverage-report/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/toc.yml",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/toc.yml"
         }
       },
       "version": ""

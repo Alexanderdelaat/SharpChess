@@ -22,7 +22,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AuthController
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 13
+    startLine: 12
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -254,7 +254,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 23
+    startLine: 22
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -289,7 +289,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Register
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 36
+    startLine: 34
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -340,7 +340,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Login
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 62
+    startLine: 60
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers

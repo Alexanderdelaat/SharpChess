@@ -42,6 +42,10 @@ jobs:
 
       - name: Generate coverage report
         run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html;MarkdownSummary"
+        
+      - name: Copy coverage summary to DocFX
+        run: mkdir -p coverage
+              cp coverage-report/summary.md coverage/index.md
 
       - name: Upload HTML coverage report
         uses: actions/upload-artifact@v4
