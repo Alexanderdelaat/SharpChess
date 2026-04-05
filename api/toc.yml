@@ -1,0 +1,26 @@
+### YamlMime:TableOfContent
+items:
+- uid: SharpChess.Api.Contracts.Auth
+  name: SharpChess.Api.Contracts.Auth
+  type: Namespace
+  items:
+  - uid: SharpChess.Api.Contracts.Auth.LoginRequest
+    name: LoginRequest
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.LoginResponse
+    name: LoginResponse
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.RegisterRequest
+    name: RegisterRequest
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.RegisterResponse
+    name: RegisterResponse
+    type: Class
+- uid: SharpChess.Api.Controllers
+  name: SharpChess.Api.Controllers
+  type: Namespace
+  items:
+  - uid: SharpChess.Api.Controllers.AuthController
+    name: AuthController
+    type: Class
+memberLayout: SamePage

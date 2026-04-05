@@ -1,0 +1,509 @@
+{
+  "source_base_path": "/Users/alexander/VisualStudioCodeProjects/SharpChess",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.LoginRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.LoginRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.LoginRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.LoginResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.LoginResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.LoginResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.RegisterRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.RegisterRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.RegisterRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.RegisterResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.RegisterResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.RegisterResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Controllers.AuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Controllers.AuthController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Controllers.AuthController",
+      "Summary": "<p sourcefile=\"api/SharpChess.Api.Controllers.AuthController.yml\" sourcestartlinenumber=\"1\">Beheert authenticatie-gerelateerde endpoints zoals registreren en inloggen.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cog.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cog.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cog_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cog_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cube.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cube.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cube_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cube_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_fork.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_fork.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_fork_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_fork_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_info-circled.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_info-circled.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_info-circled_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_info-circled_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_sponsor.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_sponsor.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_star.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_star.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_star_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_star_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-dir_active.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-dir_active.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-down-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-down-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-down-dir_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-down-dir_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_wrench.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_wrench.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_wrench_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_wrench_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/index.htm",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/index.htm"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/index.md",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/index.md"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/main.js",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/main.js"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/report.css",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/report.css"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/toc.yml",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/toc.yml"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "coverage-report/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "coverage-report/toc.html"
+        },
+        ".json": {
+          "relative_path": "coverage-report/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

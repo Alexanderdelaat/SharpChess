@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Contracts.Auth
+  commentId: N:SharpChess.Api.Contracts.Auth
+  id: SharpChess.Api.Contracts.Auth
+  children:
+  - SharpChess.Api.Contracts.Auth.LoginRequest
+  - SharpChess.Api.Contracts.Auth.LoginResponse
+  - SharpChess.Api.Contracts.Auth.RegisterRequest
+  - SharpChess.Api.Contracts.Auth.RegisterResponse
+  langs:
+  - csharp
+  - vb
+  name: SharpChess.Api.Contracts.Auth
+  nameWithType: SharpChess.Api.Contracts.Auth
+  fullName: SharpChess.Api.Contracts.Auth
+  type: Namespace
+  assemblies:
+  - SharpChess.Api
+references:
+- uid: SharpChess.Api.Contracts.Auth.LoginRequest
+  commentId: T:SharpChess.Api.Contracts.Auth.LoginRequest
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.LoginRequest.html
+  name: LoginRequest
+  nameWithType: LoginRequest
+  fullName: SharpChess.Api.Contracts.Auth.LoginRequest
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.LoginResponse
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html
+  name: LoginResponse
+  nameWithType: LoginResponse
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse
+- uid: SharpChess.Api.Contracts.Auth.RegisterRequest
+  commentId: T:SharpChess.Api.Contracts.Auth.RegisterRequest
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.RegisterRequest.html
+  name: RegisterRequest
+  nameWithType: RegisterRequest
+  fullName: SharpChess.Api.Contracts.Auth.RegisterRequest
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.RegisterResponse
+  href: SharpChess.Api.Contracts.Auth.RegisterResponse.html
+  name: RegisterResponse
+  nameWithType: RegisterResponse
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse
+- uid: SharpChess.Api.Contracts.Auth
+  commentId: N:SharpChess.Api.Contracts.Auth
+  href: SharpChess.html
+  name: SharpChess.Api.Contracts.Auth
+  nameWithType: SharpChess.Api.Contracts.Auth
+  fullName: SharpChess.Api.Contracts.Auth
+  spec.csharp:
+  - uid: SharpChess
+    name: SharpChess
+    href: SharpChess.html
+  - name: .
+  - uid: SharpChess.Api
+    name: Api
+    href: SharpChess.Api.html
+  - name: .
+  - uid: SharpChess.Api.Contracts
+    name: Contracts
+    href: SharpChess.Api.Contracts.html
+  - name: .
+  - uid: SharpChess.Api.Contracts.Auth
+    name: Auth
+    href: SharpChess.Api.Contracts.Auth.html
+  spec.vb:
+  - uid: SharpChess
+    name: SharpChess
+    href: SharpChess.html
+  - name: .
+  - uid: SharpChess.Api
+    name: Api
+    href: SharpChess.Api.html
+  - name: .
+  - uid: SharpChess.Api.Contracts
+    name: Contracts
+    href: SharpChess.Api.Contracts.html
+  - name: .
+  - uid: SharpChess.Api.Contracts.Auth
+    name: Auth
+    href: SharpChess.Api.Contracts.Auth.html

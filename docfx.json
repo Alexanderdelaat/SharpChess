@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+"metadata": [
+  {
+    "src": [
+      {
+        "src": ".",
+        "files": [ "src/SharpChess.Api/SharpChess.Api.csproj" ]
+      }
+    ],
+    "dest": "api"
+  }
+],
+  "build": {
+    "content": [
+      {
+        "files": ["**/*.{md,yml}"],
+        "exclude": ["_site/**"]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["images/**", "coverage-report/**"]
+
+      }
+    ],
+    "output": "_site",
+    "template": ["default", "modern"],
+    "globalMetadata": {
+      "_appName": "SharpChess",
+      "_appTitle": "SharpChess",
+      "_enableSearch": true,
+      "pdf": true
+    }
+  }
+}

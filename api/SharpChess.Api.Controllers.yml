@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Controllers
+  commentId: N:SharpChess.Api.Controllers
+  id: SharpChess.Api.Controllers
+  children:
+  - SharpChess.Api.Controllers.AuthController
+  langs:
+  - csharp
+  - vb
+  name: SharpChess.Api.Controllers
+  nameWithType: SharpChess.Api.Controllers
+  fullName: SharpChess.Api.Controllers
+  type: Namespace
+  assemblies:
+  - SharpChess.Api
+references:
+- uid: SharpChess.Api.Controllers.AuthController
+  commentId: T:SharpChess.Api.Controllers.AuthController
+  href: SharpChess.Api.Controllers.AuthController.html
+  name: AuthController
+  nameWithType: AuthController
+  fullName: SharpChess.Api.Controllers.AuthController

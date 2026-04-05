@@ -1,3 +1,4 @@
+using FluentResults;
 using MediatR;
 
 namespace SharpChess.Application.Auth.Commands.Login;
@@ -5,4 +6,4 @@ namespace SharpChess.Application.Auth.Commands.Login;
 public record LoginCommand(
     string Username,
     string Password
-    ) : IRequest<string>;
+) : IRequest<Result<LoginResult>>;

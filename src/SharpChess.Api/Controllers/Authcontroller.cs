@@ -7,18 +7,33 @@ using SharpChess.Application.Auth.Commands.Login;
 
 
 namespace SharpChess.Api.Controllers;
-
+/// <summary>
+/// Beheert authenticatie-gerelateerde endpoints zoals registreren en inloggen.
+/// </summary>
+/// 
 [ApiController]
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
     private readonly ISender _mediator;
 
+/// <summary>
+/// 
+/// </summary>
+/// <param name="mediator"></param>
     public AuthController(ISender mediator)
     {
         _mediator = mediator;
     }
 
+
+    /// <summary>
+    /// Registreert een nieuwe gebruiker met gebruikersnaam, e-mailadres en wachtwoord.
+    /// </summary>
+    /// <param name="request">De registratiegegevens van de gebruiker.</param>
+    /// <returns>
+    /// Een succesvolle response met de aangemaakte gebruiker, of een foutresponse als de registratie mislukt.
+    /// </returns>
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
@@ -39,6 +54,12 @@ public class AuthController : ControllerBase
             Email: result.Value.Email));
     }
 
+/// <summary>
+/// Logt de gebuiker in.
+/// </summary>
+/// <param name="request"></param>
+/// Een succesvolle loginpoging of een foutresponse als het mislukt.
+/// <returns></returns>
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
