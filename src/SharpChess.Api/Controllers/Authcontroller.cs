@@ -16,10 +16,10 @@ public class AuthController : ControllerBase
 {
     private readonly ISender _mediator;
 
-/// <summary>
-/// 
-/// </summary>
-/// <param name="mediator"></param>
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="mediator"></param>
     public AuthController(ISender mediator)
     {
         _mediator = mediator;
@@ -52,12 +52,12 @@ public class AuthController : ControllerBase
             Email: result.Value.Email));
     }
 
-/// <summary>
-/// Logt de gebuiker in.
-/// </summary>
-/// <param name="request"></param>
-/// Een succesvolle loginpoging of een foutresponse als het mislukt.
-/// <returns></returns>
+    /// <summary>
+    /// Logt de gebuiker in.
+    /// </summary>
+    /// <param name="request"></param>
+    /// Een succesvolle loginpoging of een foutresponse als het mislukt.
+    /// <returns></returns>
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
