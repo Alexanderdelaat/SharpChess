@@ -5,7 +5,6 @@ using SharpChess.Api.Contracts.Auth;
 using SharpChess.Application.Auth.Commands.Register;
 using SharpChess.Application.Auth.Commands.Login;
 
-
 namespace SharpChess.Api.Controllers;
 /// <summary>
 /// Beheert authenticatie-gerelateerde endpoints zoals registreren en inloggen.
@@ -25,7 +24,6 @@ public class AuthController : ControllerBase
     {
         _mediator = mediator;
     }
-
 
     /// <summary>
     /// Registreert een nieuwe gebruiker met gebruikersnaam, e-mailadres en wachtwoord.
