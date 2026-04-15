@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sharpchess-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sharpchess-api
+  template:
+    metadata:
+      labels:
+        app: sharpchess-api
+    spec:
+      containers:
+        - name: sharpchess-api
+          image: sharpchess-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+            - name: ConnectionStrings__DefaultConnection
+              value: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sharpchess-api
+spec:
+  selector:
+    app: sharpchess-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: ClusterIP

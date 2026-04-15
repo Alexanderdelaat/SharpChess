@@ -15,11 +15,15 @@ De documentatie van SharpChess is opgesplitst in twee delen:
 - **API** bevat de gegenereerde technische documentatie van de backend-code.
 
 ## Technologieën
-
-- React + TypeScript
-- ASP.NET Core Web API
-- Entity Framework Core
-- JWT-authenticatie
+- Front-end: React + TypeScript (Vite)
+- Authenticatie: JWT 
+- Authorisatie: ASP.NET Core 
+- Back-end: ASP.NET Core Web API 
+- Data: Entity Framework Core 
+- Validatie: Result based error handling en global exception handling 
+- Security: wachtwoorden hashen met PBKDF2 
+- Logger: Serilog -Unit testing: MsTest 
+- API Testing: Postman
 
 ## Doel
 

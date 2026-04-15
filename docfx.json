@@ -18,9 +18,10 @@
         "exclude": ["_site/**"]
       }
     ],
+    
     "resource": [
       {
-        "files": ["images/**", "coverage-report/**"]
+        "files": ["images/**", ""]
 
       }
     ],
@@ -29,6 +30,7 @@
     "globalMetadata": {
       "_appName": "SharpChess",
       "_appTitle": "SharpChess",
+        "_appFooter": "<span>Made by Alexander</span>",
       "_enableSearch": true,
       "pdf": true
     }
