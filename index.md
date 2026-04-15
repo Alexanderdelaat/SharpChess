@@ -4,7 +4,7 @@ SharpChess is een full-stack schaakwebapplicatie waarmee gebruikers zich kunnen 
 
 ## Navigatie
 
-- [Architectuurdocumentatie](docs/)
+- [Architectuurdocumentatie](docs/index.html)
 - [API Reference](api/)
 
 ## Overzicht

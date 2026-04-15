@@ -1,5 +1,5 @@
 - name: Docs
-  href: docs/
+  href: docs/index.html
 - name: API
   href: api/
 - name: Code Coverage
