@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>SharpChess logo</title>
+  <defs>
+    <linearGradient id="piece" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2f8f80"/>
+      <stop offset="100%" stop-color="#1f6f63"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 18c0-4.4 3.6-8 8-8s8 3.6 8 8c0 2.8-1.5 5.3-3.7 6.7 0.8 1.2 1.5 2.5 1.9 4.1 4.5 1.5 7.5 5.3 7.5 10.2v1H18v-1c0-4.9 3-8.7 7.5-10.2 0.4-1.6 1.1-2.9 1.9-4.1C25.5 23.3 24 20.8 24 18Z" fill="url(#piece)"/>
+  <path d="M18 43h28c1.7 0 3 1.3 3 3v1H15v-1c0-1.7 1.3-3 3-3Zm1 7h26c1.7 0 3 1.3 3 3v1H16v-1c0-1.7 1.3-3 3-3Z" fill="#1f6f63"/>
+  <path d="M25 29.2c2.2-1.4 4.4-2.1 7-2.1s4.8 0.7 7 2.1" fill="none" stroke="#4fa598" stroke-linecap="round" stroke-width="2"/>
+</svg>

@@ -1,30 +1,362 @@
+<style>
+:root{
+  --landing-surface:#faf7f0;
+  --landing-surface-strong:#fffdf8;
+  --landing-panel:#f6f1e7;
+  --landing-ink:#1e2a2d;
+  --landing-muted:#5a6661;
+  --landing-line:rgba(30,42,45,0.12);
+  --landing-line-strong:rgba(30,42,45,0.22);
+  --landing-accent:#566b78;
+  --landing-accent-soft:rgba(86,107,120,0.12);
+  --landing-accent-warm:#ad6f2b;
+  --landing-shadow:0 24px 60px rgba(34,41,38,0.08);
+  --landing-shadow-soft:0 14px 28px rgba(34,41,38,0.06);
+}
+*{box-sizing:border-box}
+article h1:first-of-type{
+  position:relative;
+  overflow:hidden;
+  max-width:980px;
+  margin:0 auto 0.3rem;
+  padding:3rem 2.4rem 1.2rem;
+  border:1px solid var(--landing-line);
+  border-bottom:none;
+  border-radius:30px 30px 0 0;
+  background:
+    radial-gradient(circle at top right,rgba(86,107,120,0.16),transparent 34%),
+    linear-gradient(145deg,rgba(255,255,255,0.88),rgba(250,247,240,0.96)),
+    var(--landing-surface);
+  box-shadow:var(--landing-shadow);
+  color:var(--landing-ink);
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-size:3.15rem;
+  font-weight:600;
+  letter-spacing:-0.045em;
+  line-height:1.02;
+}
+article h1:first-of-type::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(86,107,120,0.06) 1px,transparent 1px),
+    linear-gradient(rgba(86,107,120,0.06) 1px,transparent 1px);
+  background-size:28px 28px;
+  opacity:0.45;
+  pointer-events:none;
+}
+article h1:first-of-type::after{
+  content:"";
+  position:absolute;
+  top:1.15rem;
+  right:1.4rem;
+  width:7rem;
+  height:7rem;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(86,107,120,0.16),transparent 72%);
+  pointer-events:none;
+}
+.landing-lead{
+  position:relative;
+  max-width:980px;
+  margin:0 auto 1.4rem;
+  padding:0 2.4rem 2.2rem;
+  border:1px solid var(--landing-line);
+  border-top:none;
+  border-radius:0 0 30px 30px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,247,240,0.96)),
+    var(--landing-surface);
+  box-shadow:var(--landing-shadow);
+  color:var(--landing-muted);
+  font-size:1.05rem;
+  line-height:1.8;
+}
+.landing{
+  position:relative;
+  display:grid;
+  gap:1.15rem;
+  max-width:980px;
+  margin:0 auto;
+  padding:0.2rem 0 3rem;
+}
+.landing::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(86,107,120,0.045) 1px,transparent 1px),
+    linear-gradient(rgba(86,107,120,0.045) 1px,transparent 1px);
+  background-size:32px 32px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,0.5),transparent 96%);
+  pointer-events:none;
+  z-index:-1;
+}
+.landing-section{
+  position:relative;
+  padding:1.55rem 1.55rem 1.65rem;
+  border:1px solid var(--landing-line);
+  border-radius:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,241,231,0.92));
+  box-shadow:var(--landing-shadow-soft);
+}
+.landing-section h2{
+  margin:0 0 1rem;
+  padding-bottom:0.9rem;
+  border-bottom:1px solid var(--landing-line);
+  color:var(--landing-ink);
+  font-family:"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif;
+  font-size:1.55rem;
+  font-weight:600;
+  letter-spacing:-0.03em;
+  line-height:1.1;
+}
+.nav-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:0.9rem;
+}
+.nav-card{
+  position:relative;
+  display:block;
+  padding:1.05rem 1.15rem;
+  border:1px solid var(--landing-line);
+  border-radius:20px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,243,235,0.92));
+  color:var(--landing-ink);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:0.82rem;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:transform 160ms ease,border-color 160ms ease,box-shadow 160ms ease,background 160ms ease;
+}
+.nav-card::after{
+  content:"\2192";
+  position:absolute;
+  right:1rem;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--landing-accent);
+  font-size:1rem;
+}
+.nav-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(86,107,120,0.28);
+  box-shadow:0 16px 28px rgba(34,41,38,0.08);
+  background:linear-gradient(180deg,rgba(255,255,255,1),rgba(241,245,248,0.96));
+  color:var(--landing-ink);
+}
+.nav-card:focus-visible{
+  outline:2px solid rgba(86,107,120,0.42);
+  outline-offset:3px;
+}
+.overview-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:0.9rem;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+.overview-card{
+  min-height:100%;
+  padding:1rem 1.05rem;
+  border:1px solid var(--landing-line);
+  border-radius:20px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(247,243,235,0.9));
+}
+.overview-card strong{
+  display:block;
+  margin-bottom:0.25rem;
+  color:var(--landing-accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:0.76rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+}
+.overview-intro{
+  margin:0 0 1rem;
+  color:var(--landing-muted);
+  font-size:0.97rem;
+  line-height:1.75;
+}
+.overview-card p{
+  margin:0;
+  color:var(--landing-muted);
+  font-size:0.95rem;
+  line-height:1.7;
+}
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:0.8rem;
+  padding:0;
+  margin:0;
+  list-style:none;
+}
+.tech-item{
+  display:flex;
+  align-items:flex-start;
+  gap:0.8rem;
+  min-height:100%;
+  padding:0.95rem 1rem;
+  border:1px solid var(--landing-line);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(247,243,235,0.9));
+  color:var(--landing-muted);
+  font-size:0.94rem;
+  line-height:1.65;
+}
+.tech-item::before{
+  content:"";
+  width:0.7rem;
+  height:0.7rem;
+  margin-top:0.38rem;
+  border-radius:50%;
+  background:linear-gradient(180deg,var(--landing-accent),var(--landing-accent-warm));
+  box-shadow:0 0 0 6px rgba(86,107,120,0.1);
+  flex-shrink:0;
+}
+.goal-callout{
+  position:relative;
+  margin:0;
+  padding:1.1rem 1.2rem 1.15rem;
+  border:1px solid var(--landing-line);
+  border-left:4px solid var(--landing-accent);
+  border-radius:18px;
+  background:linear-gradient(135deg,rgba(255,255,255,0.96),rgba(241,245,248,0.9));
+  color:var(--landing-muted);
+  font-size:0.97rem;
+  line-height:1.8;
+  box-shadow:var(--landing-shadow-soft);
+}
+html[data-bs-theme="dark"]{
+  --landing-surface:#131c20;
+  --landing-surface-strong:#172328;
+  --landing-panel:#182327;
+  --landing-ink:#eef5f1;
+  --landing-muted:#b6c4be;
+  --landing-line:rgba(223,237,230,0.12);
+  --landing-line-strong:rgba(223,237,230,0.24);
+  --landing-accent:#9eb5c6;
+  --landing-accent-soft:rgba(158,181,198,0.16);
+  --landing-accent-warm:#d9ab73;
+  --landing-shadow:0 24px 60px rgba(0,0,0,0.34);
+  --landing-shadow-soft:0 14px 28px rgba(0,0,0,0.26);
+}
+html[data-bs-theme="dark"] article h1:first-of-type{
+  background:
+    radial-gradient(circle at top right,rgba(158,181,198,0.18),transparent 34%),
+    linear-gradient(145deg,rgba(23,35,40,0.98),rgba(16,24,28,0.96)),
+    var(--landing-surface);
+}
+html[data-bs-theme="dark"] article h1:first-of-type::before{
+  background:
+    linear-gradient(90deg,rgba(223,237,230,0.05) 1px,transparent 1px),
+    linear-gradient(rgba(223,237,230,0.05) 1px,transparent 1px);
+}
+html[data-bs-theme="dark"] .landing-lead{
+  background:
+    linear-gradient(180deg,rgba(23,35,40,0.98),rgba(16,24,28,0.96)),
+    var(--landing-surface);
+}
+html[data-bs-theme="dark"] .landing::before{
+  background:
+    linear-gradient(90deg,rgba(158,181,198,0.07) 1px,transparent 1px),
+    linear-gradient(rgba(158,181,198,0.07) 1px,transparent 1px);
+}
+html[data-bs-theme="dark"] .landing-section{
+  background:linear-gradient(180deg,rgba(23,35,40,0.98),rgba(18,27,31,0.94));
+}
+html[data-bs-theme="dark"] .nav-card,
+html[data-bs-theme="dark"] .overview-card,
+html[data-bs-theme="dark"] .tech-item{
+  background:linear-gradient(180deg,rgba(23,35,40,0.98),rgba(18,27,31,0.94));
+}
+html[data-bs-theme="dark"] .nav-card:hover{
+  background:linear-gradient(180deg,rgba(28,43,48,0.99),rgba(21,33,38,0.96));
+  box-shadow:0 16px 28px rgba(0,0,0,0.28);
+}
+html[data-bs-theme="dark"] .nav-card:focus-visible{
+  outline-color:rgba(158,181,198,0.58);
+}
+html[data-bs-theme="dark"] .tech-item::before{
+  box-shadow:0 0 0 6px rgba(158,181,198,0.14);
+}
+html[data-bs-theme="dark"] .goal-callout{
+  background:linear-gradient(135deg,rgba(19,32,36,0.98),rgba(16,24,28,0.94));
+}
+@media(max-width:760px){
+  article h1:first-of-type{
+    padding:2.4rem 1.4rem 1rem;
+    font-size:2.45rem;
+  }
+  .landing-lead{
+    padding:0 1.4rem 1.7rem;
+  }
+  .landing-section{
+    padding:1.25rem 1.1rem 1.35rem;
+  }
+}
+@media(max-width:600px){
+  .nav-grid,.overview-grid,.tech-grid{
+    grid-template-columns:1fr;
+  }
+  .landing-section h2{
+    font-size:1.35rem;
+  }
+}
+</style>
+
 # SharpChess
 
-SharpChess is een full-stack schaakwebapplicatie waarmee gebruikers zich kunnen registreren, inloggen en online kunnen schaken via een strikt gescheiden frontend, backend en data/infrastructuuropzet.
+<p class="landing-lead">SharpChess is een full-stack schaakwebapplicatie waarmee gebruikers zich kunnen registreren, inloggen en online kunnen schaken via een strikt gescheiden frontend, backend en data/infrastructuuropzet.</p>
 
-## Navigatie
+<div class="landing">
+  <section class="landing-section">
+    <h2>Navigatie</h2>
+    <div class="nav-grid">
+      <a class="nav-card" href="docs/index.html">Architectuurdocumentatie</a>
+      <a class="nav-card" href="api/">API Reference</a>
+    </div>
+  </section>
 
-- [Architectuurdocumentatie](docs/index.html)
-- [API Reference](api/)
+  <section class="landing-section">
+    <h2>Overzicht</h2>
+    <p class="overview-intro">De documentatie van SharpChess is opgesplitst in twee delen:</p>
+    <ul class="overview-grid">
+      <li class="overview-card">
+        <strong>Docs</strong>
+        <p>bevat de architectuurdocumentatie, ontwerpkeuzes, context, kwaliteitsdoelen en andere projectuitleg.</p>
+      </li>
+      <li class="overview-card">
+        <strong>API</strong>
+        <p>bevat de gegenereerde technische documentatie van de backend-code.</p>
+      </li>
+    </ul>
+  </section>
 
-## Overzicht
+  <section class="landing-section">
+    <h2>Technologieën</h2>
+    <ul class="tech-grid">
+      <li class="tech-item">Front-end: React + TypeScript (Vite)</li>
+      <li class="tech-item">Authenticatie: JWT</li>
+      <li class="tech-item">Authorisatie: ASP.NET Core</li>
+      <li class="tech-item">Back-end: ASP.NET Core Web API</li>
+      <li class="tech-item">Data: Entity Framework Core</li>
+      <li class="tech-item">Validatie: Result based error handling en global exception handling</li>
+      <li class="tech-item">Security: wachtwoorden hashen met PBKDF2</li>
+      <li class="tech-item">Logger: Serilog -Unit testing: MsTest</li>
+      <li class="tech-item">API Testing: Postman</li>
+    </ul>
+  </section>
 
-De documentatie van SharpChess is opgesplitst in twee delen:
-
-- **Docs** bevat de architectuurdocumentatie, ontwerpkeuzes, context, kwaliteitsdoelen en andere projectuitleg.
-- **API** bevat de gegenereerde technische documentatie van de backend-code.
-
-## Technologieën
-- Front-end: React + TypeScript (Vite)
-- Authenticatie: JWT 
-- Authorisatie: ASP.NET Core 
-- Back-end: ASP.NET Core Web API 
-- Data: Entity Framework Core 
-- Validatie: Result based error handling en global exception handling 
-- Security: wachtwoorden hashen met PBKDF2 
-- Logger: Serilog -Unit testing: MsTest 
-- API Testing: Postman
-
-## Doel
-
-Het doel van SharpChess is om een onderhoudbare en duidelijk gescheiden webapplicatie te bouwen waarin de frontend alleen via HTTP met de backend communiceert, en de backend alle businesslogica en validatie afhandelt.
+  <section class="landing-section">
+    <h2>Doel</h2>
+    <p class="goal-callout">Het doel van SharpChess is om een onderhoudbare en duidelijk gescheiden webapplicatie te bouwen waarin de frontend alleen via HTTP met de backend communiceert, en de backend alle businesslogica en validatie afhandelt.</p>
+  </section>
+</div>

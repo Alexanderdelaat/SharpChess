@@ -24,12 +24,14 @@
       }
     ],
     "output": "_site",
-    "template": [ "default", "modern" ],
+    "template": [ "default", "modern", "templates/sharpchess" ],
     "globalMetadata": {
       "_appName": "SharpChess",
       "_appTitle": "SharpChess",
+      "_appLogoPath": "images/chess-logo.svg",
       "_appFooter": "<span>Made by Alexander</span>",
       "_enableSearch": true,
+      "_disableSideFilter": true,
       "pdf": true
     }
   }
