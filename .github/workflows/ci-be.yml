@@ -91,7 +91,7 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/sharpchess-api
             ghcr.io/alexanderdelaat/sharpchess-api
           tags: |
-            type:sha
+            type=sha
 
       - name: Build and push Docker images
         id: push
