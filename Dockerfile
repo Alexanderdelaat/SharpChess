@@ -10,5 +10,10 @@ RUN dotnet publish src/SharpChess.Api/SharpChess.Api.csproj -c Release -o /app/p
 
 FROM base AS final
 WORKDIR /app
+
+ARG APP_VERSION=unknown
+ENV ASPNETCORE_HTTP_PORTS=8080
+ENV APP_VERSION=${APP_VERSION}
+
 COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "SharpChess.Api.dll"]
