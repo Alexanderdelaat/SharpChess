@@ -85,19 +85,24 @@ static string BuildEmbeddedMarkdown(string notionEmbedUrl)
     builder.AppendLine("> Notion is the live runtime source for this page, and DocFX only hosts the container page.");
     builder.AppendLine("> If the embed stays blank, open the direct Notion link below. That usually means Notion refused iframe rendering for the current URL.");
     builder.AppendLine();
-    builder.AppendLine($"<p><a href=\"{escapedUrl}\" target=\"_blank\" rel=\"noopener noreferrer\">Open the board directly in Notion</a></p>");
+    builder.AppendLine("<style>");
+    builder.AppendLine(".notion-board-frame{position:relative;left:50%;transform:translateX(-50%);width:min(1680px,calc(100vw - 2rem));max-width:1680px;margin:1rem 0 0;}");
+    builder.AppendLine(".notion-board-frame iframe{display:block;width:100%;height:78vh;min-height:960px;border:1px solid #d7dce2;border-radius:12px;background:#fff;box-shadow:0 18px 42px rgba(15,23,42,.08);}");
+    builder.AppendLine(".notion-board-link{margin:.75rem 0 1rem;}");
+    builder.AppendLine("@media (max-width: 900px){.notion-board-frame{width:calc(100vw - 1rem);}.notion-board-frame iframe{height:70vh;min-height:720px;}}");
+    builder.AppendLine("</style>");
     builder.AppendLine();
-    builder.AppendLine("<iframe");
-    builder.AppendLine($"  src=\"{escapedUrl}\"");
-    builder.AppendLine("  width=\"100%\"");
-    builder.AppendLine("  height=\"1200\"");
-    builder.AppendLine("  frameborder=\"0\"");
-    builder.AppendLine("  loading=\"lazy\"");
-    builder.AppendLine("  allowfullscreen");
-    builder.AppendLine("  referrerpolicy=\"strict-origin-when-cross-origin\"");
-    builder.AppendLine("  sandbox=\"allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms\"");
-    builder.AppendLine("  style=\"border: 1px solid #d7dce2; border-radius: 12px; background: #ffffff;\"");
-    builder.AppendLine("></iframe>");
+    builder.AppendLine($"<p class=\"notion-board-link\"><a href=\"{escapedUrl}\" target=\"_blank\" rel=\"noopener noreferrer\">Open the board directly in Notion</a></p>");
+    builder.AppendLine();
+    builder.AppendLine("<div class=\"notion-board-frame\">");
+    builder.AppendLine("  <iframe");
+    builder.AppendLine($"    src=\"{escapedUrl}\"");
+    builder.AppendLine("    loading=\"lazy\"");
+    builder.AppendLine("    allowfullscreen");
+    builder.AppendLine("    referrerpolicy=\"strict-origin-when-cross-origin\"");
+    builder.AppendLine("    sandbox=\"allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms\"");
+    builder.AppendLine("  ></iframe>");
+    builder.AppendLine("</div>");
 
     return builder.ToString().TrimEnd() + Environment.NewLine;
 }
