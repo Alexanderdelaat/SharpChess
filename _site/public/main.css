@@ -4,3 +4,116 @@
 #toc_filter_clear {
   display: none !important;
 }
+
+.content article {
+  max-width: 100%;
+}
+
+article h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+}
+
+.kanban-intro {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #d8dee8;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #f6fbf7 0%, #eef4ff 100%);
+  color: #415264;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.kanban-column h2 {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d8dee8;
+  border-bottom: none;
+  border-radius: 1.1rem 1.1rem 0 0;
+  color: #183153;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.kanban-column ul {
+  margin: 0;
+  padding: 1rem;
+  list-style: none;
+  display: flex;
+  min-height: 14rem;
+  flex-direction: column;
+  gap: 0.85rem;
+  border: 1px solid #d8dee8;
+  border-radius: 0 0 1.1rem 1.1rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fafc 100%);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.06);
+}
+
+.kanban-column li {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid #e3e8ef;
+  border-radius: 0.95rem;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+  line-height: 1.5;
+}
+
+.kanban-column li em:only-child {
+  color: #6b7280;
+}
+
+.kanban-column-backlog h2 {
+  background: linear-gradient(135deg, #fbf4e7 0%, #fff9ef 100%);
+}
+
+.kanban-column-todo h2 {
+  background: linear-gradient(135deg, #edf6ff 0%, #f5faff 100%);
+}
+
+.kanban-column-progress h2 {
+  background: linear-gradient(135deg, #eef9f0 0%, #f6fcf7 100%);
+}
+
+.kanban-column-review h2 {
+  background: linear-gradient(135deg, #fff4e8 0%, #fffbf5 100%);
+}
+
+.kanban-column-done h2 {
+  background: linear-gradient(135deg, #eef7f2 0%, #f8fcfa 100%);
+}
+
+.kanban-tag {
+  display: inline-flex;
+  margin-left: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+.kanban-tag-high {
+  background: #c62828;
+  color: #ffffff;
+}
+
+.kanban-tag-medium {
+  background: #f4d35e;
+  color: #222222;
+}
+
+@media (min-width: 1200px) {
+  .kanban-board {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

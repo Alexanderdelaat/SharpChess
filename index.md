@@ -320,8 +320,8 @@ html[data-bs-theme="dark"] .goal-callout{
   <section class="landing-section">
     <h2>Navigatie</h2>
     <div class="nav-grid">
-      <a class="nav-card" href="docs/index.html">Architectuurdocumentatie</a>
-      <a class="nav-card" href="api/">API Reference</a>
+      <a class="nav-card" href="docs/index.md">Architectuurdocumentatie</a>
+      <a class="nav-card" href="api/toc.yml">API Reference</a>
     </div>
   </section>
 

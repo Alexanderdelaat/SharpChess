@@ -2,7 +2,7 @@
   "README.html": {
     "href": "README.html",
     "title": "SharpChess | SharpChess",
-    "summary": "SharpChess"
+    "summary": "SharpChess Documentation board sync The documentation site reads the project board from Notion in one direction only: Notion -> generated Markdown -> DocFX -> GitHub Pages The sync is read-only. The integration only calls Notion read endpoints and never creates, updates, deletes, moves, archives, or reorders cards. Required GitHub Actions secrets Configure these in Settings -> Secrets and variables -> Actions for the repository: NOTION_TOKEN NOTION_DATABASE_ID If the Notion database contains more than one data source, also add: NOTION_DATA_SOURCE_ID The Notion integration must have read access to the board database, and the database must be shared with that integration inside Notion. Local generation Run the sync locally with environment variables set: export NOTION_TOKEN=\"secret_...\" export NOTION_DATABASE_ID=\"your-notion-database-id\" bash scripts/sync-notion-kanban.sh The script overwrites docs/kanban.md, which is included in the DocFX site and published by the existing GitHub Pages workflow."
   },
   "api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html": {
     "href": "api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html",
@@ -104,11 +104,6 @@
     "title": "Namespace SharpChess.Api.Security | SharpChess",
     "summary": "Namespace SharpChess.Api.Security Classes ClaimsPrincipalExtensions"
   },
-  "coverage-report/index.html": {
-    "href": "coverage-report/index.html",
-    "title": "Summary | SharpChess",
-    "summary": "Summary Generated on: 04/05/2026 - 18:59:26 Coverage date: 04/05/2026 - 18:59:24 Parser: Cobertura Assemblies: 0 Classes: 0 Files: 0 Line coverage: Covered lines: 0 Uncovered lines: 0 Coverable lines: 0 Total lines: 0 Covered branches: 0 Total branches: 0 Method coverage: Feature is only available for sponsors Coverage No assemblies have been covered."
-  },
   "docs/index.html": {
     "href": "docs/index.html",
     "title": "SharpChess | SharpChess",
@@ -116,8 +111,8 @@
   },
   "docs/kanban.html": {
     "href": "docs/kanban.html",
-    "title": "| SharpChess",
-    "summary": "Backlog [ ] Back-end: Unit Tests #High [ ] End-to-End Tests #High [ ] Restart Policy Toevoegen [ ] Readme voor SharpChess [ ] Ethics [ ] Obisidan Kanban board integration on SharpChess documentation website To-Do: (MAX 4) [ ] Raspberry PI hosting van back-end [ ] Security toevoegen volgens ISO standaarden [ ] Kernkwaliteiten vergelijken met vorige semester [ ] Database generatie op website %% kanban:settings {\"kanban-plugin\":\"board\",\"list-collapse\":[false,false],\"tag-sort\":[{\"tag\":\"#High\"}],\"tag-colors\":[{\"tagKey\":\"#High\",\"color\":\"rgba(255, 255, 255, 1)\",\"backgroundColor\":\"rgba(255, 0, 0, 1)\"},{\"tagKey\":\"#Medium\",\"color\":\"rgba(0, 0, 0, 1)\",\"backgroundColor\":\"rgba(253, 254, 0, 0.96)\"}],\"show-checkboxes\":true,\"hide-card-count\":false,\"move-tags\":true} %%"
+    "title": "Project Board | SharpChess",
+    "summary": "Project Board This page is generated from Notion by scripts/sync-notion-kanban.sh. The integration is read-only: it only reads the board and writes Markdown for DocFX. Generated placeholder. Run the Notion sync to refresh this page. Todo No cards in this column. In Progress No cards in this column. Review No cards in this column. Done No cards in this column."
   },
   "index.html": {
     "href": "index.html",

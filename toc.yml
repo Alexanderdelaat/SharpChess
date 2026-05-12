@@ -1,8 +1,8 @@
 - name: Docs
-  href: docs/index.html
-- name: Kanban Board
-  href: docs/kanban.html
+  href: docs/index.md
+- name: Project Board
+  href: docs/kanban.md
 - name: API
-  href: api/
+  href: api/toc.yml
 - name: Code Coverage
   href: coverage-report/index.html

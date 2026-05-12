@@ -73,6 +73,28 @@
         <article data-uid="">
 <h1 id="sharpchess">SharpChess</h1>
 
+<h2 id="documentation-board-sync">Documentation board sync</h2>
+<p>The documentation site reads the project board from Notion in one direction only:</p>
+<p><code>Notion -&gt; generated Markdown -&gt; DocFX -&gt; GitHub Pages</code></p>
+<p>The sync is read-only. The integration only calls Notion read endpoints and never creates, updates, deletes, moves, archives, or reorders cards.</p>
+<h3 id="required-github-actions-secrets">Required GitHub Actions secrets</h3>
+<p>Configure these in <code>Settings -&gt; Secrets and variables -&gt; Actions</code> for the repository:</p>
+<ul>
+<li><code>NOTION_TOKEN</code></li>
+<li><code>NOTION_DATABASE_ID</code></li>
+</ul>
+<p>If the Notion database contains more than one data source, also add:</p>
+<ul>
+<li><code>NOTION_DATA_SOURCE_ID</code></li>
+</ul>
+<p>The Notion integration must have read access to the board database, and the database must be shared with that integration inside Notion.</p>
+<h3 id="local-generation">Local generation</h3>
+<p>Run the sync locally with environment variables set:</p>
+<pre><code class="lang-bash">export NOTION_TOKEN=&quot;secret_...&quot;
+export NOTION_DATABASE_ID=&quot;your-notion-database-id&quot;
+bash scripts/sync-notion-kanban.sh
+</code></pre>
+<p>The script overwrites <code>docs/kanban.md</code>, which is included in the DocFX site and published by the existing GitHub Pages workflow.</p>
 
 </article>
 

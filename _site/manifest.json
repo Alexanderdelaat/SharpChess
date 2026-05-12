@@ -314,24 +314,291 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "coverage-report/index.md",
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cog.svg",
       "output": {
-        ".html": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cog.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cog_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cog_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cube.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cube.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_cube_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_cube_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_fork.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_fork.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_fork_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_fork_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_info-circled.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_info-circled.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_info-circled_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_info-circled_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-minus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-minus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-minus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-minus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-plus.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-plus.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_search-plus_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_search-plus_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_sponsor.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_sponsor.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_star.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_star.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_star_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_star_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-dir_active.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-dir_active.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-down-dir.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-down-dir.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_up-down-dir_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_up-down-dir_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_wrench.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_wrench.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/icon_wrench_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/icon_wrench_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/index.htm",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/index.htm"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/index.html",
+      "output": {
+        "resource": {
           "relative_path": "coverage-report/index.html"
         }
       },
       "version": ""
     },
     {
-      "type": "Toc",
-      "source_relative_path": "coverage-report/toc.yml",
+      "type": "Resource",
+      "source_relative_path": "coverage-report/main.js",
       "output": {
-        ".html": {
-          "relative_path": "coverage-report/toc.html"
-        },
-        ".json": {
-          "relative_path": "coverage-report/toc.json"
+        "resource": {
+          "relative_path": "coverage-report/main.js"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "coverage-report/report.css",
+      "output": {
+        "resource": {
+          "relative_path": "coverage-report/report.css"
         }
       },
       "version": ""

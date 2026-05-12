@@ -20,6 +20,16 @@
               "icon": "lucide-file",
               "title": "kanban"
             }
+          },
+          {
+            "id": "ef9b07138ba7ab94",
+            "type": "leaf",
+            "state": {
+              "type": "card-board-view",
+              "state": {},
+              "icon": "card-board",
+              "title": "CardBoard"
+            }
           }
         ]
       }

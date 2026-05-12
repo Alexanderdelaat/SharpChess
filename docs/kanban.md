@@ -1,35 +1,26 @@
 ---
-title: Kanban Board
+title: Project Board
 ---
 
-# Kanban Board
+# Project Board
 
-<div class="kanban-board-page"></div>
+> This page is generated from Notion by `scripts/sync-notion-kanban.sh`.
+> The integration is read-only: it only reads the board and writes Markdown for DocFX.
 
-Update this board from Obsidian. DocFX turns the same markdown into a visual board for GitHub Pages.
-
-## Backlog
-
-- Readme voor SharpChess
-- Ethics
-- Obsidian Kanban board integration on SharpChess documentation website <span class="kanban-tag kanban-tag-medium">Medium</span>
+_Generated placeholder. Run the Notion sync to refresh this page._
 
 ## Todo
 
-- Back-end: Unit Tests <span class="kanban-tag kanban-tag-high">High</span>
-- End-to-End Tests <span class="kanban-tag kanban-tag-high">High</span>
-- Security toevoegen volgens ISO standaarden
-- Database generatie op website
+_No cards in this column._
 
 ## In Progress
 
-- Restart Policy toevoegen
-- Raspberry PI hosting van back-end
+_No cards in this column._
 
 ## Review
 
-- Kernkwaliteiten vergelijken met vorige semester
+_No cards in this column._
 
 ## Done
 
-- _No completed items yet_
+_No cards in this column._

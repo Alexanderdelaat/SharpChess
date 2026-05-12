@@ -52,6 +52,13 @@ jobs:
       - name: Generate coverage report
         run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html"
 
+      - name: Generate Notion Kanban Markdown
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          NOTION_DATA_SOURCE_ID: ${{ secrets.NOTION_DATA_SOURCE_ID }}
+        run: bash scripts/sync-notion-kanban.sh
+
       - name: Build DocFX site
         run: docfx docfx.json
 

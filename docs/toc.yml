@@ -1,2 +1,4 @@
 - name: Architectuuroverzicht
-  href: index.html
+  href: index.md
+- name: Project Board
+  href: kanban.md
