@@ -1,0 +1,580 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  id: CurrentUserResponse
+  parent: SharpChess.Api.Contracts.Auth
+  children:
+  - SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  - SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  - SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  - SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  - SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  langs:
+  - csharp
+  - vb
+  name: CurrentUserResponse
+  nameWithType: CurrentUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  type: Class
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: CurrentUserResponse
+    path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+    startLine: 2
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: 'public record CurrentUserResponse : IEquatable<CurrentUserResponse>'
+    content.vb: Public Class CurrentUserResponse Implements IEquatable(Of CurrentUserResponse)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{SharpChess.Api.Contracts.Auth.CurrentUserResponse}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  commentId: M:SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String)'
+  parent: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  langs:
+  - csharp
+  - vb
+  name: CurrentUserResponse(string, string, string, string)
+  nameWithType: CurrentUserResponse.CurrentUserResponse(string, string, string, string)
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.CurrentUserResponse(string, string, string, string)
+  type: Constructor
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: .ctor
+    path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+    startLine: 2
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public CurrentUserResponse(string Id, string Username, string Email, string Role)
+    parameters:
+    - id: Id
+      type: System.String
+    - id: Username
+      type: System.String
+    - id: Email
+      type: System.String
+    - id: Role
+      type: System.String
+    content.vb: Public Sub New(Id As String, Username As String, Email As String, Role As String)
+  overload: SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor*
+  nameWithType.vb: CurrentUserResponse.New(String, String, String, String)
+  fullName.vb: SharpChess.Api.Contracts.Auth.CurrentUserResponse.New(String, String, String, String)
+  name.vb: New(String, String, String, String)
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  id: Id
+  parent: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: CurrentUserResponse.Id
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Id
+    path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+    startLine: 3
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public string Id { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id*
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  id: Username
+  parent: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  langs:
+  - csharp
+  - vb
+  name: Username
+  nameWithType: CurrentUserResponse.Username
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Username
+    path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+    startLine: 4
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public string Username { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Username As String
+  overload: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username*
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  id: Email
+  parent: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: CurrentUserResponse.Email
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Email
+    path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+    startLine: 5
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public string Email { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email*
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  id: Role
+  parent: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  langs:
+  - csharp
+  - vb
+  name: Role
+  nameWithType: CurrentUserResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Role
+    path: src/SharpChess.Api/Contracts/CurrentUserResponse.cs
+    startLine: 6
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public string Role { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Role As String
+  overload: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role*
+references:
+- uid: SharpChess.Api.Contracts.Auth
+  commentId: N:SharpChess.Api.Contracts.Auth
+  href: SharpChess.html
+  name: SharpChess.Api.Contracts.Auth
+  nameWithType: SharpChess.Api.Contracts.Auth
+  fullName: SharpChess.Api.Contracts.Auth
+  spec.csharp:
+  - uid: SharpChess
+    name: SharpChess
+    href: SharpChess.html
+  - name: .
+  - uid: SharpChess.Api
+    name: Api
+    href: SharpChess.Api.html
+  - name: .
+  - uid: SharpChess.Api.Contracts
+    name: Contracts
+    href: SharpChess.Api.Contracts.html
+  - name: .
+  - uid: SharpChess.Api.Contracts.Auth
+    name: Auth
+    href: SharpChess.Api.Contracts.Auth.html
+  spec.vb:
+  - uid: SharpChess
+    name: SharpChess
+    href: SharpChess.html
+  - name: .
+  - uid: SharpChess.Api
+    name: Api
+    href: SharpChess.Api.html
+  - name: .
+  - uid: SharpChess.Api.Contracts
+    name: Contracts
+    href: SharpChess.Api.Contracts.html
+  - name: .
+  - uid: SharpChess.Api.Contracts.Auth
+    name: Auth
+    href: SharpChess.Api.Contracts.Auth.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{SharpChess.Api.Contracts.Auth.CurrentUserResponse}
+  commentId: T:System.IEquatable{SharpChess.Api.Contracts.Auth.CurrentUserResponse}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CurrentUserResponse>
+  nameWithType: IEquatable<CurrentUserResponse>
+  fullName: System.IEquatable<SharpChess.Api.Contracts.Auth.CurrentUserResponse>
+  nameWithType.vb: IEquatable(Of CurrentUserResponse)
+  fullName.vb: System.IEquatable(Of SharpChess.Api.Contracts.Auth.CurrentUserResponse)
+  name.vb: IEquatable(Of CurrentUserResponse)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+    name: CurrentUserResponse
+    href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+    name: CurrentUserResponse
+    href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor
+  href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse__ctor_System_String_System_String_System_String_System_String_
+  name: CurrentUserResponse
+  nameWithType: CurrentUserResponse.CurrentUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.CurrentUserResponse
+  nameWithType.vb: CurrentUserResponse.New
+  fullName.vb: SharpChess.Api.Contracts.Auth.CurrentUserResponse.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Id
+  name: Id
+  nameWithType: CurrentUserResponse.Id
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Username
+  name: Username
+  nameWithType: CurrentUserResponse.Username
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Email
+  name: Email
+  nameWithType: CurrentUserResponse.Email
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Role
+  name: Role
+  nameWithType: CurrentUserResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role

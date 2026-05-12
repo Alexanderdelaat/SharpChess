@@ -1,0 +1,777 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler
+  commentId: T:SharpChess.Api.Middleware.GlobalExceptionHandler
+  id: GlobalExceptionHandler
+  parent: SharpChess.Api.Middleware
+  children:
+  - SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler})
+  - SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: GlobalExceptionHandler
+  nameWithType: GlobalExceptionHandler
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler
+  type: Class
+  source:
+    remote:
+      path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: GlobalExceptionHandler
+    path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+    startLine: 5
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Middleware
+  syntax:
+    content: 'public sealed class GlobalExceptionHandler : IExceptionHandler'
+    content.vb: Public NotInheritable Class GlobalExceptionHandler Implements IExceptionHandler
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.AspNetCore.Diagnostics.IExceptionHandler
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler})
+  commentId: M:SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler})
+  id: '#ctor(Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler})'
+  parent: SharpChess.Api.Middleware.GlobalExceptionHandler
+  langs:
+  - csharp
+  - vb
+  name: GlobalExceptionHandler(ILogger<GlobalExceptionHandler>)
+  nameWithType: GlobalExceptionHandler.GlobalExceptionHandler(ILogger<GlobalExceptionHandler>)
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.GlobalExceptionHandler(Microsoft.Extensions.Logging.ILogger<SharpChess.Api.Middleware.GlobalExceptionHandler>)
+  type: Constructor
+  source:
+    remote:
+      path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: .ctor
+    path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+    startLine: 9
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Middleware
+  syntax:
+    content: public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
+    parameters:
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler}
+    content.vb: Public Sub New(logger As ILogger(Of GlobalExceptionHandler))
+  overload: SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor*
+  nameWithType.vb: GlobalExceptionHandler.New(ILogger(Of GlobalExceptionHandler))
+  fullName.vb: SharpChess.Api.Middleware.GlobalExceptionHandler.New(Microsoft.Extensions.Logging.ILogger(Of SharpChess.Api.Middleware.GlobalExceptionHandler))
+  name.vb: New(ILogger(Of GlobalExceptionHandler))
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  commentId: M:SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  id: TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  parent: SharpChess.Api.Middleware.GlobalExceptionHandler
+  langs:
+  - csharp
+  - vb
+  name: TryHandleAsync(HttpContext, Exception, CancellationToken)
+  nameWithType: GlobalExceptionHandler.TryHandleAsync(HttpContext, Exception, CancellationToken)
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext, System.Exception, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: TryHandleAsync
+    path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+    startLine: 14
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Middleware
+  summary: >-
+    Tries to handle the specified exception asynchronously within the ASP.NET Core pipeline.
+
+    Implementations of this method can provide custom exception-handling logic for different scenarios.
+  example: []
+  syntax:
+    content: public ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
+    parameters:
+    - id: httpContext
+      type: Microsoft.AspNetCore.Http.HttpContext
+      description: The <xref href="Microsoft.AspNetCore.Http.HttpContext" data-throw-if-not-resolved="false"></xref> for the request.
+    - id: exception
+      type: System.Exception
+      description: The unhandled exception.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token.
+    return:
+      type: System.Threading.Tasks.ValueTask{System.Boolean}
+      description: >-
+        A task that represents the asynchronous read operation. The value of its <xref href="System.Threading.Tasks.ValueTask%601.Result" data-throw-if-not-resolved="false"></xref>
+
+        property contains the result of the handling operation.
+
+        <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the exception was handled successfully; otherwise <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Function TryHandleAsync(httpContext As HttpContext, exception As Exception, cancellationToken As CancellationToken) As ValueTask(Of Boolean)
+  overload: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync*
+  implements:
+  - Microsoft.AspNetCore.Diagnostics.IExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+references:
+- uid: SharpChess.Api.Middleware
+  commentId: N:SharpChess.Api.Middleware
+  href: SharpChess.html
+  name: SharpChess.Api.Middleware
+  nameWithType: SharpChess.Api.Middleware
+  fullName: SharpChess.Api.Middleware
+  spec.csharp:
+  - uid: SharpChess
+    name: SharpChess
+    href: SharpChess.html
+  - name: .
+  - uid: SharpChess.Api
+    name: Api
+    href: SharpChess.Api.html
+  - name: .
+  - uid: SharpChess.Api.Middleware
+    name: Middleware
+    href: SharpChess.Api.Middleware.html
+  spec.vb:
+  - uid: SharpChess
+    name: SharpChess
+    href: SharpChess.html
+  - name: .
+  - uid: SharpChess.Api
+    name: Api
+    href: SharpChess.Api.html
+  - name: .
+  - uid: SharpChess.Api.Middleware
+    name: Middleware
+    href: SharpChess.Api.Middleware.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Diagnostics.IExceptionHandler
+  commentId: T:Microsoft.AspNetCore.Diagnostics.IExceptionHandler
+  parent: Microsoft.AspNetCore.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.diagnostics.iexceptionhandler
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: Microsoft.AspNetCore.Diagnostics.IExceptionHandler
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Diagnostics
+  commentId: N:Microsoft.AspNetCore.Diagnostics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Diagnostics
+  nameWithType: Microsoft.AspNetCore.Diagnostics
+  fullName: Microsoft.AspNetCore.Diagnostics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.diagnostics
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Diagnostics
+    name: Diagnostics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.diagnostics
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor*
+  commentId: Overload:SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor
+  href: SharpChess.Api.Middleware.GlobalExceptionHandler.html#SharpChess_Api_Middleware_GlobalExceptionHandler__ctor_Microsoft_Extensions_Logging_ILogger_SharpChess_Api_Middleware_GlobalExceptionHandler__
+  name: GlobalExceptionHandler
+  nameWithType: GlobalExceptionHandler.GlobalExceptionHandler
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.GlobalExceptionHandler
+  nameWithType.vb: GlobalExceptionHandler.New
+  fullName.vb: SharpChess.Api.Middleware.GlobalExceptionHandler.New
+  name.vb: New
+- uid: Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<GlobalExceptionHandler>
+  nameWithType: ILogger<GlobalExceptionHandler>
+  fullName: Microsoft.Extensions.Logging.ILogger<SharpChess.Api.Middleware.GlobalExceptionHandler>
+  nameWithType.vb: ILogger(Of GlobalExceptionHandler)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of SharpChess.Api.Middleware.GlobalExceptionHandler)
+  name.vb: ILogger(Of GlobalExceptionHandler)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: SharpChess.Api.Middleware.GlobalExceptionHandler
+    name: GlobalExceptionHandler
+    href: SharpChess.Api.Middleware.GlobalExceptionHandler.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SharpChess.Api.Middleware.GlobalExceptionHandler
+    name: GlobalExceptionHandler
+    href: SharpChess.Api.Middleware.GlobalExceptionHandler.html
+  - name: )
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: Microsoft.AspNetCore.Http.HttpContext
+  commentId: T:Microsoft.AspNetCore.Http.HttpContext
+  parent: Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.httpcontext
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: Microsoft.AspNetCore.Http.HttpContext
+- uid: System.Threading.Tasks.ValueTask`1.Result
+  commentId: P:System.Threading.Tasks.ValueTask`1.Result
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1.result
+  name: Result
+  nameWithType: ValueTask<TResult>.Result
+  fullName: System.Threading.Tasks.ValueTask<TResult>.Result
+  nameWithType.vb: ValueTask(Of TResult).Result
+  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult).Result
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync*
+  commentId: Overload:SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync
+  href: SharpChess.Api.Middleware.GlobalExceptionHandler.html#SharpChess_Api_Middleware_GlobalExceptionHandler_TryHandleAsync_Microsoft_AspNetCore_Http_HttpContext_System_Exception_System_Threading_CancellationToken_
+  name: TryHandleAsync
+  nameWithType: GlobalExceptionHandler.TryHandleAsync
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync
+- uid: Microsoft.AspNetCore.Diagnostics.IExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  commentId: M:Microsoft.AspNetCore.Diagnostics.IExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  parent: Microsoft.AspNetCore.Diagnostics.IExceptionHandler
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.diagnostics.iexceptionhandler.tryhandleasync
+  name: TryHandleAsync(HttpContext, Exception, CancellationToken)
+  nameWithType: IExceptionHandler.TryHandleAsync(HttpContext, Exception, CancellationToken)
+  fullName: Microsoft.AspNetCore.Diagnostics.IExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext, System.Exception, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Diagnostics.IExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+    name: TryHandleAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.diagnostics.iexceptionhandler.tryhandleasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.httpcontext
+  - name: ','
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Diagnostics.IExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+    name: TryHandleAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.diagnostics.iexceptionhandler.tryhandleasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Http.HttpContext
+    name: HttpContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.httpcontext
+  - name: ','
+  - name: " "
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.ValueTask{System.Boolean}
+  commentId: T:System.Threading.Tasks.ValueTask{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<bool>
+  nameWithType: ValueTask<bool>
+  fullName: System.Threading.Tasks.ValueTask<bool>
+  nameWithType.vb: ValueTask(Of Boolean)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of Boolean)
+  name.vb: ValueTask(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Microsoft.AspNetCore.Http
+  commentId: N:Microsoft.AspNetCore.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Http
+  nameWithType: Microsoft.AspNetCore.Http
+  fullName: Microsoft.AspNetCore.Http
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.ValueTask`1
+  commentId: T:System.Threading.Tasks.ValueTask`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<TResult>
+  nameWithType: ValueTask<TResult>
+  fullName: System.Threading.Tasks.ValueTask<TResult>
+  nameWithType.vb: ValueTask(Of TResult)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult)
+  name.vb: ValueTask(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

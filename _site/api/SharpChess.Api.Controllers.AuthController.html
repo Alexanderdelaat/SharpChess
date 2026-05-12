@@ -89,7 +89,7 @@
 
 
   <h1 id="SharpChess_Api_Controllers_AuthController" data-uid="SharpChess.Api.Controllers.AuthController" class="text-break">
-Class AuthController  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L13"><i class="bi bi-code-slash"></i></a>
+Class AuthController  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L16"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -104,6 +104,7 @@ Class AuthController  <a class="header-action link-secondary" title="View source
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ApiController]
 [Route(&quot;api/[controller]&quot;)]
+[ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public class AuthController : ControllerBase</code></pre>
   </div>
 
@@ -683,8 +684,8 @@ public class AuthController : ControllerBase</code></pre>
 
   <a id="SharpChess_Api_Controllers_AuthController__ctor_" data-uid="SharpChess.Api.Controllers.AuthController.#ctor*"></a>
 
-  <h3 id="SharpChess_Api_Controllers_AuthController__ctor_MediatR_ISender_" data-uid="SharpChess.Api.Controllers.AuthController.#ctor(MediatR.ISender)">
-  AuthController(ISender)
+  <h3 id="SharpChess_Api_Controllers_AuthController__ctor_SharpChess_Application_Auth_Services_IAuthService_" data-uid="SharpChess.Api.Controllers.AuthController.#ctor(SharpChess.Application.Auth.Services.IAuthService)">
+  AuthController(IAuthService)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L23"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -692,12 +693,12 @@ public class AuthController : ControllerBase</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AuthController(ISender mediator)</code></pre>
+    <pre><code class="lang-csharp hljs">public AuthController(IAuthService authService)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>mediator</code> <span class="xref">ISender</span></dt>
+    <dt><code>authService</code> <span class="xref">IAuthService</span></dt>
     <dd></dd>
   </dl>
 
@@ -716,11 +717,44 @@ public class AuthController : ControllerBase</code></pre>
 </h2>
 
 
+  <a id="SharpChess_Api_Controllers_AuthController_AdminPing_" data-uid="SharpChess.Api.Controllers.AuthController.AdminPing*"></a>
+
+  <h3 id="SharpChess_Api_Controllers_AuthController_AdminPing" data-uid="SharpChess.Api.Controllers.AuthController.AdminPing">
+  AdminPing()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Authorize(Roles = &quot;Admin&quot;)]
+[HttpGet(&quot;admin/ping&quot;)]
+public IActionResult AdminPing()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="SharpChess_Api_Controllers_AuthController_Login_" data-uid="SharpChess.Api.Controllers.AuthController.Login*"></a>
 
-  <h3 id="SharpChess_Api_Controllers_AuthController_Login_SharpChess_Api_Contracts_Auth_LoginRequest_" data-uid="SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)">
-  Login(LoginRequest)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  <h3 id="SharpChess_Api_Controllers_AuthController_Login_SharpChess_Api_Contracts_Auth_LoginRequest_System_Threading_CancellationToken_" data-uid="SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)">
+  Login(LoginRequest, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L63"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Logt de gebuiker in.</p>
@@ -728,13 +762,133 @@ public class AuthController : ControllerBase</code></pre>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[HttpPost(&quot;login&quot;)]
-public Task&lt;IActionResult&gt; Login(LoginRequest request)</code></pre>
+    <pre><code class="lang-csharp hljs">[EnableRateLimiting(&quot;auth-login&quot;)]
+[HttpPost(&quot;login&quot;)]
+public Task&lt;IActionResult&gt; Login(LoginRequest request, CancellationToken cancellationToken)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>request</code> <a class="xref" href="SharpChess.Api.Contracts.Auth.LoginRequest.html">LoginRequest</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Controllers_AuthController_Logout_" data-uid="SharpChess.Api.Controllers.AuthController.Logout*"></a>
+
+  <h3 id="SharpChess_Api_Controllers_AuthController_Logout_SharpChess_Api_Contracts_Auth_LogoutRequest_System_Threading_CancellationToken_" data-uid="SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)">
+  Logout(LogoutRequest, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Authorize(Roles = &quot;User,Admin&quot;)]
+[HttpPost(&quot;logout&quot;)]
+public Task&lt;IActionResult&gt; Logout(LogoutRequest request, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="SharpChess.Api.Contracts.Auth.LogoutRequest.html">LogoutRequest</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Controllers_AuthController_Me_" data-uid="SharpChess.Api.Controllers.AuthController.Me*"></a>
+
+  <h3 id="SharpChess_Api_Controllers_AuthController_Me_System_Threading_CancellationToken_" data-uid="SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)">
+  Me(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Authorize(Roles = &quot;User,Admin&quot;)]
+[HttpGet(&quot;me&quot;)]
+public Task&lt;IActionResult&gt; Me(CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult">IActionResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Controllers_AuthController_Refresh_" data-uid="SharpChess.Api.Controllers.AuthController.Refresh*"></a>
+
+  <h3 id="SharpChess_Api_Controllers_AuthController_Refresh_SharpChess_Api_Contracts_Auth_RefreshTokenRequest_System_Threading_CancellationToken_" data-uid="SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)">
+  Refresh(RefreshTokenRequest, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[HttpPost(&quot;refresh&quot;)]
+public Task&lt;IActionResult&gt; Refresh(RefreshTokenRequest request, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html">RefreshTokenRequest</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
     <dd></dd>
   </dl>
 
@@ -756,8 +910,8 @@ public Task&lt;IActionResult&gt; Login(LoginRequest request)</code></pre>
 
   <a id="SharpChess_Api_Controllers_AuthController_Register_" data-uid="SharpChess.Api.Controllers.AuthController.Register*"></a>
 
-  <h3 id="SharpChess_Api_Controllers_AuthController_Register_SharpChess_Api_Contracts_Auth_RegisterRequest_" data-uid="SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)">
-  Register(RegisterRequest)
+  <h3 id="SharpChess_Api_Controllers_AuthController_Register_SharpChess_Api_Contracts_Auth_RegisterRequest_System_Threading_CancellationToken_" data-uid="SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)">
+  Register(RegisterRequest, CancellationToken)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -767,7 +921,7 @@ public Task&lt;IActionResult&gt; Login(LoginRequest request)</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[HttpPost(&quot;register&quot;)]
-public Task&lt;IActionResult&gt; Register(RegisterRequest request)</code></pre>
+public Task&lt;IActionResult&gt; Register(RegisterRequest request, CancellationToken cancellationToken)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -775,6 +929,8 @@ public Task&lt;IActionResult&gt; Register(RegisterRequest request)</code></pre>
     <dt><code>request</code> <a class="xref" href="SharpChess.Api.Contracts.Auth.RegisterRequest.html">RegisterRequest</a></dt>
     <dd><p>De registratiegegevens van de gebruiker.</p>
 </dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
@@ -798,7 +954,7 @@ public Task&lt;IActionResult&gt; Register(RegisterRequest request)</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L13" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Controllers/Authcontroller.cs/#L16" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Security
+  commentId: N:SharpChess.Api.Security
+  id: SharpChess.Api.Security
+  children:
+  - SharpChess.Api.Security.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: SharpChess.Api.Security
+  nameWithType: SharpChess.Api.Security
+  fullName: SharpChess.Api.Security
+  type: Namespace
+  assemblies:
+  - SharpChess.Api
+references:
+- uid: SharpChess.Api.Security.ClaimsPrincipalExtensions
+  commentId: T:SharpChess.Api.Security.ClaimsPrincipalExtensions
+  href: SharpChess.Api.Security.ClaimsPrincipalExtensions.html
+  name: ClaimsPrincipalExtensions
+  nameWithType: ClaimsPrincipalExtensions
+  fullName: SharpChess.Api.Security.ClaimsPrincipalExtensions

@@ -160,8 +160,8 @@ Class LoginResponse  <a class="header-action link-secondary" title="View source"
 
   <a id="SharpChess_Api_Contracts_Auth_LoginResponse__ctor_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.#ctor*"></a>
 
-  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse__ctor_System_String_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String)">
-  LoginResponse(string)
+  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse__ctor_System_String_System_DateTime_System_String_System_DateTime_SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)">
+  LoginResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Contracts/LoginResponse.cs/#L3"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -169,12 +169,20 @@ Class LoginResponse  <a class="header-action link-secondary" title="View source"
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LoginResponse(string Token)</code></pre>
+    <pre><code class="lang-csharp hljs">public LoginResponse(string AccessToken, DateTime AccessTokenExpiresAtUtc, string RefreshToken, DateTime RefreshTokenExpiresAtUtc, AuthenticatedUserResponse User)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>Token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>AccessToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>AccessTokenExpiresAtUtc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+    <dt><code>RefreshToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>RefreshTokenExpiresAtUtc</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+    <dt><code>User</code> <a class="xref" href="SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html">AuthenticatedUserResponse</a></dt>
     <dd></dd>
   </dl>
 
@@ -193,10 +201,10 @@ Class LoginResponse  <a class="header-action link-secondary" title="View source"
 </h2>
 
 
-  <a id="SharpChess_Api_Contracts_Auth_LoginResponse_Token_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.Token*"></a>
+  <a id="SharpChess_Api_Contracts_Auth_LoginResponse_AccessToken_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken*"></a>
 
-  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse_Token" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.Token">
-  Token
+  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse_AccessToken" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken">
+  AccessToken
   <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Contracts/LoginResponse.cs/#L4"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -204,7 +212,7 @@ Class LoginResponse  <a class="header-action link-secondary" title="View source"
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Token { get; init; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string AccessToken { get; init; }</code></pre>
   </div>
 
 
@@ -214,6 +222,130 @@ Class LoginResponse  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Contracts_Auth_LoginResponse_AccessTokenExpiresAtUtc_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc*"></a>
+
+  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse_AccessTokenExpiresAtUtc" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc">
+  AccessTokenExpiresAtUtc
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Contracts/LoginResponse.cs/#L5"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime AccessTokenExpiresAtUtc { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Contracts_Auth_LoginResponse_RefreshToken_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken*"></a>
+
+  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse_RefreshToken" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken">
+  RefreshToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Contracts/LoginResponse.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RefreshToken { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Contracts_Auth_LoginResponse_RefreshTokenExpiresAtUtc_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc*"></a>
+
+  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse_RefreshTokenExpiresAtUtc" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc">
+  RefreshTokenExpiresAtUtc
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Contracts/LoginResponse.cs/#L7"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime RefreshTokenExpiresAtUtc { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpChess_Api_Contracts_Auth_LoginResponse_User_" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.User*"></a>
+
+  <h3 id="SharpChess_Api_Contracts_Auth_LoginResponse_User" data-uid="SharpChess.Api.Contracts.Auth.LoginResponse.User">
+  User
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Alexanderdelaat/SharpChess/blob/main/src/SharpChess.Api/Contracts/LoginResponse.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AuthenticatedUserResponse User { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html">AuthenticatedUserResponse</a></dt>
     <dd></dd>
   </dl>
 

@@ -5,9 +5,10 @@ items:
   id: RegisterResponse
   parent: SharpChess.Api.Contracts.Auth
   children:
-  - SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String)
+  - SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String,System.String)
   - SharpChess.Api.Contracts.Auth.RegisterResponse.Email
   - SharpChess.Api.Contracts.Auth.RegisterResponse.Id
+  - SharpChess.Api.Contracts.Auth.RegisterResponse.Role
   - SharpChess.Api.Contracts.Auth.RegisterResponse.Username
   langs:
   - csharp
@@ -42,16 +43,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String)
-  commentId: M:SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String)
-  id: '#ctor(System.String,System.String,System.String)'
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String,System.String)
+  commentId: M:SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String)'
   parent: SharpChess.Api.Contracts.Auth.RegisterResponse
   langs:
   - csharp
   - vb
-  name: RegisterResponse(string, string, string)
-  nameWithType: RegisterResponse.RegisterResponse(string, string, string)
-  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.RegisterResponse(string, string, string)
+  name: RegisterResponse(string, string, string, string)
+  nameWithType: RegisterResponse.RegisterResponse(string, string, string, string)
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.RegisterResponse(string, string, string, string)
   type: Constructor
   source:
     remote:
@@ -65,7 +66,7 @@ items:
   - SharpChess.Api
   namespace: SharpChess.Api.Contracts.Auth
   syntax:
-    content: public RegisterResponse(string Id, string Username, string Email)
+    content: public RegisterResponse(string Id, string Username, string Email, string Role)
     parameters:
     - id: Id
       type: System.String
@@ -73,11 +74,13 @@ items:
       type: System.String
     - id: Email
       type: System.String
-    content.vb: Public Sub New(Id As String, Username As String, Email As String)
+    - id: Role
+      type: System.String
+    content.vb: Public Sub New(Id As String, Username As String, Email As String, Role As String)
   overload: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor*
-  nameWithType.vb: RegisterResponse.New(String, String, String)
-  fullName.vb: SharpChess.Api.Contracts.Auth.RegisterResponse.New(String, String, String)
-  name.vb: New(String, String, String)
+  nameWithType.vb: RegisterResponse.New(String, String, String, String)
+  fullName.vb: SharpChess.Api.Contracts.Auth.RegisterResponse.New(String, String, String, String)
+  name.vb: New(String, String, String, String)
 - uid: SharpChess.Api.Contracts.Auth.RegisterResponse.Id
   commentId: P:SharpChess.Api.Contracts.Auth.RegisterResponse.Id
   id: Id
@@ -165,6 +168,35 @@ items:
       type: System.String
     content.vb: Public Property Email As String
   overload: SharpChess.Api.Contracts.Auth.RegisterResponse.Email*
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  commentId: P:SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  id: Role
+  parent: SharpChess.Api.Contracts.Auth.RegisterResponse
+  langs:
+  - csharp
+  - vb
+  name: Role
+  nameWithType: RegisterResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/RegisterResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Role
+    path: src/SharpChess.Api/Contracts/RegisterResponse.cs
+    startLine: 6
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public string Role { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Role As String
+  overload: SharpChess.Api.Contracts.Auth.RegisterResponse.Role*
 references:
 - uid: SharpChess.Api.Contracts.Auth
   commentId: N:SharpChess.Api.Contracts.Auth
@@ -504,7 +536,7 @@ references:
   - name: )
 - uid: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor*
   commentId: Overload:SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor
-  href: SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse__ctor_System_String_System_String_System_String_
+  href: SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse__ctor_System_String_System_String_System_String_System_String_
   name: RegisterResponse
   nameWithType: RegisterResponse.RegisterResponse
   fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.RegisterResponse
@@ -540,3 +572,9 @@ references:
   name: Email
   nameWithType: RegisterResponse.Email
   fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.Email
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.Role*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  href: SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse_Role
+  name: Role
+  nameWithType: RegisterResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.Role

@@ -1,4 +1,8 @@
 namespace SharpChess.Api.Contracts.Auth;
 
 public record LoginResponse(
-    string Token);
+    string AccessToken,
+    DateTime AccessTokenExpiresAtUtc,
+    string RefreshToken,
+    DateTime RefreshTokenExpiresAtUtc,
+    AuthenticatedUserResponse User);

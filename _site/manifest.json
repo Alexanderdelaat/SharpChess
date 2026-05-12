@@ -22,6 +22,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.AdminAccessResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.CurrentUserResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/SharpChess.Api.Contracts.Auth.LoginRequest.yml",
       "output": {
         ".html": {
@@ -46,6 +88,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "SharpChess.Api.Contracts.Auth.LoginResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.LogoutRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.LogoutRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.LogoutRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.RefreshTokenRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Contracts.Auth.RefreshTokenResponse",
       "Summary": null
     },
     {
@@ -119,6 +203,104 @@
       "Summary": null
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Health.DatabaseReadinessHealthCheck",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Health.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Health.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Health",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Middleware.GlobalExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Middleware.GlobalExceptionHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Middleware.GlobalExceptionHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Middleware.SecurityHeadersMiddleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Middleware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Middleware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Middleware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Security.ClaimsPrincipalExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Security.ClaimsPrincipalExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Security.ClaimsPrincipalExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpChess.Api.Security.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpChess.Api.Security.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpChess.Api.Security",
+      "Summary": null
+    },
+    {
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
@@ -160,6 +342,16 @@
       "output": {
         ".html": {
           "relative_path": "docs/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/kanban.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/kanban.html"
         }
       },
       "version": ""

@@ -1,5 +1,7 @@
 - name: Docs
   href: docs/index.html
+- name: Kanban Board
+  href: docs/kanban.html
 - name: API
   href: api/
 - name: Code Coverage

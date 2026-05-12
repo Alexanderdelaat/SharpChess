@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Middleware
+  commentId: N:SharpChess.Api.Middleware
+  id: SharpChess.Api.Middleware
+  children:
+  - SharpChess.Api.Middleware.GlobalExceptionHandler
+  - SharpChess.Api.Middleware.SecurityHeadersMiddleware
+  langs:
+  - csharp
+  - vb
+  name: SharpChess.Api.Middleware
+  nameWithType: SharpChess.Api.Middleware
+  fullName: SharpChess.Api.Middleware
+  type: Namespace
+  assemblies:
+  - SharpChess.Api
+references:
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler
+  commentId: T:SharpChess.Api.Middleware.GlobalExceptionHandler
+  href: SharpChess.Api.Middleware.GlobalExceptionHandler.html
+  name: GlobalExceptionHandler
+  nameWithType: GlobalExceptionHandler
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler
+- uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware
+  commentId: T:SharpChess.Api.Middleware.SecurityHeadersMiddleware
+  href: SharpChess.Api.Middleware.SecurityHeadersMiddleware.html
+  name: SecurityHeadersMiddleware
+  nameWithType: SecurityHeadersMiddleware
+  fullName: SharpChess.Api.Middleware.SecurityHeadersMiddleware

@@ -5,9 +5,13 @@ items:
   id: AuthController
   parent: SharpChess.Api.Controllers
   children:
-  - SharpChess.Api.Controllers.AuthController.#ctor(MediatR.ISender)
-  - SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
-  - SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
+  - SharpChess.Api.Controllers.AuthController.#ctor(SharpChess.Application.Auth.Services.IAuthService)
+  - SharpChess.Api.Controllers.AuthController.AdminPing
+  - SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)
+  - SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)
+  - SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  - SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)
+  - SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -22,7 +26,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AuthController
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 12
+    startLine: 15
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -34,11 +38,15 @@ items:
 
       [Route("api/[controller]")]
 
+      [ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
+
       public class AuthController : ControllerBase
     content.vb: >-
       <ApiController>
 
       <Route("api/[controller]")>
+
+      <ResponseCache(NoStore:=True, Location:=ResponseCacheLocation.None)>
 
       Public Class AuthController Inherits ControllerBase
   inheritance:
@@ -236,16 +244,26 @@ items:
     arguments:
     - type: System.String
       value: api/[controller]
-- uid: SharpChess.Api.Controllers.AuthController.#ctor(MediatR.ISender)
-  commentId: M:SharpChess.Api.Controllers.AuthController.#ctor(MediatR.ISender)
-  id: '#ctor(MediatR.ISender)'
+  - type: Microsoft.AspNetCore.Mvc.ResponseCacheAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ResponseCacheAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: NoStore
+      type: System.Boolean
+      value: true
+    - name: Location
+      type: Microsoft.AspNetCore.Mvc.ResponseCacheLocation
+      value: 2
+- uid: SharpChess.Api.Controllers.AuthController.#ctor(SharpChess.Application.Auth.Services.IAuthService)
+  commentId: M:SharpChess.Api.Controllers.AuthController.#ctor(SharpChess.Application.Auth.Services.IAuthService)
+  id: '#ctor(SharpChess.Application.Auth.Services.IAuthService)'
   parent: SharpChess.Api.Controllers.AuthController
   langs:
   - csharp
   - vb
-  name: AuthController(ISender)
-  nameWithType: AuthController.AuthController(ISender)
-  fullName: SharpChess.Api.Controllers.AuthController.AuthController(MediatR.ISender)
+  name: AuthController(IAuthService)
+  nameWithType: AuthController.AuthController(IAuthService)
+  fullName: SharpChess.Api.Controllers.AuthController.AuthController(SharpChess.Application.Auth.Services.IAuthService)
   type: Constructor
   source:
     remote:
@@ -258,29 +276,26 @@ items:
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
-  summary: ''
-  example: []
   syntax:
-    content: public AuthController(ISender mediator)
+    content: public AuthController(IAuthService authService)
     parameters:
-    - id: mediator
-      type: MediatR.ISender
-      description: ''
-    content.vb: Public Sub New(mediator As ISender)
+    - id: authService
+      type: SharpChess.Application.Auth.Services.IAuthService
+    content.vb: Public Sub New(authService As IAuthService)
   overload: SharpChess.Api.Controllers.AuthController.#ctor*
-  nameWithType.vb: AuthController.New(ISender)
-  fullName.vb: SharpChess.Api.Controllers.AuthController.New(MediatR.ISender)
-  name.vb: New(ISender)
-- uid: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
-  commentId: M:SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
-  id: Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
+  nameWithType.vb: AuthController.New(IAuthService)
+  fullName.vb: SharpChess.Api.Controllers.AuthController.New(SharpChess.Application.Auth.Services.IAuthService)
+  name.vb: New(IAuthService)
+- uid: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)
+  commentId: M:SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)
+  id: Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)
   parent: SharpChess.Api.Controllers.AuthController
   langs:
   - csharp
   - vb
-  name: Register(RegisterRequest)
-  nameWithType: AuthController.Register(RegisterRequest)
-  fullName: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
+  name: Register(RegisterRequest, CancellationToken)
+  nameWithType: AuthController.Register(RegisterRequest, CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -299,7 +314,7 @@ items:
     content: >-
       [HttpPost("register")]
 
-      public Task<IActionResult> Register(RegisterRequest request)
+      public Task<IActionResult> Register(RegisterRequest request, CancellationToken cancellationToken)
     parameters:
     - id: request
       type: SharpChess.Api.Contracts.Auth.RegisterRequest
@@ -308,13 +323,15 @@ items:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
       description: Een succesvolle response met de aangemaakte gebruiker, of een foutresponse als de registratie mislukt.
     content.vb: >-
       <HttpPost("register")>
 
-      Public Function Register(request As RegisterRequest) As Task(Of IActionResult)
+      Public Function Register(request As RegisterRequest, cancellationToken As CancellationToken) As Task(Of IActionResult)
   overload: SharpChess.Api.Controllers.AuthController.Register*
   attributes:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
@@ -322,16 +339,16 @@ items:
     arguments:
     - type: System.String
       value: register
-- uid: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
-  commentId: M:SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
-  id: Login(SharpChess.Api.Contracts.Auth.LoginRequest)
+- uid: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)
+  commentId: M:SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)
+  id: Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)
   parent: SharpChess.Api.Controllers.AuthController
   langs:
   - csharp
   - vb
-  name: Login(LoginRequest)
-  nameWithType: AuthController.Login(LoginRequest)
-  fullName: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
+  name: Login(LoginRequest, CancellationToken)
+  nameWithType: AuthController.Login(LoginRequest, CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -340,7 +357,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Login
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 60
+    startLine: 62
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -348,9 +365,11 @@ items:
   example: []
   syntax:
     content: >-
+      [EnableRateLimiting("auth-login")]
+
       [HttpPost("login")]
 
-      public Task<IActionResult> Login(LoginRequest request)
+      public Task<IActionResult> Login(LoginRequest request, CancellationToken cancellationToken)
     parameters:
     - id: request
       type: SharpChess.Api.Contracts.Auth.LoginRequest
@@ -359,20 +378,243 @@ items:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
       description: ''
     content.vb: >-
+      <EnableRateLimiting("auth-login")>
+
       <HttpPost("login")>
 
-      Public Function Login(request As LoginRequest) As Task(Of IActionResult)
+      Public Function Login(request As LoginRequest, cancellationToken As CancellationToken) As Task(Of IActionResult)
   overload: SharpChess.Api.Controllers.AuthController.Login*
   attributes:
+  - type: Microsoft.AspNetCore.RateLimiting.EnableRateLimitingAttribute
+    ctor: Microsoft.AspNetCore.RateLimiting.EnableRateLimitingAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: auth-login
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
     arguments:
     - type: System.String
       value: login
+- uid: SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)
+  commentId: M:SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)
+  id: Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)
+  parent: SharpChess.Api.Controllers.AuthController
+  langs:
+  - csharp
+  - vb
+  name: Refresh(RefreshTokenRequest, CancellationToken)
+  nameWithType: AuthController.Refresh(RefreshTokenRequest, CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/SharpChess.Api/Controllers/Authcontroller.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Refresh
+    path: src/SharpChess.Api/Controllers/Authcontroller.cs
+    startLine: 79
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Controllers
+  syntax:
+    content: >-
+      [HttpPost("refresh")]
+
+      public Task<IActionResult> Refresh(RefreshTokenRequest request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <HttpPost("refresh")>
+
+      Public Function Refresh(request As RefreshTokenRequest, cancellationToken As CancellationToken) As Task(Of IActionResult)
+  overload: SharpChess.Api.Controllers.AuthController.Refresh*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: refresh
+- uid: SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)
+  commentId: M:SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)
+  id: Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)
+  parent: SharpChess.Api.Controllers.AuthController
+  langs:
+  - csharp
+  - vb
+  name: Logout(LogoutRequest, CancellationToken)
+  nameWithType: AuthController.Logout(LogoutRequest, CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/SharpChess.Api/Controllers/Authcontroller.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Logout
+    path: src/SharpChess.Api/Controllers/Authcontroller.cs
+    startLine: 92
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Controllers
+  syntax:
+    content: >-
+      [Authorize(Roles = "User,Admin")]
+
+      [HttpPost("logout")]
+
+      public Task<IActionResult> Logout(LogoutRequest request, CancellationToken cancellationToken)
+    parameters:
+    - id: request
+      type: SharpChess.Api.Contracts.Auth.LogoutRequest
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <Authorize(Roles:="User,Admin")>
+
+      <HttpPost("logout")>
+
+      Public Function Logout(request As LogoutRequest, cancellationToken As CancellationToken) As Task(Of IActionResult)
+  overload: SharpChess.Api.Controllers.AuthController.Logout*
+  attributes:
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Roles
+      type: System.String
+      value: User,Admin
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: logout
+- uid: SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  commentId: M:SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  id: Me(System.Threading.CancellationToken)
+  parent: SharpChess.Api.Controllers.AuthController
+  langs:
+  - csharp
+  - vb
+  name: Me(CancellationToken)
+  nameWithType: AuthController.Me(CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/SharpChess.Api/Controllers/Authcontroller.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: Me
+    path: src/SharpChess.Api/Controllers/Authcontroller.cs
+    startLine: 107
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Controllers
+  syntax:
+    content: >-
+      [Authorize(Roles = "User,Admin")]
+
+      [HttpGet("me")]
+
+      public Task<IActionResult> Me(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <Authorize(Roles:="User,Admin")>
+
+      <HttpGet("me")>
+
+      Public Function [Me](cancellationToken As CancellationToken) As Task(Of IActionResult)
+  overload: SharpChess.Api.Controllers.AuthController.Me*
+  attributes:
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Roles
+      type: System.String
+      value: User,Admin
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: me
+- uid: SharpChess.Api.Controllers.AuthController.AdminPing
+  commentId: M:SharpChess.Api.Controllers.AuthController.AdminPing
+  id: AdminPing
+  parent: SharpChess.Api.Controllers.AuthController
+  langs:
+  - csharp
+  - vb
+  name: AdminPing()
+  nameWithType: AuthController.AdminPing()
+  fullName: SharpChess.Api.Controllers.AuthController.AdminPing()
+  type: Method
+  source:
+    remote:
+      path: src/SharpChess.Api/Controllers/Authcontroller.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: AdminPing
+    path: src/SharpChess.Api/Controllers/Authcontroller.cs
+    startLine: 132
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Controllers
+  syntax:
+    content: >-
+      [Authorize(Roles = "Admin")]
+
+      [HttpGet("admin/ping")]
+
+      public IActionResult AdminPing()
+    return:
+      type: Microsoft.AspNetCore.Mvc.IActionResult
+    content.vb: >-
+      <Authorize(Roles:="Admin")>
+
+      <HttpGet("admin/ping")>
+
+      Public Function AdminPing() As IActionResult
+  overload: SharpChess.Api.Controllers.AuthController.AdminPing*
+  attributes:
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Roles
+      type: System.String
+      value: Admin
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: admin/ping
 references:
 - uid: SharpChess.Api.Controllers
   commentId: N:SharpChess.Api.Controllers
@@ -9625,29 +9867,51 @@ references:
   - name: )
 - uid: SharpChess.Api.Controllers.AuthController.#ctor*
   commentId: Overload:SharpChess.Api.Controllers.AuthController.#ctor
-  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController__ctor_MediatR_ISender_
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController__ctor_SharpChess_Application_Auth_Services_IAuthService_
   name: AuthController
   nameWithType: AuthController.AuthController
   fullName: SharpChess.Api.Controllers.AuthController.AuthController
   nameWithType.vb: AuthController.New
   fullName.vb: SharpChess.Api.Controllers.AuthController.New
   name.vb: New
-- uid: MediatR.ISender
-  commentId: T:MediatR.ISender
-  parent: MediatR
-  isExternal: true
-  name: ISender
-  nameWithType: ISender
-  fullName: MediatR.ISender
-- uid: MediatR
-  commentId: N:MediatR
-  isExternal: true
-  name: MediatR
-  nameWithType: MediatR
-  fullName: MediatR
+- uid: SharpChess.Application.Auth.Services.IAuthService
+  commentId: T:SharpChess.Application.Auth.Services.IAuthService
+  parent: SharpChess.Application.Auth.Services
+  name: IAuthService
+  nameWithType: IAuthService
+  fullName: SharpChess.Application.Auth.Services.IAuthService
+- uid: SharpChess.Application.Auth.Services
+  commentId: N:SharpChess.Application.Auth.Services
+  name: SharpChess.Application.Auth.Services
+  nameWithType: SharpChess.Application.Auth.Services
+  fullName: SharpChess.Application.Auth.Services
+  spec.csharp:
+  - uid: SharpChess
+    name: SharpChess
+  - name: .
+  - uid: SharpChess.Application
+    name: Application
+  - name: .
+  - uid: SharpChess.Application.Auth
+    name: Auth
+  - name: .
+  - uid: SharpChess.Application.Auth.Services
+    name: Services
+  spec.vb:
+  - uid: SharpChess
+    name: SharpChess
+  - name: .
+  - uid: SharpChess.Application
+    name: Application
+  - name: .
+  - uid: SharpChess.Application.Auth
+    name: Auth
+  - name: .
+  - uid: SharpChess.Application.Auth.Services
+    name: Services
 - uid: SharpChess.Api.Controllers.AuthController.Register*
   commentId: Overload:SharpChess.Api.Controllers.AuthController.Register
-  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Register_SharpChess_Api_Contracts_Auth_RegisterRequest_
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Register_SharpChess_Api_Contracts_Auth_RegisterRequest_System_Threading_CancellationToken_
   name: Register
   nameWithType: AuthController.Register
   fullName: SharpChess.Api.Controllers.AuthController.Register
@@ -9658,6 +9922,14 @@ references:
   name: RegisterRequest
   nameWithType: RegisterRequest
   fullName: SharpChess.Api.Contracts.Auth.RegisterRequest
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
 - uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
   commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
   parent: System.Threading.Tasks
@@ -9731,6 +10003,33 @@ references:
   - uid: SharpChess.Api.Contracts.Auth
     name: Auth
     href: SharpChess.Api.Contracts.Auth.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -9798,7 +10097,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: SharpChess.Api.Controllers.AuthController.Login*
   commentId: Overload:SharpChess.Api.Controllers.AuthController.Login
-  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Login_SharpChess_Api_Contracts_Auth_LoginRequest_
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Login_SharpChess_Api_Contracts_Auth_LoginRequest_System_Threading_CancellationToken_
   name: Login
   nameWithType: AuthController.Login
   fullName: SharpChess.Api.Controllers.AuthController.Login
@@ -9809,3 +10108,49 @@ references:
   name: LoginRequest
   nameWithType: LoginRequest
   fullName: SharpChess.Api.Contracts.Auth.LoginRequest
+- uid: SharpChess.Api.Controllers.AuthController.Refresh*
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.Refresh
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Refresh_SharpChess_Api_Contracts_Auth_RefreshTokenRequest_System_Threading_CancellationToken_
+  name: Refresh
+  nameWithType: AuthController.Refresh
+  fullName: SharpChess.Api.Controllers.AuthController.Refresh
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  commentId: T:SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html
+  name: RefreshTokenRequest
+  nameWithType: RefreshTokenRequest
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+- uid: SharpChess.Api.Controllers.AuthController.Logout*
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.Logout
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Logout_SharpChess_Api_Contracts_Auth_LogoutRequest_System_Threading_CancellationToken_
+  name: Logout
+  nameWithType: AuthController.Logout
+  fullName: SharpChess.Api.Controllers.AuthController.Logout
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest
+  commentId: T:SharpChess.Api.Contracts.Auth.LogoutRequest
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.LogoutRequest.html
+  name: LogoutRequest
+  nameWithType: LogoutRequest
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest
+- uid: SharpChess.Api.Controllers.AuthController.Me*
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.Me
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Me_System_Threading_CancellationToken_
+  name: Me
+  nameWithType: AuthController.Me
+  fullName: SharpChess.Api.Controllers.AuthController.Me
+- uid: SharpChess.Api.Controllers.AuthController.AdminPing*
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.AdminPing
+  href: SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_AdminPing
+  name: AdminPing
+  nameWithType: AuthController.AdminPing
+  fullName: SharpChess.Api.Controllers.AuthController.AdminPing
+- uid: Microsoft.AspNetCore.Mvc.IActionResult
+  commentId: T:Microsoft.AspNetCore.Mvc.IActionResult
+  parent: Microsoft.AspNetCore.Mvc
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
+  name: IActionResult
+  nameWithType: IActionResult
+  fullName: Microsoft.AspNetCore.Mvc.IActionResult

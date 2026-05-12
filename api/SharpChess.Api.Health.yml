@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpChess.Api.Health
+  commentId: N:SharpChess.Api.Health
+  id: SharpChess.Api.Health
+  children:
+  - SharpChess.Api.Health.DatabaseReadinessHealthCheck
+  langs:
+  - csharp
+  - vb
+  name: SharpChess.Api.Health
+  nameWithType: SharpChess.Api.Health
+  fullName: SharpChess.Api.Health
+  type: Namespace
+  assemblies:
+  - SharpChess.Api
+references:
+- uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck
+  commentId: T:SharpChess.Api.Health.DatabaseReadinessHealthCheck
+  href: SharpChess.Api.Health.DatabaseReadinessHealthCheck.html
+  name: DatabaseReadinessHealthCheck
+  nameWithType: DatabaseReadinessHealthCheck
+  fullName: SharpChess.Api.Health.DatabaseReadinessHealthCheck

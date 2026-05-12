@@ -4,11 +4,29 @@ items:
   name: SharpChess.Api.Contracts.Auth
   type: Namespace
   items:
+  - uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse
+    name: AdminAccessResponse
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+    name: AuthenticatedUserResponse
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+    name: CurrentUserResponse
+    type: Class
   - uid: SharpChess.Api.Contracts.Auth.LoginRequest
     name: LoginRequest
     type: Class
   - uid: SharpChess.Api.Contracts.Auth.LoginResponse
     name: LoginResponse
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.LogoutRequest
+    name: LogoutRequest
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+    name: RefreshTokenRequest
+    type: Class
+  - uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse
+    name: RefreshTokenResponse
     type: Class
   - uid: SharpChess.Api.Contracts.Auth.RegisterRequest
     name: RegisterRequest
@@ -22,5 +40,29 @@ items:
   items:
   - uid: SharpChess.Api.Controllers.AuthController
     name: AuthController
+    type: Class
+- uid: SharpChess.Api.Health
+  name: SharpChess.Api.Health
+  type: Namespace
+  items:
+  - uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck
+    name: DatabaseReadinessHealthCheck
+    type: Class
+- uid: SharpChess.Api.Middleware
+  name: SharpChess.Api.Middleware
+  type: Namespace
+  items:
+  - uid: SharpChess.Api.Middleware.GlobalExceptionHandler
+    name: GlobalExceptionHandler
+    type: Class
+  - uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware
+    name: SecurityHeadersMiddleware
+    type: Class
+- uid: SharpChess.Api.Security
+  name: SharpChess.Api.Security
+  type: Namespace
+  items:
+  - uid: SharpChess.Api.Security.ClaimsPrincipalExtensions
+    name: ClaimsPrincipalExtensions
     type: Class
 memberLayout: SamePage

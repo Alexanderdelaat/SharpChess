@@ -7,6 +7,198 @@ references:
   commentId: N:SharpChess.Api.Contracts.Auth
   fullName: SharpChess.Api.Contracts.Auth
   nameWithType: SharpChess.Api.Contracts.Auth
+- uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse
+  name: AdminAccessResponse
+  href: api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html
+  commentId: T:SharpChess.Api.Contracts.Auth.AdminAccessResponse
+  fullName: SharpChess.Api.Contracts.Auth.AdminAccessResponse
+  nameWithType: AdminAccessResponse
+- uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse.#ctor(System.String)
+  name: AdminAccessResponse(string)
+  href: api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html#SharpChess_Api_Contracts_Auth_AdminAccessResponse__ctor_System_String_
+  commentId: M:SharpChess.Api.Contracts.Auth.AdminAccessResponse.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SharpChess.Api.Contracts.Auth.AdminAccessResponse.AdminAccessResponse(string)
+  fullName.vb: SharpChess.Api.Contracts.Auth.AdminAccessResponse.New(String)
+  nameWithType: AdminAccessResponse.AdminAccessResponse(string)
+  nameWithType.vb: AdminAccessResponse.New(String)
+- uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse.#ctor*
+  name: AdminAccessResponse
+  href: api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html#SharpChess_Api_Contracts_Auth_AdminAccessResponse__ctor_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AdminAccessResponse.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Contracts.Auth.AdminAccessResponse.AdminAccessResponse
+  fullName.vb: SharpChess.Api.Contracts.Auth.AdminAccessResponse.New
+  nameWithType: AdminAccessResponse.AdminAccessResponse
+  nameWithType.vb: AdminAccessResponse.New
+- uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse.Message
+  name: Message
+  href: api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html#SharpChess_Api_Contracts_Auth_AdminAccessResponse_Message
+  commentId: P:SharpChess.Api.Contracts.Auth.AdminAccessResponse.Message
+  fullName: SharpChess.Api.Contracts.Auth.AdminAccessResponse.Message
+  nameWithType: AdminAccessResponse.Message
+- uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse.Message*
+  name: Message
+  href: api/SharpChess.Api.Contracts.Auth.AdminAccessResponse.html#SharpChess_Api_Contracts_Auth_AdminAccessResponse_Message_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AdminAccessResponse.Message
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.AdminAccessResponse.Message
+  nameWithType: AdminAccessResponse.Message
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  name: AuthenticatedUserResponse
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html
+  commentId: T:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  nameWithType: AuthenticatedUserResponse
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  name: AuthenticatedUserResponse(string, string, string, string)
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse__ctor_System_String_System_String_System_String_System_String_
+  commentId: M:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  name.vb: New(String, String, String, String)
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.AuthenticatedUserResponse(string, string, string, string)
+  fullName.vb: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.New(String, String, String, String)
+  nameWithType: AuthenticatedUserResponse.AuthenticatedUserResponse(string, string, string, string)
+  nameWithType.vb: AuthenticatedUserResponse.New(String, String, String, String)
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.#ctor*
+  name: AuthenticatedUserResponse
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse__ctor_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.AuthenticatedUserResponse
+  fullName.vb: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.New
+  nameWithType: AuthenticatedUserResponse.AuthenticatedUserResponse
+  nameWithType.vb: AuthenticatedUserResponse.New
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Email
+  name: Email
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Email
+  commentId: P:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Email
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Email
+  nameWithType: AuthenticatedUserResponse.Email
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Email*
+  name: Email
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Email_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Email
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Email
+  nameWithType: AuthenticatedUserResponse.Email
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Id
+  name: Id
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Id
+  commentId: P:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Id
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Id
+  nameWithType: AuthenticatedUserResponse.Id
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Id*
+  name: Id
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Id_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Id
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Id
+  nameWithType: AuthenticatedUserResponse.Id
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Role
+  name: Role
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Role
+  commentId: P:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Role
+  nameWithType: AuthenticatedUserResponse.Role
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Role*
+  name: Role
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Role_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Role
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Role
+  nameWithType: AuthenticatedUserResponse.Role
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Username
+  name: Username
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Username
+  commentId: P:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Username
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Username
+  nameWithType: AuthenticatedUserResponse.Username
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Username*
+  name: Username
+  href: api/SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html#SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_Username_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Username
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.Username
+  nameWithType: AuthenticatedUserResponse.Username
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  name: CurrentUserResponse
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html
+  commentId: T:SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  nameWithType: CurrentUserResponse
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  name: CurrentUserResponse(string, string, string, string)
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse__ctor_System_String_System_String_System_String_System_String_
+  commentId: M:SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor(System.String,System.String,System.String,System.String)
+  name.vb: New(String, String, String, String)
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.CurrentUserResponse(string, string, string, string)
+  fullName.vb: SharpChess.Api.Contracts.Auth.CurrentUserResponse.New(String, String, String, String)
+  nameWithType: CurrentUserResponse.CurrentUserResponse(string, string, string, string)
+  nameWithType.vb: CurrentUserResponse.New(String, String, String, String)
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor*
+  name: CurrentUserResponse
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse__ctor_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.CurrentUserResponse
+  fullName.vb: SharpChess.Api.Contracts.Auth.CurrentUserResponse.New
+  nameWithType: CurrentUserResponse.CurrentUserResponse
+  nameWithType.vb: CurrentUserResponse.New
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  name: Email
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Email
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  nameWithType: CurrentUserResponse.Email
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email*
+  name: Email
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Email_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Email
+  nameWithType: CurrentUserResponse.Email
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  name: Id
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Id
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  nameWithType: CurrentUserResponse.Id
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id*
+  name: Id
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Id_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Id
+  nameWithType: CurrentUserResponse.Id
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  name: Role
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Role
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  nameWithType: CurrentUserResponse.Role
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role*
+  name: Role
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Role_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Role
+  nameWithType: CurrentUserResponse.Role
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  name: Username
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Username
+  commentId: P:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  nameWithType: CurrentUserResponse.Username
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username*
+  name: Username
+  href: api/SharpChess.Api.Contracts.Auth.CurrentUserResponse.html#SharpChess_Api_Contracts_Auth_CurrentUserResponse_Username_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse.Username
+  nameWithType: CurrentUserResponse.Username
 - uid: SharpChess.Api.Contracts.Auth.LoginRequest
   name: LoginRequest
   href: api/SharpChess.Api.Contracts.Auth.LoginRequest.html
@@ -64,15 +256,15 @@ references:
   commentId: T:SharpChess.Api.Contracts.Auth.LoginResponse
   fullName: SharpChess.Api.Contracts.Auth.LoginResponse
   nameWithType: LoginResponse
-- uid: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String)
-  name: LoginResponse(string)
-  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse__ctor_System_String_
-  commentId: M:SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String)
-  name.vb: New(String)
-  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.LoginResponse(string)
-  fullName.vb: SharpChess.Api.Contracts.Auth.LoginResponse.New(String)
-  nameWithType: LoginResponse.LoginResponse(string)
-  nameWithType.vb: LoginResponse.New(String)
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  name: LoginResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse__ctor_System_String_System_DateTime_System_String_System_DateTime_SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_
+  commentId: M:SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  name.vb: New(String, Date, String, Date, AuthenticatedUserResponse)
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.LoginResponse(string, System.DateTime, string, System.DateTime, SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  fullName.vb: SharpChess.Api.Contracts.Auth.LoginResponse.New(String, Date, String, Date, SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  nameWithType: LoginResponse.LoginResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
+  nameWithType.vb: LoginResponse.New(String, Date, String, Date, AuthenticatedUserResponse)
 - uid: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor*
   name: LoginResponse
   href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse__ctor_
@@ -83,19 +275,237 @@ references:
   fullName.vb: SharpChess.Api.Contracts.Auth.LoginResponse.New
   nameWithType: LoginResponse.LoginResponse
   nameWithType.vb: LoginResponse.New
-- uid: SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  name: Token
-  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_Token
-  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  nameWithType: LoginResponse.Token
-- uid: SharpChess.Api.Contracts.Auth.LoginResponse.Token*
-  name: Token
-  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_Token_
-  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.Token
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  name: AccessToken
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_AccessToken
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  nameWithType: LoginResponse.AccessToken
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken*
+  name: AccessToken
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_AccessToken_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
   isSpec: "True"
-  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  nameWithType: LoginResponse.Token
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  nameWithType: LoginResponse.AccessToken
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  name: AccessTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_AccessTokenExpiresAtUtc
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  nameWithType: LoginResponse.AccessTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc*
+  name: AccessTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_AccessTokenExpiresAtUtc_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  nameWithType: LoginResponse.AccessTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_RefreshToken
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  nameWithType: LoginResponse.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken*
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_RefreshToken_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  nameWithType: LoginResponse.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  name: RefreshTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_RefreshTokenExpiresAtUtc
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  nameWithType: LoginResponse.RefreshTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc*
+  name: RefreshTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_RefreshTokenExpiresAtUtc_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  nameWithType: LoginResponse.RefreshTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.User
+  name: User
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_User
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.User
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.User
+  nameWithType: LoginResponse.User
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.User*
+  name: User
+  href: api/SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_User_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.User
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.User
+  nameWithType: LoginResponse.User
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest
+  name: LogoutRequest
+  href: api/SharpChess.Api.Contracts.Auth.LogoutRequest.html
+  commentId: T:SharpChess.Api.Contracts.Auth.LogoutRequest
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest
+  nameWithType: LogoutRequest
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest.#ctor(System.String)
+  name: LogoutRequest(string)
+  href: api/SharpChess.Api.Contracts.Auth.LogoutRequest.html#SharpChess_Api_Contracts_Auth_LogoutRequest__ctor_System_String_
+  commentId: M:SharpChess.Api.Contracts.Auth.LogoutRequest.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest.LogoutRequest(string)
+  fullName.vb: SharpChess.Api.Contracts.Auth.LogoutRequest.New(String)
+  nameWithType: LogoutRequest.LogoutRequest(string)
+  nameWithType.vb: LogoutRequest.New(String)
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest.#ctor*
+  name: LogoutRequest
+  href: api/SharpChess.Api.Contracts.Auth.LogoutRequest.html#SharpChess_Api_Contracts_Auth_LogoutRequest__ctor_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LogoutRequest.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest.LogoutRequest
+  fullName.vb: SharpChess.Api.Contracts.Auth.LogoutRequest.New
+  nameWithType: LogoutRequest.LogoutRequest
+  nameWithType.vb: LogoutRequest.New
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest.RefreshToken
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.LogoutRequest.html#SharpChess_Api_Contracts_Auth_LogoutRequest_RefreshToken
+  commentId: P:SharpChess.Api.Contracts.Auth.LogoutRequest.RefreshToken
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest.RefreshToken
+  nameWithType: LogoutRequest.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest.RefreshToken*
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.LogoutRequest.html#SharpChess_Api_Contracts_Auth_LogoutRequest_RefreshToken_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LogoutRequest.RefreshToken
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest.RefreshToken
+  nameWithType: LogoutRequest.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  name: RefreshTokenRequest
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html
+  commentId: T:SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  nameWithType: RefreshTokenRequest
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.#ctor(System.String)
+  name: RefreshTokenRequest(string)
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html#SharpChess_Api_Contracts_Auth_RefreshTokenRequest__ctor_System_String_
+  commentId: M:SharpChess.Api.Contracts.Auth.RefreshTokenRequest.#ctor(System.String)
+  name.vb: New(String)
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshTokenRequest(string)
+  fullName.vb: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.New(String)
+  nameWithType: RefreshTokenRequest.RefreshTokenRequest(string)
+  nameWithType.vb: RefreshTokenRequest.New(String)
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.#ctor*
+  name: RefreshTokenRequest
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html#SharpChess_Api_Contracts_Auth_RefreshTokenRequest__ctor_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenRequest.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshTokenRequest
+  fullName.vb: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.New
+  nameWithType: RefreshTokenRequest.RefreshTokenRequest
+  nameWithType.vb: RefreshTokenRequest.New
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshToken
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html#SharpChess_Api_Contracts_Auth_RefreshTokenRequest_RefreshToken
+  commentId: P:SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshToken
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshToken
+  nameWithType: RefreshTokenRequest.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshToken*
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html#SharpChess_Api_Contracts_Auth_RefreshTokenRequest_RefreshToken_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshToken
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.RefreshToken
+  nameWithType: RefreshTokenRequest.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse
+  name: RefreshTokenResponse
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html
+  commentId: T:SharpChess.Api.Contracts.Auth.RefreshTokenResponse
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse
+  nameWithType: RefreshTokenResponse
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  name: RefreshTokenResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse__ctor_System_String_System_DateTime_System_String_System_DateTime_SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_
+  commentId: M:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  name.vb: New(String, Date, String, Date, AuthenticatedUserResponse)
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenResponse(string, System.DateTime, string, System.DateTime, SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  fullName.vb: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.New(String, Date, String, Date, SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  nameWithType: RefreshTokenResponse.RefreshTokenResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
+  nameWithType.vb: RefreshTokenResponse.New(String, Date, String, Date, AuthenticatedUserResponse)
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.#ctor*
+  name: RefreshTokenResponse
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse__ctor_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenResponse
+  fullName.vb: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.New
+  nameWithType: RefreshTokenResponse.RefreshTokenResponse
+  nameWithType.vb: RefreshTokenResponse.New
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessToken
+  name: AccessToken
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_AccessToken
+  commentId: P:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessToken
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessToken
+  nameWithType: RefreshTokenResponse.AccessToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessToken*
+  name: AccessToken
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_AccessToken_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessToken
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessToken
+  nameWithType: RefreshTokenResponse.AccessToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessTokenExpiresAtUtc
+  name: AccessTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_AccessTokenExpiresAtUtc
+  commentId: P:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessTokenExpiresAtUtc
+  nameWithType: RefreshTokenResponse.AccessTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessTokenExpiresAtUtc*
+  name: AccessTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_AccessTokenExpiresAtUtc_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessTokenExpiresAtUtc
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.AccessTokenExpiresAtUtc
+  nameWithType: RefreshTokenResponse.AccessTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshToken
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_RefreshToken
+  commentId: P:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshToken
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshToken
+  nameWithType: RefreshTokenResponse.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshToken*
+  name: RefreshToken
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_RefreshToken_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshToken
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshToken
+  nameWithType: RefreshTokenResponse.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenExpiresAtUtc
+  name: RefreshTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_RefreshTokenExpiresAtUtc
+  commentId: P:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenExpiresAtUtc
+  nameWithType: RefreshTokenResponse.RefreshTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenExpiresAtUtc*
+  name: RefreshTokenExpiresAtUtc
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_RefreshTokenExpiresAtUtc_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenExpiresAtUtc
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.RefreshTokenExpiresAtUtc
+  nameWithType: RefreshTokenResponse.RefreshTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.User
+  name: User
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_User
+  commentId: P:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.User
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.User
+  nameWithType: RefreshTokenResponse.User
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.User*
+  name: User
+  href: api/SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html#SharpChess_Api_Contracts_Auth_RefreshTokenResponse_User_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RefreshTokenResponse.User
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.User
+  nameWithType: RefreshTokenResponse.User
 - uid: SharpChess.Api.Contracts.Auth.RegisterRequest
   name: RegisterRequest
   href: api/SharpChess.Api.Contracts.Auth.RegisterRequest.html
@@ -179,15 +589,15 @@ references:
   commentId: T:SharpChess.Api.Contracts.Auth.RegisterResponse
   fullName: SharpChess.Api.Contracts.Auth.RegisterResponse
   nameWithType: RegisterResponse
-- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String)
-  name: RegisterResponse(string, string, string)
-  href: api/SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse__ctor_System_String_System_String_System_String_
-  commentId: M:SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String)
-  name.vb: New(String, String, String)
-  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.RegisterResponse(string, string, string)
-  fullName.vb: SharpChess.Api.Contracts.Auth.RegisterResponse.New(String, String, String)
-  nameWithType: RegisterResponse.RegisterResponse(string, string, string)
-  nameWithType.vb: RegisterResponse.New(String, String, String)
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String,System.String)
+  name: RegisterResponse(string, string, string, string)
+  href: api/SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse__ctor_System_String_System_String_System_String_System_String_
+  commentId: M:SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor(System.String,System.String,System.String,System.String)
+  name.vb: New(String, String, String, String)
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.RegisterResponse(string, string, string, string)
+  fullName.vb: SharpChess.Api.Contracts.Auth.RegisterResponse.New(String, String, String, String)
+  nameWithType: RegisterResponse.RegisterResponse(string, string, string, string)
+  nameWithType.vb: RegisterResponse.New(String, String, String, String)
 - uid: SharpChess.Api.Contracts.Auth.RegisterResponse.#ctor*
   name: RegisterResponse
   href: api/SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse__ctor_
@@ -224,6 +634,19 @@ references:
   isSpec: "True"
   fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.Id
   nameWithType: RegisterResponse.Id
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  name: Role
+  href: api/SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse_Role
+  commentId: P:SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  nameWithType: RegisterResponse.Role
+- uid: SharpChess.Api.Contracts.Auth.RegisterResponse.Role*
+  name: Role
+  href: api/SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse_Role_
+  commentId: Overload:SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  isSpec: "True"
+  fullName: SharpChess.Api.Contracts.Auth.RegisterResponse.Role
+  nameWithType: RegisterResponse.Role
 - uid: SharpChess.Api.Contracts.Auth.RegisterResponse.Username
   name: Username
   href: api/SharpChess.Api.Contracts.Auth.RegisterResponse.html#SharpChess_Api_Contracts_Auth_RegisterResponse_Username
@@ -249,15 +672,15 @@ references:
   commentId: T:SharpChess.Api.Controllers.AuthController
   fullName: SharpChess.Api.Controllers.AuthController
   nameWithType: AuthController
-- uid: SharpChess.Api.Controllers.AuthController.#ctor(MediatR.ISender)
-  name: AuthController(ISender)
-  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController__ctor_MediatR_ISender_
-  commentId: M:SharpChess.Api.Controllers.AuthController.#ctor(MediatR.ISender)
-  name.vb: New(ISender)
-  fullName: SharpChess.Api.Controllers.AuthController.AuthController(MediatR.ISender)
-  fullName.vb: SharpChess.Api.Controllers.AuthController.New(MediatR.ISender)
-  nameWithType: AuthController.AuthController(ISender)
-  nameWithType.vb: AuthController.New(ISender)
+- uid: SharpChess.Api.Controllers.AuthController.#ctor(SharpChess.Application.Auth.Services.IAuthService)
+  name: AuthController(IAuthService)
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController__ctor_SharpChess_Application_Auth_Services_IAuthService_
+  commentId: M:SharpChess.Api.Controllers.AuthController.#ctor(SharpChess.Application.Auth.Services.IAuthService)
+  name.vb: New(IAuthService)
+  fullName: SharpChess.Api.Controllers.AuthController.AuthController(SharpChess.Application.Auth.Services.IAuthService)
+  fullName.vb: SharpChess.Api.Controllers.AuthController.New(SharpChess.Application.Auth.Services.IAuthService)
+  nameWithType: AuthController.AuthController(IAuthService)
+  nameWithType.vb: AuthController.New(IAuthService)
 - uid: SharpChess.Api.Controllers.AuthController.#ctor*
   name: AuthController
   href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController__ctor_
@@ -268,12 +691,25 @@ references:
   fullName.vb: SharpChess.Api.Controllers.AuthController.New
   nameWithType: AuthController.AuthController
   nameWithType.vb: AuthController.New
-- uid: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
-  name: Login(LoginRequest)
-  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Login_SharpChess_Api_Contracts_Auth_LoginRequest_
-  commentId: M:SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
-  fullName: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest)
-  nameWithType: AuthController.Login(LoginRequest)
+- uid: SharpChess.Api.Controllers.AuthController.AdminPing
+  name: AdminPing()
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_AdminPing
+  commentId: M:SharpChess.Api.Controllers.AuthController.AdminPing
+  fullName: SharpChess.Api.Controllers.AuthController.AdminPing()
+  nameWithType: AuthController.AdminPing()
+- uid: SharpChess.Api.Controllers.AuthController.AdminPing*
+  name: AdminPing
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_AdminPing_
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.AdminPing
+  isSpec: "True"
+  fullName: SharpChess.Api.Controllers.AuthController.AdminPing
+  nameWithType: AuthController.AdminPing
+- uid: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)
+  name: Login(LoginRequest, CancellationToken)
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Login_SharpChess_Api_Contracts_Auth_LoginRequest_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest,System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Login(SharpChess.Api.Contracts.Auth.LoginRequest, System.Threading.CancellationToken)
+  nameWithType: AuthController.Login(LoginRequest, CancellationToken)
 - uid: SharpChess.Api.Controllers.AuthController.Login*
   name: Login
   href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Login_
@@ -281,12 +717,51 @@ references:
   isSpec: "True"
   fullName: SharpChess.Api.Controllers.AuthController.Login
   nameWithType: AuthController.Login
-- uid: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
-  name: Register(RegisterRequest)
-  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Register_SharpChess_Api_Contracts_Auth_RegisterRequest_
-  commentId: M:SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
-  fullName: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest)
-  nameWithType: AuthController.Register(RegisterRequest)
+- uid: SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)
+  name: Logout(LogoutRequest, CancellationToken)
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Logout_SharpChess_Api_Contracts_Auth_LogoutRequest_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest,System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Logout(SharpChess.Api.Contracts.Auth.LogoutRequest, System.Threading.CancellationToken)
+  nameWithType: AuthController.Logout(LogoutRequest, CancellationToken)
+- uid: SharpChess.Api.Controllers.AuthController.Logout*
+  name: Logout
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Logout_
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.Logout
+  isSpec: "True"
+  fullName: SharpChess.Api.Controllers.AuthController.Logout
+  nameWithType: AuthController.Logout
+- uid: SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  name: Me(CancellationToken)
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Me_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Me(System.Threading.CancellationToken)
+  nameWithType: AuthController.Me(CancellationToken)
+- uid: SharpChess.Api.Controllers.AuthController.Me*
+  name: Me
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Me_
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.Me
+  isSpec: "True"
+  fullName: SharpChess.Api.Controllers.AuthController.Me
+  nameWithType: AuthController.Me
+- uid: SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)
+  name: Refresh(RefreshTokenRequest, CancellationToken)
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Refresh_SharpChess_Api_Contracts_Auth_RefreshTokenRequest_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest,System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Refresh(SharpChess.Api.Contracts.Auth.RefreshTokenRequest, System.Threading.CancellationToken)
+  nameWithType: AuthController.Refresh(RefreshTokenRequest, CancellationToken)
+- uid: SharpChess.Api.Controllers.AuthController.Refresh*
+  name: Refresh
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Refresh_
+  commentId: Overload:SharpChess.Api.Controllers.AuthController.Refresh
+  isSpec: "True"
+  fullName: SharpChess.Api.Controllers.AuthController.Refresh
+  nameWithType: AuthController.Refresh
+- uid: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)
+  name: Register(RegisterRequest, CancellationToken)
+  href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Register_SharpChess_Api_Contracts_Auth_RegisterRequest_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest,System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Controllers.AuthController.Register(SharpChess.Api.Contracts.Auth.RegisterRequest, System.Threading.CancellationToken)
+  nameWithType: AuthController.Register(RegisterRequest, CancellationToken)
 - uid: SharpChess.Api.Controllers.AuthController.Register*
   name: Register
   href: api/SharpChess.Api.Controllers.AuthController.html#SharpChess_Api_Controllers_AuthController_Register_
@@ -294,3 +769,154 @@ references:
   isSpec: "True"
   fullName: SharpChess.Api.Controllers.AuthController.Register
   nameWithType: AuthController.Register
+- uid: SharpChess.Api.Health
+  name: SharpChess.Api.Health
+  href: api/SharpChess.Api.Health.html
+  commentId: N:SharpChess.Api.Health
+  fullName: SharpChess.Api.Health
+  nameWithType: SharpChess.Api.Health
+- uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck
+  name: DatabaseReadinessHealthCheck
+  href: api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.html
+  commentId: T:SharpChess.Api.Health.DatabaseReadinessHealthCheck
+  fullName: SharpChess.Api.Health.DatabaseReadinessHealthCheck
+  nameWithType: DatabaseReadinessHealthCheck
+- uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  name: DatabaseReadinessHealthCheck(IServiceScopeFactory)
+  href: api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.html#SharpChess_Api_Health_DatabaseReadinessHealthCheck__ctor_Microsoft_Extensions_DependencyInjection_IServiceScopeFactory_
+  commentId: M:SharpChess.Api.Health.DatabaseReadinessHealthCheck.#ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  name.vb: New(IServiceScopeFactory)
+  fullName: SharpChess.Api.Health.DatabaseReadinessHealthCheck.DatabaseReadinessHealthCheck(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  fullName.vb: SharpChess.Api.Health.DatabaseReadinessHealthCheck.New(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)
+  nameWithType: DatabaseReadinessHealthCheck.DatabaseReadinessHealthCheck(IServiceScopeFactory)
+  nameWithType.vb: DatabaseReadinessHealthCheck.New(IServiceScopeFactory)
+- uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck.#ctor*
+  name: DatabaseReadinessHealthCheck
+  href: api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.html#SharpChess_Api_Health_DatabaseReadinessHealthCheck__ctor_
+  commentId: Overload:SharpChess.Api.Health.DatabaseReadinessHealthCheck.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Health.DatabaseReadinessHealthCheck.DatabaseReadinessHealthCheck
+  fullName.vb: SharpChess.Api.Health.DatabaseReadinessHealthCheck.New
+  nameWithType: DatabaseReadinessHealthCheck.DatabaseReadinessHealthCheck
+  nameWithType.vb: DatabaseReadinessHealthCheck.New
+- uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+  name: CheckHealthAsync(HealthCheckContext, CancellationToken)
+  href: api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.html#SharpChess_Api_Health_DatabaseReadinessHealthCheck_CheckHealthAsync_Microsoft_Extensions_Diagnostics_HealthChecks_HealthCheckContext_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Health.DatabaseReadinessHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext,System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Health.DatabaseReadinessHealthCheck.CheckHealthAsync(Microsoft.Extensions.Diagnostics.HealthChecks.HealthCheckContext, System.Threading.CancellationToken)
+  nameWithType: DatabaseReadinessHealthCheck.CheckHealthAsync(HealthCheckContext, CancellationToken)
+- uid: SharpChess.Api.Health.DatabaseReadinessHealthCheck.CheckHealthAsync*
+  name: CheckHealthAsync
+  href: api/SharpChess.Api.Health.DatabaseReadinessHealthCheck.html#SharpChess_Api_Health_DatabaseReadinessHealthCheck_CheckHealthAsync_
+  commentId: Overload:SharpChess.Api.Health.DatabaseReadinessHealthCheck.CheckHealthAsync
+  isSpec: "True"
+  fullName: SharpChess.Api.Health.DatabaseReadinessHealthCheck.CheckHealthAsync
+  nameWithType: DatabaseReadinessHealthCheck.CheckHealthAsync
+- uid: SharpChess.Api.Middleware
+  name: SharpChess.Api.Middleware
+  href: api/SharpChess.Api.Middleware.html
+  commentId: N:SharpChess.Api.Middleware
+  fullName: SharpChess.Api.Middleware
+  nameWithType: SharpChess.Api.Middleware
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler
+  name: GlobalExceptionHandler
+  href: api/SharpChess.Api.Middleware.GlobalExceptionHandler.html
+  commentId: T:SharpChess.Api.Middleware.GlobalExceptionHandler
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler
+  nameWithType: GlobalExceptionHandler
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler})
+  name: GlobalExceptionHandler(ILogger<GlobalExceptionHandler>)
+  href: api/SharpChess.Api.Middleware.GlobalExceptionHandler.html#SharpChess_Api_Middleware_GlobalExceptionHandler__ctor_Microsoft_Extensions_Logging_ILogger_SharpChess_Api_Middleware_GlobalExceptionHandler__
+  commentId: M:SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor(Microsoft.Extensions.Logging.ILogger{SharpChess.Api.Middleware.GlobalExceptionHandler})
+  name.vb: New(ILogger(Of GlobalExceptionHandler))
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.GlobalExceptionHandler(Microsoft.Extensions.Logging.ILogger<SharpChess.Api.Middleware.GlobalExceptionHandler>)
+  fullName.vb: SharpChess.Api.Middleware.GlobalExceptionHandler.New(Microsoft.Extensions.Logging.ILogger(Of SharpChess.Api.Middleware.GlobalExceptionHandler))
+  nameWithType: GlobalExceptionHandler.GlobalExceptionHandler(ILogger<GlobalExceptionHandler>)
+  nameWithType.vb: GlobalExceptionHandler.New(ILogger(Of GlobalExceptionHandler))
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor*
+  name: GlobalExceptionHandler
+  href: api/SharpChess.Api.Middleware.GlobalExceptionHandler.html#SharpChess_Api_Middleware_GlobalExceptionHandler__ctor_
+  commentId: Overload:SharpChess.Api.Middleware.GlobalExceptionHandler.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.GlobalExceptionHandler
+  fullName.vb: SharpChess.Api.Middleware.GlobalExceptionHandler.New
+  nameWithType: GlobalExceptionHandler.GlobalExceptionHandler
+  nameWithType.vb: GlobalExceptionHandler.New
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  name: TryHandleAsync(HttpContext, Exception, CancellationToken)
+  href: api/SharpChess.Api.Middleware.GlobalExceptionHandler.html#SharpChess_Api_Middleware_GlobalExceptionHandler_TryHandleAsync_Microsoft_AspNetCore_Http_HttpContext_System_Exception_System_Threading_CancellationToken_
+  commentId: M:SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext, System.Exception, System.Threading.CancellationToken)
+  nameWithType: GlobalExceptionHandler.TryHandleAsync(HttpContext, Exception, CancellationToken)
+- uid: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync*
+  name: TryHandleAsync
+  href: api/SharpChess.Api.Middleware.GlobalExceptionHandler.html#SharpChess_Api_Middleware_GlobalExceptionHandler_TryHandleAsync_
+  commentId: Overload:SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync
+  isSpec: "True"
+  fullName: SharpChess.Api.Middleware.GlobalExceptionHandler.TryHandleAsync
+  nameWithType: GlobalExceptionHandler.TryHandleAsync
+- uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware
+  name: SecurityHeadersMiddleware
+  href: api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.html
+  commentId: T:SharpChess.Api.Middleware.SecurityHeadersMiddleware
+  fullName: SharpChess.Api.Middleware.SecurityHeadersMiddleware
+  nameWithType: SecurityHeadersMiddleware
+- uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name: SecurityHeadersMiddleware(RequestDelegate)
+  href: api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.html#SharpChess_Api_Middleware_SecurityHeadersMiddleware__ctor_Microsoft_AspNetCore_Http_RequestDelegate_
+  commentId: M:SharpChess.Api.Middleware.SecurityHeadersMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+  name.vb: New(RequestDelegate)
+  fullName: SharpChess.Api.Middleware.SecurityHeadersMiddleware.SecurityHeadersMiddleware(Microsoft.AspNetCore.Http.RequestDelegate)
+  fullName.vb: SharpChess.Api.Middleware.SecurityHeadersMiddleware.New(Microsoft.AspNetCore.Http.RequestDelegate)
+  nameWithType: SecurityHeadersMiddleware.SecurityHeadersMiddleware(RequestDelegate)
+  nameWithType.vb: SecurityHeadersMiddleware.New(RequestDelegate)
+- uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware.#ctor*
+  name: SecurityHeadersMiddleware
+  href: api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.html#SharpChess_Api_Middleware_SecurityHeadersMiddleware__ctor_
+  commentId: Overload:SharpChess.Api.Middleware.SecurityHeadersMiddleware.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: SharpChess.Api.Middleware.SecurityHeadersMiddleware.SecurityHeadersMiddleware
+  fullName.vb: SharpChess.Api.Middleware.SecurityHeadersMiddleware.New
+  nameWithType: SecurityHeadersMiddleware.SecurityHeadersMiddleware
+  nameWithType.vb: SecurityHeadersMiddleware.New
+- uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  name: InvokeAsync(HttpContext)
+  href: api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.html#SharpChess_Api_Middleware_SecurityHeadersMiddleware_InvokeAsync_Microsoft_AspNetCore_Http_HttpContext_
+  commentId: M:SharpChess.Api.Middleware.SecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  fullName: SharpChess.Api.Middleware.SecurityHeadersMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)
+  nameWithType: SecurityHeadersMiddleware.InvokeAsync(HttpContext)
+- uid: SharpChess.Api.Middleware.SecurityHeadersMiddleware.InvokeAsync*
+  name: InvokeAsync
+  href: api/SharpChess.Api.Middleware.SecurityHeadersMiddleware.html#SharpChess_Api_Middleware_SecurityHeadersMiddleware_InvokeAsync_
+  commentId: Overload:SharpChess.Api.Middleware.SecurityHeadersMiddleware.InvokeAsync
+  isSpec: "True"
+  fullName: SharpChess.Api.Middleware.SecurityHeadersMiddleware.InvokeAsync
+  nameWithType: SecurityHeadersMiddleware.InvokeAsync
+- uid: SharpChess.Api.Security
+  name: SharpChess.Api.Security
+  href: api/SharpChess.Api.Security.html
+  commentId: N:SharpChess.Api.Security
+  fullName: SharpChess.Api.Security
+  nameWithType: SharpChess.Api.Security
+- uid: SharpChess.Api.Security.ClaimsPrincipalExtensions
+  name: ClaimsPrincipalExtensions
+  href: api/SharpChess.Api.Security.ClaimsPrincipalExtensions.html
+  commentId: T:SharpChess.Api.Security.ClaimsPrincipalExtensions
+  fullName: SharpChess.Api.Security.ClaimsPrincipalExtensions
+  nameWithType: ClaimsPrincipalExtensions
+- uid: SharpChess.Api.Security.ClaimsPrincipalExtensions.GetUserId(System.Security.Claims.ClaimsPrincipal)
+  name: GetUserId(ClaimsPrincipal)
+  href: api/SharpChess.Api.Security.ClaimsPrincipalExtensions.html#SharpChess_Api_Security_ClaimsPrincipalExtensions_GetUserId_System_Security_Claims_ClaimsPrincipal_
+  commentId: M:SharpChess.Api.Security.ClaimsPrincipalExtensions.GetUserId(System.Security.Claims.ClaimsPrincipal)
+  fullName: SharpChess.Api.Security.ClaimsPrincipalExtensions.GetUserId(System.Security.Claims.ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetUserId(ClaimsPrincipal)
+- uid: SharpChess.Api.Security.ClaimsPrincipalExtensions.GetUserId*
+  name: GetUserId
+  href: api/SharpChess.Api.Security.ClaimsPrincipalExtensions.html#SharpChess_Api_Security_ClaimsPrincipalExtensions_GetUserId_
+  commentId: Overload:SharpChess.Api.Security.ClaimsPrincipalExtensions.GetUserId
+  isSpec: "True"
+  fullName: SharpChess.Api.Security.ClaimsPrincipalExtensions.GetUserId
+  nameWithType: ClaimsPrincipalExtensions.GetUserId

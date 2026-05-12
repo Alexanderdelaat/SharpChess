@@ -22,6 +22,11 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ConnectionStrings__DefaultConnection: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword
+      Jwt__Issuer: SharpChess.Api
+      Jwt__Audience: SharpChess.Frontend
+      Jwt__SigningKey: ChangeThisDevelopmentSigningKey_AtLeast32Characters!
+      Jwt__AccessTokenMinutes: 15
+      Jwt__RefreshTokenDays: 7
     depends_on:
       - sharpchess-db
 

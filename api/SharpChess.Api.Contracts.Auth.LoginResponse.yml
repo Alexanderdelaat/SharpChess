@@ -5,8 +5,12 @@ items:
   id: LoginResponse
   parent: SharpChess.Api.Contracts.Auth
   children:
-  - SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String)
-  - SharpChess.Api.Contracts.Auth.LoginResponse.Token
+  - SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  - SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  - SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  - SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  - SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  - SharpChess.Api.Contracts.Auth.LoginResponse.User
   langs:
   - csharp
   - vb
@@ -40,16 +44,16 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String)
-  commentId: M:SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String)
-  id: '#ctor(System.String)'
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  commentId: M:SharpChess.Api.Contracts.Auth.LoginResponse.#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  id: '#ctor(System.String,System.DateTime,System.String,System.DateTime,SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)'
   parent: SharpChess.Api.Contracts.Auth.LoginResponse
   langs:
   - csharp
   - vb
-  name: LoginResponse(string)
-  nameWithType: LoginResponse.LoginResponse(string)
-  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.LoginResponse(string)
+  name: LoginResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
+  nameWithType: LoginResponse.LoginResponse(string, DateTime, string, DateTime, AuthenticatedUserResponse)
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.LoginResponse(string, System.DateTime, string, System.DateTime, SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
   type: Constructor
   source:
     remote:
@@ -63,44 +67,168 @@ items:
   - SharpChess.Api
   namespace: SharpChess.Api.Contracts.Auth
   syntax:
-    content: public LoginResponse(string Token)
+    content: public LoginResponse(string AccessToken, DateTime AccessTokenExpiresAtUtc, string RefreshToken, DateTime RefreshTokenExpiresAtUtc, AuthenticatedUserResponse User)
     parameters:
-    - id: Token
+    - id: AccessToken
       type: System.String
-    content.vb: Public Sub New(Token As String)
+    - id: AccessTokenExpiresAtUtc
+      type: System.DateTime
+    - id: RefreshToken
+      type: System.String
+    - id: RefreshTokenExpiresAtUtc
+      type: System.DateTime
+    - id: User
+      type: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+    content.vb: Public Sub New(AccessToken As String, AccessTokenExpiresAtUtc As Date, RefreshToken As String, RefreshTokenExpiresAtUtc As Date, User As AuthenticatedUserResponse)
   overload: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor*
-  nameWithType.vb: LoginResponse.New(String)
-  fullName.vb: SharpChess.Api.Contracts.Auth.LoginResponse.New(String)
-  name.vb: New(String)
-- uid: SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  id: Token
+  nameWithType.vb: LoginResponse.New(String, Date, String, Date, AuthenticatedUserResponse)
+  fullName.vb: SharpChess.Api.Contracts.Auth.LoginResponse.New(String, Date, String, Date, SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse)
+  name.vb: New(String, Date, String, Date, AuthenticatedUserResponse)
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  id: AccessToken
   parent: SharpChess.Api.Contracts.Auth.LoginResponse
   langs:
   - csharp
   - vb
-  name: Token
-  nameWithType: LoginResponse.Token
-  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.Token
+  name: AccessToken
+  nameWithType: LoginResponse.AccessToken
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
   type: Property
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
       branch: main
       repo: https://github.com/Alexanderdelaat/SharpChess.git
-    id: Token
+    id: AccessToken
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
     startLine: 3
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Contracts.Auth
   syntax:
-    content: public string Token { get; init; }
+    content: public string AccessToken { get; init; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Token As String
-  overload: SharpChess.Api.Contracts.Auth.LoginResponse.Token*
+    content.vb: Public Property AccessToken As String
+  overload: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken*
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  id: AccessTokenExpiresAtUtc
+  parent: SharpChess.Api.Contracts.Auth.LoginResponse
+  langs:
+  - csharp
+  - vb
+  name: AccessTokenExpiresAtUtc
+  nameWithType: LoginResponse.AccessTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/LoginResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: AccessTokenExpiresAtUtc
+    path: src/SharpChess.Api/Contracts/LoginResponse.cs
+    startLine: 4
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public DateTime AccessTokenExpiresAtUtc { get; init; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property AccessTokenExpiresAtUtc As Date
+  overload: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc*
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  id: RefreshToken
+  parent: SharpChess.Api.Contracts.Auth.LoginResponse
+  langs:
+  - csharp
+  - vb
+  name: RefreshToken
+  nameWithType: LoginResponse.RefreshToken
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/LoginResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: RefreshToken
+    path: src/SharpChess.Api/Contracts/LoginResponse.cs
+    startLine: 5
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public string RefreshToken { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RefreshToken As String
+  overload: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken*
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  id: RefreshTokenExpiresAtUtc
+  parent: SharpChess.Api.Contracts.Auth.LoginResponse
+  langs:
+  - csharp
+  - vb
+  name: RefreshTokenExpiresAtUtc
+  nameWithType: LoginResponse.RefreshTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/LoginResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: RefreshTokenExpiresAtUtc
+    path: src/SharpChess.Api/Contracts/LoginResponse.cs
+    startLine: 6
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public DateTime RefreshTokenExpiresAtUtc { get; init; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property RefreshTokenExpiresAtUtc As Date
+  overload: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc*
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.User
+  commentId: P:SharpChess.Api.Contracts.Auth.LoginResponse.User
+  id: User
+  parent: SharpChess.Api.Contracts.Auth.LoginResponse
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: LoginResponse.User
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.User
+  type: Property
+  source:
+    remote:
+      path: src/SharpChess.Api/Contracts/LoginResponse.cs
+      branch: main
+      repo: https://github.com/Alexanderdelaat/SharpChess.git
+    id: User
+    path: src/SharpChess.Api/Contracts/LoginResponse.cs
+    startLine: 7
+  assemblies:
+  - SharpChess.Api
+  namespace: SharpChess.Api.Contracts.Auth
+  syntax:
+    content: public AuthenticatedUserResponse User { get; init; }
+    parameters: []
+    return:
+      type: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+    content.vb: Public Property User As AuthenticatedUserResponse
+  overload: SharpChess.Api.Contracts.Auth.LoginResponse.User*
 references:
 - uid: SharpChess.Api.Contracts.Auth
   commentId: N:SharpChess.Api.Contracts.Auth
@@ -440,7 +568,7 @@ references:
   - name: )
 - uid: SharpChess.Api.Contracts.Auth.LoginResponse.#ctor*
   commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.#ctor
-  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse__ctor_System_String_
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse__ctor_System_String_System_DateTime_System_String_System_DateTime_SharpChess_Api_Contracts_Auth_AuthenticatedUserResponse_
   name: LoginResponse
   nameWithType: LoginResponse.LoginResponse
   fullName: SharpChess.Api.Contracts.Auth.LoginResponse.LoginResponse
@@ -458,9 +586,51 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: SharpChess.Api.Contracts.Auth.LoginResponse.Token*
-  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.Token
-  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_Token
-  name: Token
-  nameWithType: LoginResponse.Token
-  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.Token
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html
+  name: AuthenticatedUserResponse
+  nameWithType: AuthenticatedUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_AccessToken
+  name: AccessToken
+  nameWithType: LoginResponse.AccessToken
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessToken
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_AccessTokenExpiresAtUtc
+  name: AccessTokenExpiresAtUtc
+  nameWithType: LoginResponse.AccessTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.AccessTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_RefreshToken
+  name: RefreshToken
+  nameWithType: LoginResponse.RefreshToken
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshToken
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_RefreshTokenExpiresAtUtc
+  name: RefreshTokenExpiresAtUtc
+  nameWithType: LoginResponse.RefreshTokenExpiresAtUtc
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.RefreshTokenExpiresAtUtc
+- uid: SharpChess.Api.Contracts.Auth.LoginResponse.User*
+  commentId: Overload:SharpChess.Api.Contracts.Auth.LoginResponse.User
+  href: SharpChess.Api.Contracts.Auth.LoginResponse.html#SharpChess_Api_Contracts_Auth_LoginResponse_User
+  name: User
+  nameWithType: LoginResponse.User
+  fullName: SharpChess.Api.Contracts.Auth.LoginResponse.User

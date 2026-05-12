@@ -1,9 +1,12 @@
 using FluentResults;
-using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using SharpChess.Api.Contracts.Auth;
-using SharpChess.Application.Auth.Commands.Register;
-using SharpChess.Application.Auth.Commands.Login;
+using SharpChess.Api.Security;
+using SharpChess.Application.Auth.Constants;
+using SharpChess.Application.Auth.Models;
+using SharpChess.Application.Auth.Services;
 
 namespace SharpChess.Api.Controllers;
 /// <summary>
@@ -12,17 +15,14 @@ namespace SharpChess.Api.Controllers;
 /// 
 [ApiController]
 [Route("api/[controller]")]
+[ResponseCache(NoStore = true, Location = ResponseCacheLocation.None)]
 public class AuthController : ControllerBase
 {
-    private readonly ISender _mediator;
+    private readonly IAuthService _authService;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="mediator"></param>
-    public AuthController(ISender mediator)
+    public AuthController(IAuthService authService)
     {
-        _mediator = mediator;
+        _authService = authService;
     }
 
     /// <summary>
@@ -33,23 +33,25 @@ public class AuthController : ControllerBase
     /// Een succesvolle response met de aangemaakte gebruiker, of een foutresponse als de registratie mislukt.
     /// </returns>
     [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+    public async Task<IActionResult> Register([FromBody] RegisterRequest request, CancellationToken cancellationToken)
     {
-        RegisterCommand command = new RegisterCommand(
-            Username: request.Username,
-            Email: request.Email,
-            Password: request.Password,
-            ConfirmPassword: request.ConfirmPassword);
-
-        Result<RegisterResult> result = await _mediator.Send(command);
+        Result<SharpChess.Application.Auth.Commands.Register.RegisterResult> result = await _authService.RegisterAsync(
+            request.Username,
+            request.Email,
+            request.Password,
+            request.ConfirmPassword,
+            cancellationToken);
 
         if (result.IsFailed)
-            return BadRequest(result.Errors.Select(error => error.Message));
+        {
+            return CreateProblem(result, StatusCodes.Status400BadRequest, "Registratie mislukt.");
+        }
 
         return Ok(new RegisterResponse(
             Id: result.Value.Id,
             Username: result.Value.Username,
-            Email: result.Value.Email));
+            Email: result.Value.Email,
+            Role: ApplicationRoles.User));
     }
 
     /// <summary>
@@ -58,19 +60,123 @@ public class AuthController : ControllerBase
     /// <param name="request"></param>
     /// Een succesvolle loginpoging of een foutresponse als het mislukt.
     /// <returns></returns>
+    [EnableRateLimiting("auth-login")]
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken cancellationToken)
     {
-        LoginCommand command = new LoginCommand(
-            Username: request.Username,
-            Password: request.Password);
-
-        Result<LoginResult> result = await _mediator.Send(command);
+        Result<AuthSessionResult> result = await _authService.LoginAsync(
+            request.Username,
+            request.Password,
+            cancellationToken);
 
         if (result.IsFailed)
-            return BadRequest(result.Errors.Select(error => error.Message));
+        {
+            return CreateProblem(result, StatusCodes.Status401Unauthorized, "Login mislukt.");
+        }
 
-        return Ok(new LoginResponse(
-            Token: result.Value.Token));
+        return Ok(ToLoginResponse(result.Value));
+    }
+
+    [HttpPost("refresh")]
+    public async Task<IActionResult> Refresh([FromBody] RefreshTokenRequest request, CancellationToken cancellationToken)
+    {
+        Result<AuthSessionResult> result = await _authService.RefreshAsync(request.RefreshToken, cancellationToken);
+
+        if (result.IsFailed)
+        {
+            return CreateProblem(result, StatusCodes.Status401Unauthorized, "Sessie vernieuwen mislukt.");
+        }
+
+        return Ok(ToRefreshResponse(result.Value));
+    }
+
+    [Authorize(Roles = $"{ApplicationRoles.User},{ApplicationRoles.Admin}")]
+    [HttpPost("logout")]
+    public async Task<IActionResult> Logout([FromBody] LogoutRequest request, CancellationToken cancellationToken)
+    {
+        string? userId = User.GetUserId();
+
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            return Unauthorized();
+        }
+
+        await _authService.LogoutAsync(userId, request.RefreshToken, cancellationToken);
+        return NoContent();
+    }
+
+    [Authorize(Roles = $"{ApplicationRoles.User},{ApplicationRoles.Admin}")]
+    [HttpGet("me")]
+    public async Task<IActionResult> Me(CancellationToken cancellationToken)
+    {
+        string? userId = User.GetUserId();
+
+        if (string.IsNullOrWhiteSpace(userId))
+        {
+            return Unauthorized();
+        }
+
+        Result<AuthenticatedUser> result = await _authService.GetCurrentUserAsync(userId, cancellationToken);
+
+        if (result.IsFailed)
+        {
+            return CreateProblem(result, StatusCodes.Status401Unauthorized, "Gebruiker niet geauthenticeerd.");
+        }
+
+        return Ok(new CurrentUserResponse(
+            Id: result.Value.Id,
+            Username: result.Value.Username,
+            Email: result.Value.Email,
+            Role: result.Value.Role));
+    }
+
+    [Authorize(Roles = ApplicationRoles.Admin)]
+    [HttpGet("admin/ping")]
+    public IActionResult AdminPing()
+    {
+        return Ok(new AdminAccessResponse("Admin toegang bevestigd."));
+    }
+
+    private static LoginResponse ToLoginResponse(AuthSessionResult session)
+    {
+        return new LoginResponse(
+            AccessToken: session.AccessToken,
+            AccessTokenExpiresAtUtc: session.AccessTokenExpiresAtUtc,
+            RefreshToken: session.RefreshToken,
+            RefreshTokenExpiresAtUtc: session.RefreshTokenExpiresAtUtc,
+            User: ToUserResponse(session.User));
+    }
+
+    private static RefreshTokenResponse ToRefreshResponse(AuthSessionResult session)
+    {
+        return new RefreshTokenResponse(
+            AccessToken: session.AccessToken,
+            AccessTokenExpiresAtUtc: session.AccessTokenExpiresAtUtc,
+            RefreshToken: session.RefreshToken,
+            RefreshTokenExpiresAtUtc: session.RefreshTokenExpiresAtUtc,
+            User: ToUserResponse(session.User));
+    }
+
+    private static AuthenticatedUserResponse ToUserResponse(AuthenticatedUser user)
+    {
+        return new AuthenticatedUserResponse(
+            Id: user.Id,
+            Username: user.Username,
+            Email: user.Email,
+            Role: user.Role);
+    }
+
+    private ObjectResult CreateProblem(ResultBase result, int statusCode, string title)
+    {
+        ValidationProblemDetails problemDetails = new(new Dictionary<string, string[]>
+        {
+            ["auth"] = result.Errors.Select(error => error.Message).Distinct().ToArray(),
+        })
+        {
+            Status = statusCode,
+            Title = title,
+        };
+
+        return StatusCode(statusCode, problemDetails);
     }
 }

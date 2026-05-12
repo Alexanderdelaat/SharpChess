@@ -4,8 +4,14 @@ items:
   commentId: N:SharpChess.Api.Contracts.Auth
   id: SharpChess.Api.Contracts.Auth
   children:
+  - SharpChess.Api.Contracts.Auth.AdminAccessResponse
+  - SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  - SharpChess.Api.Contracts.Auth.CurrentUserResponse
   - SharpChess.Api.Contracts.Auth.LoginRequest
   - SharpChess.Api.Contracts.Auth.LoginResponse
+  - SharpChess.Api.Contracts.Auth.LogoutRequest
+  - SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  - SharpChess.Api.Contracts.Auth.RefreshTokenResponse
   - SharpChess.Api.Contracts.Auth.RegisterRequest
   - SharpChess.Api.Contracts.Auth.RegisterResponse
   langs:
@@ -18,6 +24,25 @@ items:
   assemblies:
   - SharpChess.Api
 references:
+- uid: SharpChess.Api.Contracts.Auth.AdminAccessResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.AdminAccessResponse
+  href: SharpChess.Api.Contracts.Auth.AdminAccessResponse.html
+  name: AdminAccessResponse
+  nameWithType: AdminAccessResponse
+  fullName: SharpChess.Api.Contracts.Auth.AdminAccessResponse
+- uid: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse.html
+  name: AuthenticatedUserResponse
+  nameWithType: AuthenticatedUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.AuthenticatedUserResponse
+- uid: SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.CurrentUserResponse
+  href: SharpChess.Api.Contracts.Auth.CurrentUserResponse.html
+  name: CurrentUserResponse
+  nameWithType: CurrentUserResponse
+  fullName: SharpChess.Api.Contracts.Auth.CurrentUserResponse
 - uid: SharpChess.Api.Contracts.Auth.LoginRequest
   commentId: T:SharpChess.Api.Contracts.Auth.LoginRequest
   parent: SharpChess.Api.Contracts.Auth
@@ -31,6 +56,26 @@ references:
   name: LoginResponse
   nameWithType: LoginResponse
   fullName: SharpChess.Api.Contracts.Auth.LoginResponse
+- uid: SharpChess.Api.Contracts.Auth.LogoutRequest
+  commentId: T:SharpChess.Api.Contracts.Auth.LogoutRequest
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.LogoutRequest.html
+  name: LogoutRequest
+  nameWithType: LogoutRequest
+  fullName: SharpChess.Api.Contracts.Auth.LogoutRequest
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  commentId: T:SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+  parent: SharpChess.Api.Contracts.Auth
+  href: SharpChess.Api.Contracts.Auth.RefreshTokenRequest.html
+  name: RefreshTokenRequest
+  nameWithType: RefreshTokenRequest
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenRequest
+- uid: SharpChess.Api.Contracts.Auth.RefreshTokenResponse
+  commentId: T:SharpChess.Api.Contracts.Auth.RefreshTokenResponse
+  href: SharpChess.Api.Contracts.Auth.RefreshTokenResponse.html
+  name: RefreshTokenResponse
+  nameWithType: RefreshTokenResponse
+  fullName: SharpChess.Api.Contracts.Auth.RefreshTokenResponse
 - uid: SharpChess.Api.Contracts.Auth.RegisterRequest
   commentId: T:SharpChess.Api.Contracts.Auth.RegisterRequest
   parent: SharpChess.Api.Contracts.Auth
