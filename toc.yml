@@ -2,8 +2,8 @@
   href: docs/index.md
 - name: Project Board
   href: docs/kanban.md
-- name: K3s Pod Health
-  href: docs/k3s-health.md
+- name: Kubernetes Pod Health
+  href: docs/kubernetes-pod-health.md
 - name: API
   href: api/toc.yml
 - name: Code Coverage

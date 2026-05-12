@@ -615,20 +615,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "docs/k3s-health.md",
+      "source_relative_path": "docs/kanban.md",
       "output": {
         ".html": {
-          "relative_path": "docs/k3s-health.html"
+          "relative_path": "docs/kanban.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "docs/kanban.md",
+      "source_relative_path": "docs/kubernetes-pod-health.md",
       "output": {
         ".html": {
-          "relative_path": "docs/kanban.html"
+          "relative_path": "docs/kubernetes-pod-health.html"
         }
       },
       "version": ""

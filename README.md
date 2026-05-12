@@ -79,7 +79,7 @@ This repository uses DocFX for the documentation site and GitHub Pages for publi
 - architecture and project explanation pages
 - generated API reference from the C# code
 - a Project Board page
-- a K3s pod health snapshot page
+- a Kubernetes Pod Health page
 - code coverage output
 
 The GitHub Pages build runs through [docfx-pages.yml](/Users/alexander/CodeProjects/SharpChess/.github/workflows/docfx-pages.yml:1).
@@ -87,7 +87,7 @@ The GitHub Pages build runs through [docfx-pages.yml](/Users/alexander/CodeProje
 Some documentation pages depend on GitHub Actions configuration:
 
 - `NOTION_EMBED_URL` or `NOTION_PUBLIC_BOARD_URL` for the Project Board page
-- `K3S_KUBECONFIG` for the K3s health snapshot page
+- `K8S_KUBECONFIG` or `K3S_KUBECONFIG` for the Kubernetes Pod Health snapshot page
 
 ## Current Status
 

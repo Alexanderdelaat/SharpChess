@@ -5,6 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
 
 env:
   DOTNET_VERSION: "10.0.x"
@@ -55,30 +57,33 @@ jobs:
       - name: Generate coverage report
         run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html"
 
-      - name: Configure K3s kubeconfig
+      - name: Configure Kubernetes kubeconfig
         env:
-          K3S_KUBECONFIG: ${{ secrets.K3S_KUBECONFIG }}
+          K8S_KUBECONFIG: ${{ secrets.K8S_KUBECONFIG || secrets.K3S_KUBECONFIG }}
         run: |
-          if [ -z "${K3S_KUBECONFIG}" ]; then
+          if [ -z "${K8S_KUBECONFIG}" ]; then
             exit 0
           fi
 
           mkdir -p "$RUNNER_TEMP/.kube"
-          printf '%s' "${K3S_KUBECONFIG}" > "$RUNNER_TEMP/.kube/config"
+          printf '%s' "${K8S_KUBECONFIG}" > "$RUNNER_TEMP/.kube/config"
           chmod 600 "$RUNNER_TEMP/.kube/config"
           echo "KUBECONFIG=$RUNNER_TEMP/.kube/config" >> "$GITHUB_ENV"
 
-      - name: Generate K3s health snapshot
+      - name: Generate Kubernetes pod health snapshot
         env:
-          K3S_NAMESPACE: ${{ vars.K3S_NAMESPACE }}
-          K3S_LABEL_SELECTOR: ${{ vars.K3S_LABEL_SELECTOR }}
-        run: bash scripts/generate-k3s-health.sh
+          K8S_NAMESPACE: ${{ vars.K8S_NAMESPACE || vars.K3S_NAMESPACE }}
+          APP_LABEL: ${{ vars.APP_LABEL || vars.K3S_LABEL_SELECTOR }}
+        run: bash scripts/generate-kubernetes-pod-health.sh
 
       - name: Generate Notion Kanban Markdown
         env:
           NOTION_EMBED_URL: ${{ secrets.NOTION_EMBED_URL }}
           NOTION_PUBLIC_BOARD_URL: ${{ vars.NOTION_PUBLIC_BOARD_URL || secrets.NOTION_PUBLIC_BOARD_URL }}
         run: bash scripts/sync-notion-kanban.sh
+
+      - name: Clean DocFX output
+        run: rm -rf _site
 
       - name: Build DocFX site
         run: docfx docfx.json
