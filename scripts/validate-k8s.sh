@@ -62,6 +62,44 @@ wait_for_restart() {
   return 1
 }
 
+wait_for_deployment_ready() {
+  local deployment_name="$1"
+  local attempts="${2:-90}"
+  local sleep_seconds="${3:-2}"
+  local desired_replicas=0
+  local updated_replicas=0
+  local ready_replicas=0
+  local available_replicas=0
+  local unavailable_replicas=0
+  local attempt=0
+
+  desired_replicas="$(kubectl -n "${NAMESPACE}" get "deployment/${deployment_name}" -o jsonpath='{.spec.replicas}')"
+
+  for ((attempt = 1; attempt <= attempts; attempt++)); do
+    updated_replicas="$(kubectl -n "${NAMESPACE}" get "deployment/${deployment_name}" -o jsonpath='{.status.updatedReplicas}')"
+    ready_replicas="$(kubectl -n "${NAMESPACE}" get "deployment/${deployment_name}" -o jsonpath='{.status.readyReplicas}')"
+    available_replicas="$(kubectl -n "${NAMESPACE}" get "deployment/${deployment_name}" -o jsonpath='{.status.availableReplicas}')"
+    unavailable_replicas="$(kubectl -n "${NAMESPACE}" get "deployment/${deployment_name}" -o jsonpath='{.status.unavailableReplicas}')"
+
+    updated_replicas="${updated_replicas:-0}"
+    ready_replicas="${ready_replicas:-0}"
+    available_replicas="${available_replicas:-0}"
+    unavailable_replicas="${unavailable_replicas:-0}"
+
+    if [[ "${updated_replicas}" == "${desired_replicas}" &&
+      "${ready_replicas}" == "${desired_replicas}" &&
+      "${available_replicas}" == "${desired_replicas}" &&
+      "${unavailable_replicas}" == "0" ]]; then
+      return 0
+    fi
+
+    sleep "${sleep_seconds}"
+  done
+
+  log "Timed out waiting for deployment/${deployment_name} to become fully ready."
+  return 1
+}
+
 trap cleanup EXIT
 
 log "Waiting for postgres rollout."
@@ -69,7 +107,7 @@ kubectl -n "${NAMESPACE}" rollout status "deployment/${DB_DEPLOYMENT}" --timeout
 
 log "Waiting for API rollout."
 kubectl -n "${NAMESPACE}" rollout status "deployment/${APP_DEPLOYMENT}" --timeout=180s
-kubectl -n "${NAMESPACE}" wait --for=condition=Ready pod -l app="${APP_DEPLOYMENT}" --timeout=180s
+wait_for_deployment_ready "${APP_DEPLOYMENT}"
 
 log "Creating an in-cluster validation client."
 kubectl -n "${NAMESPACE}" run "${CLIENT_POD}" \
@@ -95,7 +133,7 @@ kubectl -n "${NAMESPACE}" exec "${target_pod}" -- /bin/sh -c 'kill 1' >/dev/null
 
 wait_for_restart "${target_pod}" "${initial_restarts}"
 kubectl -n "${NAMESPACE}" wait --for=condition=Ready "pod/${target_pod}" --timeout=180s
-kubectl -n "${NAMESPACE}" wait --for=condition=Ready pod -l app="${APP_DEPLOYMENT}" --timeout=180s
+wait_for_deployment_ready "${APP_DEPLOYMENT}"
 
 post_heal_version="$(wait_for_service "/version" "version endpoint after self-healing")"
 if [[ "${post_heal_version}" != "${OLD_VERSION}" ]]; then
@@ -121,7 +159,7 @@ poller_pid=$!
 
 kubectl -n "${NAMESPACE}" set image "deployment/${APP_DEPLOYMENT}" "${APP_DEPLOYMENT}=sharpchess-api:${NEW_VERSION}"
 kubectl -n "${NAMESPACE}" rollout status "deployment/${APP_DEPLOYMENT}" --timeout=180s
-kubectl -n "${NAMESPACE}" wait --for=condition=Ready pod -l app="${APP_DEPLOYMENT}" --timeout=180s
+wait_for_deployment_ready "${APP_DEPLOYMENT}"
 
 sleep 5
 wait "${poller_pid}"

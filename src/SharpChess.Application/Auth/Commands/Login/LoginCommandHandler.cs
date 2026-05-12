@@ -1,32 +1,31 @@
 using FluentResults;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
+using SharpChess.Application.Auth.Models;
+using SharpChess.Application.Auth.Services;
 
 namespace SharpChess.Application.Auth.Commands.Login;
 
 public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<LoginResult>>
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly IAuthService _authService;
 
-    public LoginCommandHandler(UserManager<IdentityUser> userManager)
+    public LoginCommandHandler(IAuthService authService)
     {
-        _userManager = userManager;
+        _authService = authService;
     }
 
     public async Task<Result<LoginResult>> Handle(LoginCommand command, CancellationToken cancellationToken)
     {
-        IdentityUser? user = await _userManager.FindByNameAsync(command.Username);
+        Result<AuthSessionResult> loginResult = await _authService.LoginAsync(
+            command.Username,
+            command.Password,
+            cancellationToken);
 
-        if (user is null)
-            return Result.Fail(AuthErrorCodes.InvalidCredentials);
+        if (loginResult.IsFailed)
+        {
+            return Result.Fail(loginResult.Errors);
+        }
 
-        bool passwordCorrect = await _userManager.CheckPasswordAsync(user, command.Password);
-
-        if (!passwordCorrect)
-            return Result.Fail(AuthErrorCodes.InvalidCredentials);
-
-        string token = "";
-
-        return Result.Ok(new LoginResult(Token: token));
+        return Result.Ok(new LoginResult(Token: loginResult.Value.AccessToken));
     }
 }
