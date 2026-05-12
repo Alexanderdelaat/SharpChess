@@ -87,14 +87,14 @@
         <article data-uid="">
 <h1 id="kubernetes-pod-health">Kubernetes Pod Health</h1>
 
-<p>This page shows the last generated snapshot of the SharpChess Kubernetes workload. It is generated with <code>kubectl</code> and published through DocFX, so the page does not expose direct cluster access, kubeconfig content, or Kubernetes credentials.</p>
-<p><em>Generated at 2026-05-12 19:51 UTC.</em></p>
+<p>This page shows the last committed snapshot of the SharpChess Kubernetes workload. It is generated locally with <code>kubectl</code> and then published through DocFX, so the page does not expose direct cluster access, kubeconfig content, or Kubernetes credentials.</p>
+<p><em>Generated at 2026-05-12 20:21 UTC.</em></p>
 <ul>
 <li>Namespace scope: <code>default</code></li>
-<li>App label selector: not set</li>
+<li>App label selector: <code>app=sharpchess-api</code></li>
 </ul>
 <blockquote>
-<p>Cluster access was not available when this page was generated, so no live pod snapshot could be collected.</p>
+<p>This page shows a generated snapshot. It is not direct unrestricted cluster access, and it does not expose kubeconfig or cluster credentials.</p>
 </blockquote>
 <h2 id="pod-snapshot">Pod Snapshot</h2>
 <table>
@@ -112,14 +112,24 @@
 </thead>
 <tbody>
 <tr>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>Snapshot unavailable</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td>default</td>
+<td>sharpchess-api</td>
+<td>sharpchess-api-76d5888f8-2cdcn</td>
+<td>1/1 (True)</td>
+<td>Running</td>
+<td>0</td>
+<td>25d 11h</td>
+<td>k3d-sharpchess-cluster-server-0</td>
+</tr>
+<tr>
+<td>default</td>
+<td>sharpchess-api</td>
+<td>sharpchess-api-76d5888f8-w6965</td>
+<td>1/1 (True)</td>
+<td>Running</td>
+<td>0</td>
+<td>25d 11h</td>
+<td>k3d-sharpchess-cluster-server-0</td>
 </tr>
 </tbody>
 </table>
@@ -139,7 +149,7 @@
 <tr>
 <td>-</td>
 <td>-</td>
-<td>Snapshot unavailable</td>
+<td>No matching deployments found</td>
 <td>-</td>
 <td>-</td>
 <td>-</td>
@@ -147,7 +157,7 @@
 </tbody>
 </table>
 <h2 id="recent-warning-events">Recent Warning Events</h2>
-<p>No warning event snapshot was available.</p>
+<p>No warning events were returned for the selected scope.</p>
 <h2 id="what-this-means">What This Means</h2>
 <h3 id="what-is-a-kubernetes-pod">What is a Kubernetes Pod?</h3>
 <p>A Pod is the smallest deployable unit in Kubernetes. It contains one or more containers that run together on the same node and share networking and storage context.</p>
@@ -162,11 +172,11 @@
 </ul>
 <h2 id="regenerate-locally">Regenerate Locally</h2>
 <p>Run the snapshot script from the repository root:</p>
-<pre><code class="lang-bash">K8S_NAMESPACE=default bash scripts/generate-kubernetes-pod-health.sh
+<pre><code class="lang-bash">K8S_NAMESPACE=default APP_LABEL=sharpchess-api bash scripts/generate-kubernetes-pod-health.sh
 </code></pre>
 <p>The script uses <code>KUBECONFIG</code> if it is set, or falls back to <code>~/.kube/config</code> on your machine.</p>
 <h2 id="why-this-page-exists">Why This Page Exists</h2>
-<p>This page gives deployment monitoring evidence without giving the static DocFX site direct cluster access. It is useful in CI/CD because the snapshot can be generated during a workflow run and published together with the documentation.</p>
+<p>This page gives deployment monitoring evidence without giving the static DocFX site direct cluster access. The snapshot is generated on a machine that can reach the cluster, committed to the repository, and then published with the rest of the documentation.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
 <li><strong>Pending</strong>: check node capacity, image pull access, PVC binding, and whether the namespace exists.</li>

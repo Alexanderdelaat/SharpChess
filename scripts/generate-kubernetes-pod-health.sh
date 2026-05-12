@@ -36,10 +36,8 @@ else
   scope_label="\`$namespace\`"
 fi
 
-selector_args=()
 selector_label='not set'
 if [[ -n "$label_selector" ]]; then
-  selector_args=(-l "$label_selector")
   selector_label="\`$label_selector\`"
 fi
 
@@ -105,8 +103,8 @@ write_page() {
   local local_regen_command
 
   local_regen_command="K8S_NAMESPACE=$namespace"
-  if [[ -n "$label_selector" ]]; then
-    local_regen_command="$local_regen_command APP_LABEL=$label_selector"
+  if [[ -n "$app_label_input" ]]; then
+    local_regen_command="$local_regen_command APP_LABEL=$app_label_input"
   fi
   local_regen_command="$local_regen_command bash scripts/generate-kubernetes-pod-health.sh"
 
@@ -117,7 +115,7 @@ title: Kubernetes Pod Health
 
 # Kubernetes Pod Health
 
-This page shows the last generated snapshot of the SharpChess Kubernetes workload. It is generated with \`kubectl\` and published through DocFX, so the page does not expose direct cluster access, kubeconfig content, or Kubernetes credentials.
+This page shows the last committed snapshot of the SharpChess Kubernetes workload. It is generated locally with \`kubectl\` and then published through DocFX, so the page does not expose direct cluster access, kubeconfig content, or Kubernetes credentials.
 
 _Generated at $generated_at._
 
@@ -171,7 +169,7 @@ The script uses \`KUBECONFIG\` if it is set, or falls back to \`~/.kube/config\`
 
 ## Why This Page Exists
 
-This page gives deployment monitoring evidence without giving the static DocFX site direct cluster access. It is useful in CI/CD because the snapshot can be generated during a workflow run and published together with the documentation.
+This page gives deployment monitoring evidence without giving the static DocFX site direct cluster access. The snapshot is generated on a machine that can reach the cluster, committed to the repository, and then published with the rest of the documentation.
 
 ## Troubleshooting
 

@@ -87,7 +87,19 @@ The GitHub Pages build runs through [docfx-pages.yml](/Users/alexander/CodeProje
 Some documentation pages depend on GitHub Actions configuration:
 
 - `NOTION_EMBED_URL` or `NOTION_PUBLIC_BOARD_URL` for the Project Board page
-- `K8S_KUBECONFIG` or `K3S_KUBECONFIG` for the Kubernetes Pod Health snapshot page
+
+The Kubernetes Pod Health page is generated in the GitHub Pages workflow on a self-hosted runner labeled `sharpchess-k3d`. That runner needs cluster access through `~/.kube/config` or `KUBECONFIG`. The workflow uploads the generated Markdown snapshot and then the DocFX build publishes it.
+
+The defaults are:
+
+- `K8S_NAMESPACE=default`
+- `APP_LABEL=sharpchess-api`
+
+You can still refresh the snapshot locally with:
+
+```bash
+K8S_NAMESPACE=default APP_LABEL=sharpchess-api bash scripts/generate-kubernetes-pod-health.sh
+```
 
 ## Current Status
 

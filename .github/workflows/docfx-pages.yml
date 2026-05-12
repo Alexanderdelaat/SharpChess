@@ -5,8 +5,6 @@ on:
     branches:
       - main
   workflow_dispatch:
-  schedule:
-    - cron: "0 * * * *"
 
 env:
   DOTNET_VERSION: "10.0.x"
@@ -21,12 +19,41 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  snapshot-kubernetes-pod-health:
+    runs-on:
+      - self-hosted
+      - sharpchess-k3d
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Generate Kubernetes pod health snapshot
+        env:
+          K8S_NAMESPACE: ${{ vars.K8S_NAMESPACE || vars.K3S_NAMESPACE || 'default' }}
+          APP_LABEL: ${{ vars.APP_LABEL || vars.K3S_LABEL_SELECTOR || 'sharpchess-api' }}
+        run: bash scripts/generate-kubernetes-pod-health.sh
+
+      - name: Upload Kubernetes pod health snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: kubernetes-pod-health
+          path: docs/kubernetes-pod-health.md
+          if-no-files-found: error
+
   build:
+    needs: snapshot-kubernetes-pod-health
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v5
+
+      - name: Download Kubernetes pod health snapshot
+        uses: actions/download-artifact@v4
+        with:
+          name: kubernetes-pod-health
+          path: docs
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
@@ -35,9 +62,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Setup kubectl
-        uses: azure/setup-kubectl@v4
 
       - name: Install DocFX
         run: dotnet tool update -g docfx
@@ -56,25 +80,6 @@ jobs:
 
       - name: Generate coverage report
         run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html"
-
-      - name: Configure Kubernetes kubeconfig
-        env:
-          K8S_KUBECONFIG: ${{ secrets.K8S_KUBECONFIG || secrets.K3S_KUBECONFIG }}
-        run: |
-          if [ -z "${K8S_KUBECONFIG}" ]; then
-            exit 0
-          fi
-
-          mkdir -p "$RUNNER_TEMP/.kube"
-          printf '%s' "${K8S_KUBECONFIG}" > "$RUNNER_TEMP/.kube/config"
-          chmod 600 "$RUNNER_TEMP/.kube/config"
-          echo "KUBECONFIG=$RUNNER_TEMP/.kube/config" >> "$GITHUB_ENV"
-
-      - name: Generate Kubernetes pod health snapshot
-        env:
-          K8S_NAMESPACE: ${{ vars.K8S_NAMESPACE || vars.K3S_NAMESPACE }}
-          APP_LABEL: ${{ vars.APP_LABEL || vars.K3S_LABEL_SELECTOR }}
-        run: bash scripts/generate-kubernetes-pod-health.sh
 
       - name: Generate Notion Kanban Markdown
         env:
