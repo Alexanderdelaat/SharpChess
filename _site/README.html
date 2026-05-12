@@ -85,6 +85,17 @@
 </ul>
 <p>After the required configuration is in place, trigger the <code>Deploy DocFX to GitHub Pages</code> workflow on <code>main</code> or via manual dispatch. The workflow regenerates <code>docs/kanban.md</code>, builds DocFX, and publishes <code>_site</code>.</p>
 <p>The embed URL will be visible in the public HTML output, so it should not be treated as sensitive.</p>
+<h2 id="k3s-pod-health-snapshot">K3s pod health snapshot</h2>
+<p>The DocFX site can also publish a build-time snapshot of Kubernetes pod health:</p>
+<p><code>k3s -&gt; kubectl during GitHub Actions -&gt; generated Markdown -&gt; DocFX -&gt; GitHub Pages</code></p>
+<p>Configure these in <code>Settings -&gt; Secrets and variables -&gt; Actions</code> if you want that page populated:</p>
+<ul>
+<li>Secret <code>K3S_KUBECONFIG</code> with the kubeconfig content for the target cluster</li>
+<li>Optional variable <code>K3S_NAMESPACE</code> to scope the snapshot; defaults to <code>default</code></li>
+<li>Optional variable <code>K3S_LABEL_SELECTOR</code> to filter the reported workloads</li>
+</ul>
+<p>The generated page is <code>docs/k3s-health.md</code>. If cluster access is not configured, the workflow writes a placeholder page instead of failing.</p>
+<p>This page is public on GitHub Pages. Review whether exposing pod names, restart counts, and deployment readiness is acceptable before enabling it.</p>
 
 </article>
 

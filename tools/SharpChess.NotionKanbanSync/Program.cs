@@ -77,6 +77,7 @@ static string BuildEmbeddedMarkdown(string notionEmbedUrl)
 
     builder.AppendLine("---");
     builder.AppendLine("title: Project Board");
+    builder.AppendLine("_disableToc: true");
     builder.AppendLine("---");
     builder.AppendLine();
     builder.AppendLine("# Project Board");

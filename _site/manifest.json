@@ -615,6 +615,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "docs/k3s-health.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/k3s-health.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/kanban.md",
       "output": {
         ".html": {

@@ -2,3 +2,5 @@
   href: index.md
 - name: Project Board
   href: kanban.md
+- name: K3s Pod Health
+  href: k3s-health.md
