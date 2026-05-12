@@ -83,19 +83,21 @@ static string BuildEmbeddedMarkdown(string notionEmbedUrl)
     builder.AppendLine();
     builder.AppendLine("> This page embeds the published Notion board.");
     builder.AppendLine("> Notion is the live runtime source for this page, and DocFX only hosts the container page.");
+    builder.AppendLine("> If the embed stays blank, open the direct Notion link below. That usually means Notion refused iframe rendering for the current URL.");
+    builder.AppendLine();
+    builder.AppendLine($"<p><a href=\"{escapedUrl}\" target=\"_blank\" rel=\"noopener noreferrer\">Open the board directly in Notion</a></p>");
     builder.AppendLine();
     builder.AppendLine("<iframe");
     builder.AppendLine($"  src=\"{escapedUrl}\"");
     builder.AppendLine("  width=\"100%\"");
-    builder.AppendLine("  height=\"960\"");
+    builder.AppendLine("  height=\"1200\"");
     builder.AppendLine("  frameborder=\"0\"");
     builder.AppendLine("  loading=\"lazy\"");
     builder.AppendLine("  allowfullscreen");
     builder.AppendLine("  referrerpolicy=\"strict-origin-when-cross-origin\"");
+    builder.AppendLine("  sandbox=\"allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms\"");
     builder.AppendLine("  style=\"border: 1px solid #d7dce2; border-radius: 12px; background: #ffffff;\"");
     builder.AppendLine("></iframe>");
-    builder.AppendLine();
-    builder.AppendLine($"<p><a href=\"{escapedUrl}\">Open the board in Notion</a></p>");
 
     return builder.ToString().TrimEnd() + Environment.NewLine;
 }
