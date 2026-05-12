@@ -93,6 +93,7 @@ jobs:
           if ! kubectl -n sharpchess-validation wait --for=condition=complete job/sharpchess-api-migrator --timeout=180s; then
             kubectl -n sharpchess-validation describe job sharpchess-api-migrator || true
             kubectl -n sharpchess-validation get pods -l job-name=sharpchess-api-migrator -o wide || true
+            kubectl -n sharpchess-validation describe pod -l job-name=sharpchess-api-migrator || true
             kubectl -n sharpchess-validation logs -l job-name=sharpchess-api-migrator --all-containers=true --tail=200 || true
             exit 1
           fi
@@ -109,6 +110,7 @@ jobs:
           kubectl -n sharpchess-validation describe deployment sharpchess-api || true
           kubectl -n sharpchess-validation describe deployment sharpchess-db || true
           kubectl -n sharpchess-validation describe job sharpchess-api-migrator || true
+          kubectl -n sharpchess-validation describe pod -l job-name=sharpchess-api-migrator || true
           kubectl -n sharpchess-validation describe pods || true
           kubectl -n sharpchess-validation logs -l app=sharpchess-api --all-containers=true --tail=200 || true
           kubectl -n sharpchess-validation logs -l app=sharpchess-db --all-containers=true --tail=200 || true

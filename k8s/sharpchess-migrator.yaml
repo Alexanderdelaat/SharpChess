@@ -3,14 +3,14 @@ kind: Job
 metadata:
   name: sharpchess-api-migrator
 spec:
-  backoffLimit: 3
+  backoffLimit: 0
   ttlSecondsAfterFinished: 300
   template:
     metadata:
       labels:
         app: sharpchess-api-migrator
     spec:
-      restartPolicy: OnFailure
+      restartPolicy: Never
       initContainers:
         - name: wait-for-postgres
           image: postgres:17
@@ -23,6 +23,7 @@ spec:
         - name: sharpchess-api-migrator
           image: ghcr.io/alexanderdelaat/sharpchess-api:sha-675e940
           imagePullPolicy: IfNotPresent
+          terminationMessagePolicy: FallbackToLogsOnError
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: Development

@@ -4,14 +4,14 @@ metadata:
   name: sharpchess-api-migrator
   namespace: sharpchess-validation
 spec:
-  backoffLimit: 3
+  backoffLimit: 0
   ttlSecondsAfterFinished: 300
   template:
     metadata:
       labels:
         app: sharpchess-api-migrator
     spec:
-      restartPolicy: OnFailure
+      restartPolicy: Never
       initContainers:
         - name: wait-for-postgres
           image: postgres:17
@@ -24,6 +24,7 @@ spec:
         - name: sharpchess-api-migrator
           image: sharpchess-api:validation-v1
           imagePullPolicy: IfNotPresent
+          terminationMessagePolicy: FallbackToLogsOnError
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: Development
