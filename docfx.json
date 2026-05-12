@@ -15,12 +15,15 @@
     "content": [
       {
         "files": [ "**/*.{md,html,yml}" ],
-        "exclude": [ "_site/**", "docs/index.html" ]
+        "exclude": [ "_site/**", "docs/index.html", "coverage-report/**" ]
       }
     ],
     "resource": [
       {
         "files": [ "images/**" ]
+      },
+      {
+        "files": [ "coverage-report/**" ]
       }
     ],
     "output": "_site",

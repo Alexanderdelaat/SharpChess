@@ -50,10 +50,7 @@ jobs:
         run: dotnet test --configuration Release --collect:"XPlat Code Coverage"
 
       - name: Generate coverage report
-        run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html;MarkdownSummary"
-
-      - name: Update coverage index for DocFX
-        run: mv coverage-report/Summary.md coverage-report/index.md
+        run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html"
 
       - name: Build DocFX site
         run: docfx docfx.json
