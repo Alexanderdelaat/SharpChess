@@ -14,6 +14,73 @@ article h1 {
   font-size: clamp(2rem, 3vw, 2.75rem);
 }
 
+main.container-xxl:has(.project-board-page) .actionbar,
+main.container-xxl:has(.project-board-page) .affix,
+main.container-xxl:has(.project-board-page) .next-article {
+  display: none;
+}
+
+.project-board-page {
+  display: block;
+}
+
+.project-board-breakout {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-inline: clamp(0.75rem, 2vw, 1.75rem);
+}
+
+.project-board-shell {
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+.project-board-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.project-board-title {
+  margin: 0;
+  font-size: clamp(1.9rem, 2.4vw, 3rem);
+  line-height: 1.1;
+}
+
+.project-board-page .notion-board-link {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.project-board-page .notion-board-link a {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.project-board-frame {
+  overflow: hidden;
+  border: 1px solid #d7dce2;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.project-board-frame iframe {
+  display: block;
+  width: 100%;
+  height: clamp(42rem, calc(100vh - 11rem), 76rem);
+  min-height: 880px;
+  border: 0;
+  background: #ffffff;
+}
+
 .kanban-intro {
   margin-bottom: 1.5rem;
   padding: 1rem 1.25rem;
@@ -115,5 +182,36 @@ article h1 {
 @media (min-width: 1200px) {
   .kanban-board {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1200px) {
+  .project-board-frame iframe {
+    height: clamp(38rem, calc(100vh - 10rem), 68rem);
+    min-height: 760px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-board-breakout {
+    padding-inline: 0.5rem;
+  }
+
+  .project-board-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-board-page .notion-board-link a {
+    white-space: normal;
+  }
+
+  .project-board-frame {
+    border-radius: 10px;
+  }
+
+  .project-board-frame iframe {
+    height: 72vh;
+    min-height: 560px;
   }
 }
