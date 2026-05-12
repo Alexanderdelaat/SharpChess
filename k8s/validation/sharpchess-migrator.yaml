@@ -12,6 +12,14 @@ spec:
         app: sharpchess-api-migrator
     spec:
       restartPolicy: OnFailure
+      initContainers:
+        - name: wait-for-postgres
+          image: postgres:17
+          imagePullPolicy: IfNotPresent
+          command:
+            - sh
+            - -c
+            - until pg_isready -h sharpchess-db -p 5432 -U postgres -d sharpchess; do sleep 2; done
       containers:
         - name: sharpchess-api-migrator
           image: sharpchess-api:validation-v1
@@ -23,3 +31,13 @@ spec:
               value: "true"
             - name: ConnectionStrings__DefaultConnection
               value: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword
+            - name: Jwt__Issuer
+              value: SharpChess.Api
+            - name: Jwt__Audience
+              value: SharpChess.Frontend
+            - name: Jwt__SigningKey
+              value: ChangeThisDevelopmentSigningKey_AtLeast32Characters!
+            - name: Jwt__AccessTokenMinutes
+              value: "15"
+            - name: Jwt__RefreshTokenDays
+              value: "7"

@@ -90,7 +90,12 @@ jobs:
           kubectl apply -f k8s/validation/postgres.yaml
           kubectl -n sharpchess-validation rollout status deployment/sharpchess-db --timeout=180s
           kubectl apply -f k8s/validation/sharpchess-migrator.yaml
-          kubectl -n sharpchess-validation wait --for=condition=complete job/sharpchess-api-migrator --timeout=180s
+          if ! kubectl -n sharpchess-validation wait --for=condition=complete job/sharpchess-api-migrator --timeout=180s; then
+            kubectl -n sharpchess-validation describe job sharpchess-api-migrator || true
+            kubectl -n sharpchess-validation get pods -l job-name=sharpchess-api-migrator -o wide || true
+            kubectl -n sharpchess-validation logs -l job-name=sharpchess-api-migrator --all-containers=true --tail=200 || true
+            exit 1
+          fi
           kubectl apply -f k8s/validation/sharpchess-api.yaml
 
       - name: Validate Kubernetes self-healing and rolling updates
@@ -101,11 +106,13 @@ jobs:
         run: |
           kubectl get all -A
           kubectl -n sharpchess-validation get events --sort-by=.lastTimestamp
-          kubectl -n sharpchess-validation describe deployment sharpchess-api
-          kubectl -n sharpchess-validation describe deployment sharpchess-db
-          kubectl -n sharpchess-validation describe pods
-          kubectl -n sharpchess-validation logs -l app=sharpchess-api --all-containers=true --tail=200
-          kubectl -n sharpchess-validation logs -l app=sharpchess-db --all-containers=true --tail=200
+          kubectl -n sharpchess-validation describe deployment sharpchess-api || true
+          kubectl -n sharpchess-validation describe deployment sharpchess-db || true
+          kubectl -n sharpchess-validation describe job sharpchess-api-migrator || true
+          kubectl -n sharpchess-validation describe pods || true
+          kubectl -n sharpchess-validation logs -l app=sharpchess-api --all-containers=true --tail=200 || true
+          kubectl -n sharpchess-validation logs -l app=sharpchess-db --all-containers=true --tail=200 || true
+          kubectl -n sharpchess-validation logs -l job-name=sharpchess-api-migrator --all-containers=true --tail=200 || true
 
   docker:
     runs-on: ubuntu-latest
