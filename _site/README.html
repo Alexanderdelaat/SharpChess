@@ -74,22 +74,17 @@
 <h1 id="sharpchess">SharpChess</h1>
 
 <h2 id="documentation-board-sync">Documentation board sync</h2>
-<p>The documentation site reads the project board from Notion in one direction only:</p>
-<p><code>Notion -&gt; generated Markdown -&gt; DocFX -&gt; GitHub Pages</code></p>
-<p>The sync is read-only. The integration only calls Notion read endpoints and never creates, updates, deletes, moves, archives, or reorders cards.</p>
-<h3 id="required-github-actions-secrets">Required GitHub Actions secrets</h3>
-<p>Configure these in <code>Settings -&gt; Secrets and variables -&gt; Actions</code> for the repository:</p>
+<p>The documentation site now uses a live Notion embed:</p>
+<p><code>Published Notion page -&gt; embedded in DocFX -&gt; GitHub Pages</code></p>
+<p>DocFX does not render a native board from API data. It hosts a page that embeds the published Notion board in an iframe, so the visitor's browser loads the real Notion UI from Notion's servers.</p>
+<h3 id="required-github-configuration">Required GitHub configuration</h3>
+<p>Publish the Notion board page, then configure one of these in <code>Settings -&gt; Secrets and variables -&gt; Actions</code>:</p>
 <ul>
-<li><code>NOTION_TOKEN</code></li>
-<li><code>NOTION_DATABASE_ID</code></li>
+<li>Repository variable <code>NOTION_PUBLIC_BOARD_URL</code> with the published Notion page URL.</li>
+<li>Repository secret <code>NOTION_EMBED_URL</code> with either the published page URL or the <code>src</code> URL from Notion's embed code.</li>
 </ul>
-<p>If the Notion database contains more than one data source, also add:</p>
-<ul>
-<li><code>NOTION_DATA_SOURCE_ID</code></li>
-</ul>
-<p>The Notion integration must have read access to the board database, and the database must be shared with that integration inside Notion.</p>
-<p>After the secrets are configured, trigger the <code>Deploy DocFX to GitHub Pages</code> workflow on <code>main</code> or via manual dispatch. The workflow reads the Notion board, regenerates <code>docs/kanban.md</code>, builds DocFX, and publishes <code>_site</code>.</p>
-<p>The repository does not store the Notion token in source control. The workflow consumes it from GitHub Actions secrets only.</p>
+<p>After the required configuration is in place, trigger the <code>Deploy DocFX to GitHub Pages</code> workflow on <code>main</code> or via manual dispatch. The workflow regenerates <code>docs/kanban.md</code>, builds DocFX, and publishes <code>_site</code>.</p>
+<p>The embed URL will be visible in the public HTML output, so it should not be treated as sensitive.</p>
 
 </article>
 

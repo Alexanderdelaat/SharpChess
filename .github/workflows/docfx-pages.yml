@@ -54,9 +54,8 @@ jobs:
 
       - name: Generate Notion Kanban Markdown
         env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-          NOTION_DATA_SOURCE_ID: ${{ secrets.NOTION_DATA_SOURCE_ID }}
+          NOTION_EMBED_URL: ${{ secrets.NOTION_EMBED_URL }}
+          NOTION_PUBLIC_BOARD_URL: ${{ vars.NOTION_PUBLIC_BOARD_URL }}
         run: bash scripts/sync-notion-kanban.sh
 
       - name: Build DocFX site

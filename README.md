@@ -2,25 +2,19 @@
 
 ## Documentation board sync
 
-The documentation site reads the project board from Notion in one direction only:
+The documentation site now uses a live Notion embed:
 
-`Notion -> generated Markdown -> DocFX -> GitHub Pages`
+`Published Notion page -> embedded in DocFX -> GitHub Pages`
 
-The sync is read-only. The integration only calls Notion read endpoints and never creates, updates, deletes, moves, archives, or reorders cards.
+DocFX does not render a native board from API data. It hosts a page that embeds the published Notion board in an iframe, so the visitor's browser loads the real Notion UI from Notion's servers.
 
-### Required GitHub Actions secrets
+### Required GitHub configuration
 
-Configure these in `Settings -> Secrets and variables -> Actions` for the repository:
+Publish the Notion board page, then configure one of these in `Settings -> Secrets and variables -> Actions`:
 
-- `NOTION_TOKEN`
-- `NOTION_DATABASE_ID`
+- Repository variable `NOTION_PUBLIC_BOARD_URL` with the published Notion page URL.
+- Repository secret `NOTION_EMBED_URL` with either the published page URL or the `src` URL from Notion's embed code.
 
-If the Notion database contains more than one data source, also add:
+After the required configuration is in place, trigger the `Deploy DocFX to GitHub Pages` workflow on `main` or via manual dispatch. The workflow regenerates `docs/kanban.md`, builds DocFX, and publishes `_site`.
 
-- `NOTION_DATA_SOURCE_ID`
-
-The Notion integration must have read access to the board database, and the database must be shared with that integration inside Notion.
-
-After the secrets are configured, trigger the `Deploy DocFX to GitHub Pages` workflow on `main` or via manual dispatch. The workflow reads the Notion board, regenerates `docs/kanban.md`, builds DocFX, and publishes `_site`.
-
-The repository does not store the Notion token in source control. The workflow consumes it from GitHub Actions secrets only.
+The embed URL will be visible in the public HTML output, so it should not be treated as sensitive.
