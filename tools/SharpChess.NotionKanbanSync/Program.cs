@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Text.RegularExpressions;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -12,8 +13,8 @@ try
     var outputPath = Path.GetFullPath(options.OutputPath ?? Path.Combine(Environment.CurrentDirectory, "docs", "kanban.md"));
 
     var notionToken = RequiredEnvironmentVariable("NOTION_TOKEN");
-    var notionDatabaseId = RequiredEnvironmentVariable("NOTION_DATABASE_ID");
-    var notionDataSourceId = Environment.GetEnvironmentVariable("NOTION_DATA_SOURCE_ID");
+    var notionDatabaseId = RequiredNotionIdentifierEnvironmentVariable("NOTION_DATABASE_ID");
+    var notionDataSourceId = OptionalNotionIdentifierEnvironmentVariable("NOTION_DATA_SOURCE_ID");
 
     using var client = new HttpClient
     {
@@ -51,12 +52,87 @@ static string RequiredEnvironmentVariable(string name)
     var value = Environment.GetEnvironmentVariable(name);
     if (!string.IsNullOrWhiteSpace(value))
     {
-        return value.Trim();
+        return StripWrappingQuotes(value.Trim());
     }
 
     throw new InvalidOperationException(
         $"Missing required environment variable '{name}'. " +
         "Set it locally before running the sync, or configure it as a GitHub Actions secret.");
+}
+
+static string RequiredNotionIdentifierEnvironmentVariable(string name)
+{
+    var value = RequiredEnvironmentVariable(name);
+    return NormalizeNotionIdentifier(value, name);
+}
+
+static string? OptionalNotionIdentifierEnvironmentVariable(string name)
+{
+    var value = Environment.GetEnvironmentVariable(name);
+    if (string.IsNullOrWhiteSpace(value))
+    {
+        return null;
+    }
+
+    return NormalizeNotionIdentifier(value, name);
+}
+
+static string NormalizeNotionIdentifier(string rawValue, string environmentVariableName)
+{
+    var value = StripWrappingQuotes(rawValue.Trim());
+
+    if (Uri.TryCreate(value, UriKind.Absolute, out var uri))
+    {
+        var idFromPath = TryExtractNotionIdentifier(uri.AbsolutePath);
+        if (!string.IsNullOrWhiteSpace(idFromPath))
+        {
+            return idFromPath;
+        }
+    }
+
+    var id = TryExtractNotionIdentifier(value);
+    if (!string.IsNullOrWhiteSpace(id))
+    {
+        return id;
+    }
+
+    throw new InvalidOperationException(
+        $"Environment variable '{environmentVariableName}' must be a Notion UUID or a Notion URL that contains one.");
+}
+
+static string? TryExtractNotionIdentifier(string value)
+{
+    var match = Regex.Match(
+        value,
+        "([0-9a-fA-F]{32}|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})",
+        RegexOptions.CultureInvariant);
+    if (!match.Success)
+    {
+        return null;
+    }
+
+    var normalized = match.Value.Replace("-", string.Empty, StringComparison.Ordinal).ToLowerInvariant();
+    if (!Guid.TryParseExact(normalized, "N", out _))
+    {
+        return null;
+    }
+
+    return normalized;
+}
+
+static string StripWrappingQuotes(string value)
+{
+    if (value.Length >= 2)
+    {
+        var first = value[0];
+        var last = value[^1];
+        if ((first == '"' && last == '"') || (first == '\'' && last == '\''))
+        {
+            return value[1..^1].Trim();
+        }
+    }
+
+    return value;
 }
 
 static async Task<string> ResolveDataSourceIdAsync(HttpClient client, string databaseId)
