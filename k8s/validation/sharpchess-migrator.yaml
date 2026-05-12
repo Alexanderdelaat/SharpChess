@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sharpchess-api-migrator
+  namespace: sharpchess-validation
+spec:
+  backoffLimit: 3
+  ttlSecondsAfterFinished: 300
+  template:
+    metadata:
+      labels:
+        app: sharpchess-api-migrator
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: sharpchess-api-migrator
+          image: sharpchess-api:validation-v1
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+            - name: Database__RunMigrationsOnly
+              value: "true"
+            - name: ConnectionStrings__DefaultConnection
+              value: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword

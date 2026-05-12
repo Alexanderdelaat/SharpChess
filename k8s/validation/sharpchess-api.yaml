@@ -30,6 +30,8 @@ spec:
           env:
             - name: ASPNETCORE_ENVIRONMENT
               value: Development
+            - name: Database__RunMigrationsOnStartup
+              value: "false"
             - name: ConnectionStrings__DefaultConnection
               value: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword
           startupProbe:

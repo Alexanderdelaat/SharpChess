@@ -16,6 +16,8 @@ using SharpChess.Infrastructure.Persistence;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 string appVersion = builder.Configuration["APP_VERSION"] ?? "unknown";
+bool runDatabaseMigrationsOnStartup = builder.Configuration.GetValue<bool>("Database:RunMigrationsOnStartup");
+bool runDatabaseMigrationsOnly = builder.Configuration.GetValue<bool>("Database:RunMigrationsOnly");
 JwtOptions jwtOptions = builder.Configuration.GetSection(JwtOptions.SectionName).Get<JwtOptions>()
                         ?? throw new InvalidOperationException("JWT configuratie ontbreekt.");
 
@@ -78,7 +80,15 @@ builder.Services.AddCors(options =>
 
 WebApplication app = builder.Build();
 
-await app.Services.InitializeDatabaseAsync();
+if (runDatabaseMigrationsOnStartup || runDatabaseMigrationsOnly)
+{
+    await app.Services.InitializeDatabaseAsync();
+}
+
+if (runDatabaseMigrationsOnly)
+{
+    return;
+}
 
 if (app.Environment.IsDevelopment())
 {

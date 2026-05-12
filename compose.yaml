@@ -21,6 +21,7 @@ services:
       - "8080:8080"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
+      Database__RunMigrationsOnStartup: "true"
       ConnectionStrings__DefaultConnection: Host=sharpchess-db;Port=5432;Database=sharpchess;Username=postgres;Password=devpassword
       Jwt__Issuer: SharpChess.Api
       Jwt__Audience: SharpChess.Frontend

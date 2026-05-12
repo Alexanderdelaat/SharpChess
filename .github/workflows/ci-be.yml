@@ -88,6 +88,9 @@ jobs:
         run: |
           kubectl apply -f k8s/validation/namespace.yaml
           kubectl apply -f k8s/validation/postgres.yaml
+          kubectl -n sharpchess-validation rollout status deployment/sharpchess-db --timeout=180s
+          kubectl apply -f k8s/validation/sharpchess-migrator.yaml
+          kubectl -n sharpchess-validation wait --for=condition=complete job/sharpchess-api-migrator --timeout=180s
           kubectl apply -f k8s/validation/sharpchess-api.yaml
 
       - name: Validate Kubernetes self-healing and rolling updates
