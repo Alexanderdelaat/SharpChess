@@ -31,12 +31,12 @@ try
     var dataSource = await GetJsonAsync(client, $"data_sources/{Uri.EscapeDataString(dataSourceId)}");
     var schema = BoardSchema.Create(dataSource);
     var cards = await ReadCardsAsync(client, dataSourceId, schema);
-    var markdown = BuildMarkdown(cards, schema, notionDatabaseId, dataSourceId);
+    var markdown = BuildMarkdown(cards, schema);
 
     Directory.CreateDirectory(Path.GetDirectoryName(outputPath)!);
     await File.WriteAllTextAsync(outputPath, markdown, new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
 
-    Console.WriteLine($"Generated '{outputPath}' from Notion data source '{dataSourceId}'.");
+    Console.WriteLine($"Generated '{outputPath}' from the configured Notion board.");
 }
 catch (Exception exception)
 {
@@ -64,12 +64,12 @@ static async Task<string> ResolveDataSourceIdAsync(HttpClient client, string dat
     var database = await GetJsonAsync(client, $"databases/{Uri.EscapeDataString(databaseId)}");
     var dataSources = database["data_sources"]?.AsArray()
         ?? throw new InvalidOperationException(
-            $"The Notion database '{databaseId}' did not return any data sources.");
+            "The configured Notion database did not return any data sources.");
 
     if (dataSources.Count == 0)
     {
         throw new InvalidOperationException(
-            $"The Notion database '{databaseId}' does not contain any data sources.");
+            "The configured Notion database does not contain any data sources.");
     }
 
     if (dataSources.Count > 1)
@@ -84,13 +84,13 @@ static async Task<string> ResolveDataSourceIdAsync(HttpClient client, string dat
             }));
 
         throw new InvalidOperationException(
-            $"The Notion database '{databaseId}' contains multiple data sources: {availableSources}. " +
+            $"The configured Notion database contains multiple data sources: {availableSources}. " +
             "Set NOTION_DATA_SOURCE_ID to choose the board source explicitly.");
     }
 
     return dataSources[0]?["id"]?.GetValue<string>()
         ?? throw new InvalidOperationException(
-            $"The Notion database '{databaseId}' returned a data source without an id.");
+            "The configured Notion database returned a data source without an id.");
 }
 
 static async Task<JsonObject> GetJsonAsync(HttpClient client, string relativePath)
@@ -213,7 +213,7 @@ static IReadOnlyList<string> BuildFilterProperties(BoardSchema schema)
         .ToArray();
 }
 
-static string BuildMarkdown(IReadOnlyList<BoardCard> cards, BoardSchema schema, string databaseId, string dataSourceId)
+static string BuildMarkdown(IReadOnlyList<BoardCard> cards, BoardSchema schema)
 {
     var builder = new StringBuilder();
     var generatedAt = DateTimeOffset.UtcNow;
@@ -237,7 +237,7 @@ static string BuildMarkdown(IReadOnlyList<BoardCard> cards, BoardSchema schema, 
     builder.AppendLine("> This page is generated from Notion by `scripts/sync-notion-kanban.sh`.");
     builder.AppendLine("> The integration is read-only: it only reads the board and writes Markdown for DocFX.");
     builder.AppendLine();
-    builder.AppendLine($"_Generated at {generatedAt:yyyy-MM-dd HH:mm 'UTC'} from database `{databaseId}` and data source `{dataSourceId}`._");
+    builder.AppendLine($"_Generated at {generatedAt:yyyy-MM-dd HH:mm 'UTC'}._");
     builder.AppendLine();
 
     foreach (var status in OrderedStatuses(schema, groupedCards.Keys))

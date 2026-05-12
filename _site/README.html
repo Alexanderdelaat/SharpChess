@@ -88,13 +88,8 @@
 <li><code>NOTION_DATA_SOURCE_ID</code></li>
 </ul>
 <p>The Notion integration must have read access to the board database, and the database must be shared with that integration inside Notion.</p>
-<h3 id="local-generation">Local generation</h3>
-<p>Run the sync locally with environment variables set:</p>
-<pre><code class="lang-bash">export NOTION_TOKEN=&quot;secret_...&quot;
-export NOTION_DATABASE_ID=&quot;your-notion-database-id&quot;
-bash scripts/sync-notion-kanban.sh
-</code></pre>
-<p>The script overwrites <code>docs/kanban.md</code>, which is included in the DocFX site and published by the existing GitHub Pages workflow.</p>
+<p>After the secrets are configured, trigger the <code>Deploy DocFX to GitHub Pages</code> workflow on <code>main</code> or via manual dispatch. The workflow reads the Notion board, regenerates <code>docs/kanban.md</code>, builds DocFX, and publishes <code>_site</code>.</p>
+<p>The repository does not store the Notion token in source control. The workflow consumes it from GitHub Actions secrets only.</p>
 
 </article>
 
