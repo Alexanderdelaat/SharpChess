@@ -19,41 +19,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  snapshot-kubernetes-pod-health:
-    runs-on:
-      - self-hosted
-      - sharpchess-k3d
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Generate Kubernetes pod health snapshot
-        env:
-          K8S_NAMESPACE: ${{ vars.K8S_NAMESPACE || vars.K3S_NAMESPACE || 'default' }}
-          APP_LABEL: ${{ vars.APP_LABEL || vars.K3S_LABEL_SELECTOR || 'sharpchess-api' }}
-        run: bash scripts/generate-kubernetes-pod-health.sh
-
-      - name: Upload Kubernetes pod health snapshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: kubernetes-pod-health
-          path: docs/kubernetes-pod-health.md
-          if-no-files-found: error
-
   build:
-    needs: snapshot-kubernetes-pod-health
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-
-      - name: Download Kubernetes pod health snapshot
-        uses: actions/download-artifact@v4
-        with:
-          name: kubernetes-pod-health
-          path: docs
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
