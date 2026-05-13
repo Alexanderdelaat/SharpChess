@@ -52,6 +52,13 @@ jobs:
       - name: Generate coverage report
         run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html"
 
+      - name: Upload Kubernetes pod health snapshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kubernetes-pod-health
+          path: docs/kubernetes-pod-health.md
+          if-no-files-found: error
+
       - name: Generate Notion Kanban Markdown
         env:
           NOTION_EMBED_URL: ${{ secrets.NOTION_EMBED_URL }}
