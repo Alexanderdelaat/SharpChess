@@ -4,3 +4,5 @@
   href: kanban.md
 - name: Kubernetes Pod Health
   href: kubernetes-pod-health.md
+- name: SonarQube
+  href: sonarqube.md

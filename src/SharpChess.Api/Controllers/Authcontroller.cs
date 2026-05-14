@@ -29,6 +29,7 @@ public class AuthController : ControllerBase
     /// Registreert een nieuwe gebruiker met gebruikersnaam, e-mailadres en wachtwoord.
     /// </summary>
     /// <param name="request">De registratiegegevens van de gebruiker.</param>
+    /// <param name="cancellationToken">Token waarmee de aanvraag kan worden geannuleerd.</param>
     /// <returns>
     /// Een succesvolle response met de aangemaakte gebruiker, of een foutresponse als de registratie mislukt.
     /// </returns>
@@ -57,9 +58,9 @@ public class AuthController : ControllerBase
     /// <summary>
     /// Logt de gebuiker in.
     /// </summary>
-    /// <param name="request"></param>
-    /// Een succesvolle loginpoging of een foutresponse als het mislukt.
-    /// <returns></returns>
+    /// <param name="request">De logingegevens van de gebruiker.</param>
+    /// <param name="cancellationToken">Token waarmee de aanvraag kan worden geannuleerd.</param>
+    /// <returns>Een succesvolle loginpoging of een foutresponse als het mislukt.</returns>
     [EnableRateLimiting("auth-login")]
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request, CancellationToken cancellationToken)

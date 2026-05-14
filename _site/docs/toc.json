@@ -1,2 +1,2 @@
 
-{"items":[{"name":"Architectuuroverzicht","href":"index.html","topicHref":"index.html"},{"name":"Project Board","href":"kanban.html","topicHref":"kanban.html"},{"name":"Kubernetes Pod Health","href":"kubernetes-pod-health.html","topicHref":"kubernetes-pod-health.html"}],"pdf":true}
+{"items":[{"name":"Architectuuroverzicht","href":"index.html","topicHref":"index.html"},{"name":"Project Board","href":"kanban.html","topicHref":"kanban.html"},{"name":"Kubernetes Pod Health","href":"kubernetes-pod-health.html","topicHref":"kubernetes-pod-health.html"},{"name":"SonarQube","href":"sonarqube.html","topicHref":"sonarqube.html"}]}

@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: GlobalExceptionHandler
     path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: TryHandleAsync
     path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs

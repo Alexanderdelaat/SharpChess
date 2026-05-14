@@ -1,0 +1,7 @@
+root = true
+
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none
+
+[SharpChess.Tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none

@@ -16,7 +16,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Security/ClaimsPrincipalExtensions.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: ClaimsPrincipalExtensions
     path: src/SharpChess.Api/Security/ClaimsPrincipalExtensions.cs
@@ -52,7 +52,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Security/ClaimsPrincipalExtensions.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: GetUserId
     path: src/SharpChess.Api/Security/ClaimsPrincipalExtensions.cs

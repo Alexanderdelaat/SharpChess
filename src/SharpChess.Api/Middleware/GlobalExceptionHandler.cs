@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SharpChess.Api.Middleware;
 
-public sealed class GlobalExceptionHandler : IExceptionHandler
+public sealed partial class GlobalExceptionHandler : IExceptionHandler
 {
     private readonly ILogger<GlobalExceptionHandler> _logger;
 
@@ -17,7 +17,7 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
         Exception exception,
         CancellationToken cancellationToken)
     {
-        _logger.LogError(exception, "Unhandled exception while processing request.");
+        LogUnhandledException(_logger, exception);
 
         httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
@@ -32,4 +32,10 @@ public sealed class GlobalExceptionHandler : IExceptionHandler
 
         return true;
     }
+
+    [LoggerMessage(
+        EventId = 1,
+        Level = LogLevel.Error,
+        Message = "Unhandled exception while processing request.")]
+    private static partial void LogUnhandledException(ILogger logger, Exception exception);
 }

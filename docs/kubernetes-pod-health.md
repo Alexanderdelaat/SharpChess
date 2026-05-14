@@ -4,14 +4,14 @@ title: Kubernetes Pod Health
 
 # Kubernetes Pod Health
 
-This page shows the last committed snapshot of the SharpChess Kubernetes workload. It is generated locally with `kubectl` and then published through DocFX, so the page does not expose direct cluster access, kubeconfig content, or Kubernetes credentials.
+This page shows the last committed snapshot artifact of the SharpChess Kubernetes workload. GitHub Actions publishes this committed Markdown file through DocFX and uploads the same file as a workflow artifact, so the Pages build does not need live cluster access, kubeconfig content, or Kubernetes credentials.
 
 _Generated at 2026-05-12 20:21 UTC._
 
 - Namespace scope: `default`
 - App label selector: `app=sharpchess-api`
 
-> This page shows a generated snapshot. It is not direct unrestricted cluster access, and it does not expose kubeconfig or cluster credentials.
+> This page shows a committed snapshot artifact. It is not live cluster access, and it does not expose kubeconfig or cluster credentials.
 
 ## Pod Snapshot
 
@@ -59,7 +59,7 @@ The script uses `KUBECONFIG` if it is set, or falls back to `~/.kube/config` on 
 
 ## Why This Page Exists
 
-This page gives deployment monitoring evidence without giving the static DocFX site direct cluster access. The snapshot is generated on a machine that can reach the cluster, committed to the repository, and then published with the rest of the documentation.
+This page gives deployment monitoring evidence without giving the static DocFX site or GitHub-hosted runner direct cluster access. The snapshot is refreshed locally when needed, committed to the repository, uploaded as a GitHub Actions artifact, and then published with the rest of the documentation.
 
 ## Troubleshooting
 

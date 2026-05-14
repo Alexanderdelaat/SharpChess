@@ -52,11 +52,25 @@ jobs:
       - name: Generate coverage report
         run: reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coverage-report" -reporttypes:"Html"
 
+      - name: Upload Kubernetes pod health snapshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kubernetes-pod-health
+          path: docs/kubernetes-pod-health.md
+          if-no-files-found: error
+
       - name: Generate Notion Kanban Markdown
         env:
           NOTION_EMBED_URL: ${{ secrets.NOTION_EMBED_URL }}
           NOTION_PUBLIC_BOARD_URL: ${{ vars.NOTION_PUBLIC_BOARD_URL || secrets.NOTION_PUBLIC_BOARD_URL }}
         run: bash scripts/sync-notion-kanban.sh
+
+      - name: Generate SonarCloud metrics page
+        env:
+          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY || secrets.SONAR_PROJECT_KEY }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_BRANCH: main
+        run: python3 scripts/generate-sonarcloud-docs.py
 
       - name: Clean DocFX output
         run: rm -rf _site

@@ -21,7 +21,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: LoginResponse
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
@@ -58,7 +58,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
@@ -98,7 +98,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AccessToken
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
@@ -127,7 +127,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AccessTokenExpiresAtUtc
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
@@ -156,7 +156,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: RefreshToken
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
@@ -185,7 +185,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: RefreshTokenExpiresAtUtc
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
@@ -214,7 +214,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/LoginResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: User
     path: src/SharpChess.Api/Contracts/LoginResponse.cs
