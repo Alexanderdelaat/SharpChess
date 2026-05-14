@@ -24,6 +24,24 @@ main.container-xxl:has(.project-board-page) .next-article {
   display: block;
 }
 
+.sonar-dashboard-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid #183153;
+  border-radius: 10px;
+  background: #183153;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sonar-dashboard-link:hover {
+  color: #ffffff;
+  background: #274864;
+}
+
 .project-board-breakout {
   position: relative;
   left: 50%;

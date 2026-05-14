@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/AdminAccessResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AdminAccessResponse
     path: src/SharpChess.Api/Contracts/AdminAccessResponse.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/AdminAccessResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Contracts/AdminAccessResponse.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/AdminAccessResponse.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Message
     path: src/SharpChess.Api/Contracts/AdminAccessResponse.cs

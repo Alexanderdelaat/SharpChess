@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Health/DatabaseReadinessHealthCheck.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: DatabaseReadinessHealthCheck
     path: src/SharpChess.Api/Health/DatabaseReadinessHealthCheck.cs
@@ -53,7 +53,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Health/DatabaseReadinessHealthCheck.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Health/DatabaseReadinessHealthCheck.cs
@@ -85,7 +85,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Health/DatabaseReadinessHealthCheck.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: CheckHealthAsync
     path: src/SharpChess.Api/Health/DatabaseReadinessHealthCheck.cs

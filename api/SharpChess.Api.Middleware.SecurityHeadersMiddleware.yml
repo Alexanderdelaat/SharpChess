@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Middleware/SecurityHeadersMiddleware.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: SecurityHeadersMiddleware
     path: src/SharpChess.Api/Middleware/SecurityHeadersMiddleware.cs
@@ -51,7 +51,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Middleware/SecurityHeadersMiddleware.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Middleware/SecurityHeadersMiddleware.cs
@@ -83,7 +83,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Middleware/SecurityHeadersMiddleware.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: InvokeAsync
     path: src/SharpChess.Api/Middleware/SecurityHeadersMiddleware.cs

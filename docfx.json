@@ -34,8 +34,7 @@
       "_appLogoPath": "images/chess-logo.svg",
       "_appFooter": "<span>Made by Alexander</span>",
       "_enableSearch": true,
-      "_disableSideFilter": true,
-      "pdf": true
+      "_disableSideFilter": true
     }
   }
 }

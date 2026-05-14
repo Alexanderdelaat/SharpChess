@@ -4,6 +4,8 @@
   href: docs/kanban.md
 - name: Kubernetes Pod Health
   href: docs/kubernetes-pod-health.md
+- name: SonarQube
+  href: docs/sonarqube.md
 - name: API
   href: api/toc.yml
 - name: Code Coverage

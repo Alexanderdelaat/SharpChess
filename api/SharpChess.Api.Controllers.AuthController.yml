@@ -22,7 +22,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AuthController
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -268,7 +268,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -300,7 +300,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Register
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -353,7 +353,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Login
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -415,7 +415,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Refresh
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -464,7 +464,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Logout
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -524,7 +524,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Me
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
@@ -578,7 +578,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Controllers/Authcontroller.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AdminPing
     path: src/SharpChess.Api/Controllers/Authcontroller.cs

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Alexanderdelaat/SharpChess/blob/main/docs/kubernetes-pod-health.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/Alexanderdelaat/SharpChess/blob/k8s-pod-health-artifact/docs/kubernetes-pod-health.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -87,14 +87,14 @@
         <article data-uid="">
 <h1 id="kubernetes-pod-health">Kubernetes Pod Health</h1>
 
-<p>This page shows the last committed snapshot of the SharpChess Kubernetes workload. It is generated locally with <code>kubectl</code> and then published through DocFX, so the page does not expose direct cluster access, kubeconfig content, or Kubernetes credentials.</p>
+<p>This page shows the last committed snapshot artifact of the SharpChess Kubernetes workload. GitHub Actions publishes this committed Markdown file through DocFX and uploads the same file as a workflow artifact, so the Pages build does not need live cluster access, kubeconfig content, or Kubernetes credentials.</p>
 <p><em>Generated at 2026-05-12 20:21 UTC.</em></p>
 <ul>
 <li>Namespace scope: <code>default</code></li>
 <li>App label selector: <code>app=sharpchess-api</code></li>
 </ul>
 <blockquote>
-<p>This page shows a generated snapshot. It is not direct unrestricted cluster access, and it does not expose kubeconfig or cluster credentials.</p>
+<p>This page shows a committed snapshot artifact. It is not live cluster access, and it does not expose kubeconfig or cluster credentials.</p>
 </blockquote>
 <h2 id="pod-snapshot">Pod Snapshot</h2>
 <table>
@@ -176,7 +176,7 @@
 </code></pre>
 <p>The script uses <code>KUBECONFIG</code> if it is set, or falls back to <code>~/.kube/config</code> on your machine.</p>
 <h2 id="why-this-page-exists">Why This Page Exists</h2>
-<p>This page gives deployment monitoring evidence without giving the static DocFX site direct cluster access. The snapshot is generated on a machine that can reach the cluster, committed to the repository, and then published with the rest of the documentation.</p>
+<p>This page gives deployment monitoring evidence without giving the static DocFX site or GitHub-hosted runner direct cluster access. The snapshot is refreshed locally when needed, committed to the repository, uploaded as a GitHub Actions artifact, and then published with the rest of the documentation.</p>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <ul>
 <li><strong>Pending</strong>: check node capacity, image pull access, PVC binding, and whether the namespace exists.</li>
@@ -188,7 +188,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Alexanderdelaat/SharpChess/blob/main/docs/kubernetes-pod-health.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Alexanderdelaat/SharpChess/blob/k8s-pod-health-artifact/docs/kubernetes-pod-health.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/Alexanderdelaat/SharpChess/blob/main/README.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/Alexanderdelaat/SharpChess/blob/k8s-pod-health-artifact/README.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -144,13 +144,13 @@ docfx docfx.json
 <ul>
 <li><code>NOTION_EMBED_URL</code> or <code>NOTION_PUBLIC_BOARD_URL</code> for the Project Board page</li>
 </ul>
-<p>The Kubernetes Pod Health page is generated in the GitHub Pages workflow on a self-hosted runner labeled <code>sharpchess-k3d</code>. That runner needs cluster access through <code>~/.kube/config</code> or <code>KUBECONFIG</code>. The workflow uploads the generated Markdown snapshot and then the DocFX build publishes it.</p>
+<p>The Kubernetes Pod Health page is a committed snapshot artifact. The GitHub Pages workflow uploads <code>docs/kubernetes-pod-health.md</code> as a workflow artifact and publishes that same committed file through DocFX. The Pages build does not need a self-hosted runner, live cluster access, <code>~/.kube/config</code>, or <code>KUBECONFIG</code>.</p>
 <p>The defaults are:</p>
 <ul>
 <li><code>K8S_NAMESPACE=default</code></li>
 <li><code>APP_LABEL=sharpchess-api</code></li>
 </ul>
-<p>You can still refresh the snapshot locally with:</p>
+<p>You can refresh the snapshot locally, review it, and commit the updated Markdown with:</p>
 <pre><code class="lang-bash">K8S_NAMESPACE=default APP_LABEL=sharpchess-api bash scripts/generate-kubernetes-pod-health.sh
 </code></pre>
 <h2 id="current-status">Current Status</h2>
@@ -161,7 +161,7 @@ docfx docfx.json
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/Alexanderdelaat/SharpChess/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/Alexanderdelaat/SharpChess/blob/k8s-pod-health-artifact/README.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

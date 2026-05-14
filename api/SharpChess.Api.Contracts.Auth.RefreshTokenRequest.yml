@@ -17,7 +17,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/RefreshTokenRequest.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: RefreshTokenRequest
     path: src/SharpChess.Api/Contracts/RefreshTokenRequest.cs
@@ -54,7 +54,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/RefreshTokenRequest.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: .ctor
     path: src/SharpChess.Api/Contracts/RefreshTokenRequest.cs
@@ -86,7 +86,7 @@ items:
   source:
     remote:
       path: src/SharpChess.Api/Contracts/RefreshTokenRequest.cs
-      branch: main
+      branch: k8s-pod-health-artifact
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: RefreshToken
     path: src/SharpChess.Api/Contracts/RefreshTokenRequest.cs

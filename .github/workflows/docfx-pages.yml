@@ -65,6 +65,13 @@ jobs:
           NOTION_PUBLIC_BOARD_URL: ${{ vars.NOTION_PUBLIC_BOARD_URL || secrets.NOTION_PUBLIC_BOARD_URL }}
         run: bash scripts/sync-notion-kanban.sh
 
+      - name: Generate SonarCloud metrics page
+        env:
+          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY || secrets.SONAR_PROJECT_KEY }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_BRANCH: main
+        run: python3 scripts/generate-sonarcloud-docs.py
+
       - name: Clean DocFX output
         run: rm -rf _site
 
