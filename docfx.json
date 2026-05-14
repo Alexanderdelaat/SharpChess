@@ -33,6 +33,7 @@
       "_appTitle": "SharpChess",
       "_appLogoPath": "images/chess-logo.svg",
       "_appFooter": "<span>Made by Alexander</span>",
+      "_lang": "en",
       "_enableSearch": true,
       "_disableSideFilter": true
     }
