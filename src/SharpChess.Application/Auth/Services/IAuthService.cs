@@ -1,5 +1,4 @@
 using FluentResults;
-using SharpChess.Application.Auth.Commands.Register;
 using SharpChess.Application.Auth.Models;
 
 namespace SharpChess.Application.Auth.Services;

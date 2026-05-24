@@ -1,6 +1,6 @@
 using FluentResults;
 
-namespace SharpChess.Application.Account;
+namespace SharpChess.Application.Account.Services;
 
 public interface IAccountService
 {

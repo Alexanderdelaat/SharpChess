@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using SharpChess.Infrastructure.Identity;
 
-namespace SharpChess.Api.Tests;
+namespace SharpChess.Api.Tests.Identity;
 
 [TestClass]
 public sealed class BcryptPasswordHasherTests

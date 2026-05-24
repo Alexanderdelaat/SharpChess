@@ -1,17 +1,14 @@
-using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using SharpChess.Application.Account;
+using SharpChess.Application.Account.Services;
 using SharpChess.Application.Auth.Services;
-using SharpChess.Application.Players;
+using SharpChess.Application.Players.Services;
 
-namespace SharpChess.Application;
+namespace SharpChess.Application.Extensions;
 
 public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddMediatR(cfg =>
-            cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
         services.AddScoped<IAuthPasswordValidator, PasswordValidator>();
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IAccountService, AccountService>();

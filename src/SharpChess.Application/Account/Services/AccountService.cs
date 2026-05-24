@@ -1,9 +1,9 @@
 using FluentResults;
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Auth;
+using SharpChess.Application.Auth.Errors;
 using SharpChess.Application.Auth.Services;
 
-namespace SharpChess.Application.Account;
+namespace SharpChess.Application.Account.Services;
 
 public sealed class AccountService : IAccountService
 {
@@ -25,10 +25,15 @@ public sealed class AccountService : IAccountService
     public async Task<Result> UpdatePasswordAsync(string userId, string currentPassword, string newPassword, string confirmNewPassword, CancellationToken cancellationToken)
     {
         if (newPassword != confirmNewPassword)
+        {
             return Result.Fail(AuthErrorCodes.PasswordMismatch);
+        }
 
         Result validation = _passwordValidator.Validate(newPassword);
-        if (validation.IsFailed) return validation;
+        if (validation.IsFailed)
+        {
+            return validation;
+        }
 
         return await _userRepository.UpdatePasswordAsync(userId, currentPassword, newPassword, cancellationToken);
     }

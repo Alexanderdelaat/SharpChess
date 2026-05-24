@@ -1,13 +1,12 @@
 using FluentResults;
 using SharpChess.Application.Abstractions.Authentication;
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Auth;
-using SharpChess.Application.Auth.Commands.Register;
 using SharpChess.Application.Auth.Constants;
+using SharpChess.Application.Auth.Errors;
 using SharpChess.Application.Auth.Models;
 using SharpChess.Application.Auth.Services;
 
-namespace SharpChess.Api.Tests;
+namespace SharpChess.Api.Tests.Auth;
 
 [TestClass]
 public sealed class AuthServicePasswordTests

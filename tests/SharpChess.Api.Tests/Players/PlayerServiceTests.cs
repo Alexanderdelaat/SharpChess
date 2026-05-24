@@ -1,7 +1,8 @@
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Players;
+using SharpChess.Application.Players.Models;
+using SharpChess.Application.Players.Services;
 
-namespace SharpChess.Api.Tests;
+namespace SharpChess.Api.Tests.Players;
 
 [TestClass]
 public sealed class PlayerServiceTests

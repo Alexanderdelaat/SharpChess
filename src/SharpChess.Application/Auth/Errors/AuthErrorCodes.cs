@@ -1,4 +1,4 @@
-namespace SharpChess.Application.Auth;
+namespace SharpChess.Application.Auth.Errors;
 
 public static class AuthErrorCodes
 {

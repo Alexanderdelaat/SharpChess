@@ -1,4 +1,4 @@
-namespace SharpChess.Application.Players;
+namespace SharpChess.Application.Players.Models;
 
 public sealed record PlayerSummary(
     string Id,

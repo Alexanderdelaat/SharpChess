@@ -1,4 +1,6 @@
-namespace SharpChess.Application.Players;
+using SharpChess.Application.Players.Models;
+
+namespace SharpChess.Application.Players.Services;
 
 public interface IPlayerService
 {

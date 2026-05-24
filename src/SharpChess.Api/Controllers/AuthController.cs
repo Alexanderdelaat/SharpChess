@@ -7,6 +7,11 @@ using SharpChess.Api.Security;
 using SharpChess.Application.Auth.Constants;
 using SharpChess.Application.Auth.Models;
 using SharpChess.Application.Auth.Services;
+using RefreshTokenRequest = SharpChess.Api.Contracts.Auth.RefreshTokenRequest;
+using RefreshTokenResponse = SharpChess.Api.Contracts.Auth.RefreshTokenResponse;
+using RegisterRequest = SharpChess.Api.Contracts.Auth.RegisterRequest;
+using RegisterResponse = SharpChess.Api.Contracts.Auth.RegisterResponse;
+using RegisterResult = SharpChess.Application.Auth.Models.RegisterResult;
 
 namespace SharpChess.Api.Controllers;
 /// <summary>
@@ -36,7 +41,7 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterRequest request, CancellationToken cancellationToken)
     {
-        Result<SharpChess.Application.Auth.Commands.Register.RegisterResult> result = await _authService.RegisterAsync(
+        Result<RegisterResult> result = await _authService.RegisterAsync(
             request.Username,
             request.Email,
             request.Password,
@@ -45,7 +50,7 @@ public class AuthController : ControllerBase
 
         if (result.IsFailed)
         {
-            return CreateProblem(result, StatusCodes.Status400BadRequest, "Registratie mislukt.");
+            return AuthProblemDetailsExtensions.CreateAuthProblem(this, result, StatusCodes.Status400BadRequest, "Registratie mislukt.");
         }
 
         return Ok(new RegisterResponse(
@@ -72,7 +77,7 @@ public class AuthController : ControllerBase
 
         if (result.IsFailed)
         {
-            return CreateProblem(result, StatusCodes.Status401Unauthorized, "Login mislukt.");
+            return AuthProblemDetailsExtensions.CreateAuthProblem(this, result, StatusCodes.Status401Unauthorized, "Login mislukt.");
         }
 
         return Ok(ToLoginResponse(result.Value));
@@ -85,7 +90,7 @@ public class AuthController : ControllerBase
 
         if (result.IsFailed)
         {
-            return CreateProblem(result, StatusCodes.Status401Unauthorized, "Sessie vernieuwen mislukt.");
+            return AuthProblemDetailsExtensions.CreateAuthProblem(this, result, StatusCodes.Status401Unauthorized, "Sessie vernieuwen mislukt.");
         }
 
         return Ok(ToRefreshResponse(result.Value));
@@ -121,7 +126,7 @@ public class AuthController : ControllerBase
 
         if (result.IsFailed)
         {
-            return CreateProblem(result, StatusCodes.Status401Unauthorized, "Gebruiker niet geauthenticeerd.");
+            return AuthProblemDetailsExtensions.CreateAuthProblem(this, result, StatusCodes.Status401Unauthorized, "Gebruiker niet geauthenticeerd.");
         }
 
         return Ok(new CurrentUserResponse(
@@ -167,17 +172,4 @@ public class AuthController : ControllerBase
             Role: user.Role);
     }
 
-    private ObjectResult CreateProblem(ResultBase result, int statusCode, string title)
-    {
-        ValidationProblemDetails problemDetails = new(new Dictionary<string, string[]>
-        {
-            ["auth"] = result.Errors.Select(error => error.Message).Distinct().ToArray(),
-        })
-        {
-            Status = statusCode,
-            Title = title,
-        };
-
-        return StatusCode(statusCode, problemDetails);
-    }
 }

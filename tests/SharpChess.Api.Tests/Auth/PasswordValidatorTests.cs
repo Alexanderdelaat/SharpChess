@@ -1,8 +1,8 @@
 using FluentResults;
-using SharpChess.Application.Auth;
+using SharpChess.Application.Auth.Errors;
 using SharpChess.Application.Auth.Services;
 
-namespace SharpChess.Api.Tests;
+namespace SharpChess.Api.Tests.Auth;
 
 [TestClass]
 public sealed class PasswordValidatorTests

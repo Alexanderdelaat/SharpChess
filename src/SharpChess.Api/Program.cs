@@ -9,9 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using SharpChess.Api.Health;
 using SharpChess.Api.Middleware;
-using SharpChess.Application;
+using SharpChess.Application.Extensions;
 using SharpChess.Infrastructure.Auth;
-using SharpChess.Infrastructure;
+using SharpChess.Infrastructure.Extensions;
 using SharpChess.Infrastructure.Persistence;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);

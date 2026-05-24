@@ -1,4 +1,4 @@
-namespace SharpChess.Application.Auth.Commands.Register;
+namespace SharpChess.Application.Auth.Models;
 
 public record RegisterResult(
     string Id,

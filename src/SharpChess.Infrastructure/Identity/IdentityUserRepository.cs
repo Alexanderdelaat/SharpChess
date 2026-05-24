@@ -1,8 +1,8 @@
 using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Auth;
 using SharpChess.Application.Auth.Constants;
+using SharpChess.Application.Auth.Errors;
 using SharpChess.Application.Auth.Models;
 
 namespace SharpChess.Infrastructure.Identity;

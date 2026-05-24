@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SharpChess.Api.Contracts.Players;
 using SharpChess.Application.Auth.Constants;
-using SharpChess.Application.Players;
+using SharpChess.Application.Players.Models;
+using SharpChess.Application.Players.Services;
 
 namespace SharpChess.Api.Controllers;
 

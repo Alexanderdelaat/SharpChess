@@ -1,6 +1,7 @@
 using SharpChess.Application.Abstractions.Persistence;
+using SharpChess.Application.Players.Models;
 
-namespace SharpChess.Application.Players;
+namespace SharpChess.Application.Players.Services;
 
 public sealed class PlayerService : IPlayerService
 {

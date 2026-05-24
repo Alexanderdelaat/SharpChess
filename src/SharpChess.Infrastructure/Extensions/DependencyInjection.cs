@@ -9,7 +9,7 @@ using SharpChess.Infrastructure.Auth;
 using SharpChess.Infrastructure.Identity;
 using SharpChess.Infrastructure.Persistence;
 
-namespace SharpChess.Infrastructure;
+namespace SharpChess.Infrastructure.Extensions;
 
 public static class DependencyInjection
 {

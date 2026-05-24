@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Players;
+using SharpChess.Application.Players.Models;
 
 namespace SharpChess.Infrastructure.Identity;
 
