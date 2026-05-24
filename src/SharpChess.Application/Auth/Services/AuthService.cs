@@ -1,8 +1,8 @@
 using FluentResults;
 using SharpChess.Application.Abstractions.Authentication;
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Auth.Commands.Register;
 using SharpChess.Application.Auth.Constants;
+using SharpChess.Application.Auth.Errors;
 using SharpChess.Application.Auth.Models;
 
 namespace SharpChess.Application.Auth.Services;

@@ -16,4 +16,7 @@ public interface IUserRepository
     Task<AuthenticatedUser?> FindByUsernameAsync(string username, CancellationToken cancellationToken);
     Task<bool> CheckPasswordAsync(string userId, string password, CancellationToken cancellationToken);
     Task EnsureRoleExistsAsync(string role, CancellationToken cancellationToken);
+    Task<Result> UpdateEmailAsync(string userId, string newEmail, CancellationToken cancellationToken);
+    Task<Result> UpdateUsernameAsync(string userId, string newUsername, CancellationToken cancellationToken);
+    Task<Result> UpdatePasswordAsync(string userId, string currentPassword, string newPassword, CancellationToken cancellationToken);
 }

@@ -15,12 +15,8 @@ items:
   fullName: SharpChess.Api.Middleware.GlobalExceptionHandler
   type: Class
   source:
-    remote:
-      path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
-      branch: k8s-pod-health-artifact
-      repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: GlobalExceptionHandler
-    path: src/SharpChess.Api/Middleware/GlobalExceptionHandler.cs
+    path: /Users/alexander/CodeProjects/SharpChess/src/SharpChess.Api/obj/Release/net10.0/Microsoft.Extensions.Logging.Generators/Microsoft.Extensions.Logging.Generators.LoggerMessageGenerator/LoggerMessage.g.cs
     startLine: 5
   assemblies:
   - SharpChess.Api

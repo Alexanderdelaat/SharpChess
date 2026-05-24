@@ -1,8 +1,8 @@
 using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using SharpChess.Application.Abstractions.Persistence;
-using SharpChess.Application.Auth;
 using SharpChess.Application.Auth.Constants;
+using SharpChess.Application.Auth.Errors;
 using SharpChess.Application.Auth.Models;
 
 namespace SharpChess.Infrastructure.Identity;
@@ -83,6 +83,54 @@ public sealed class IdentityUserRepository : IUserRepository
         }
 
         await _roleManager.CreateAsync(new IdentityRole(role));
+    }
+
+    public async Task<Result> UpdateEmailAsync(string userId, string newEmail, CancellationToken cancellationToken)
+    {
+        ApplicationUser? user = await _userManager.FindByIdAsync(userId);
+        if (user is null) return Result.Fail(AuthErrorCodes.UserNotFound);
+
+        ApplicationUser? existing = await _userManager.FindByEmailAsync(newEmail);
+        if (existing is not null && existing.Id != userId)
+            return Result.Fail(AuthErrorCodes.EmailAlreadyExists);
+
+        IdentityResult result = await _userManager.SetEmailAsync(user, newEmail);
+        if (!result.Succeeded)
+            return Result.Fail(result.Errors.FirstOrDefault()?.Description ?? AuthErrorCodes.UserNotFound);
+
+        return Result.Ok();
+    }
+
+    public async Task<Result> UpdateUsernameAsync(string userId, string newUsername, CancellationToken cancellationToken)
+    {
+        ApplicationUser? user = await _userManager.FindByIdAsync(userId);
+        if (user is null) return Result.Fail(AuthErrorCodes.UserNotFound);
+
+        ApplicationUser? existing = await _userManager.FindByNameAsync(newUsername);
+        if (existing is not null && existing.Id != userId)
+            return Result.Fail(AuthErrorCodes.UsernameAlreadyExists);
+
+        IdentityResult result = await _userManager.SetUserNameAsync(user, newUsername);
+        if (!result.Succeeded)
+            return Result.Fail(result.Errors.FirstOrDefault()?.Description ?? AuthErrorCodes.UserNotFound);
+
+        return Result.Ok();
+    }
+
+    public async Task<Result> UpdatePasswordAsync(string userId, string currentPassword, string newPassword, CancellationToken cancellationToken)
+    {
+        ApplicationUser? user = await _userManager.FindByIdAsync(userId);
+        if (user is null) return Result.Fail(AuthErrorCodes.UserNotFound);
+
+        IdentityResult result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
+        if (!result.Succeeded)
+        {
+            if (result.Errors.Any(e => e.Code is "PasswordMismatch"))
+                return Result.Fail(AuthErrorCodes.InvalidCurrentPassword);
+            return Result.Fail(result.Errors.FirstOrDefault()?.Description ?? AuthErrorCodes.UserNotFound);
+        }
+
+        return Result.Ok();
     }
 
     private async Task<AuthenticatedUser> MapAsync(ApplicationUser user)

@@ -1,4 +1,5 @@
 using FluentResults;
+using SharpChess.Application.Auth.Errors;
 
 namespace SharpChess.Application.Auth.Services;
 
