@@ -15,4 +15,5 @@ public static class AuthErrorCodes
     public const string EmailAlreadyExists = "Dit e-mailadres is al in gebruik.";
     public const string InvalidEmail = "Voer een geldig e-mailadres in.";
     public const string UserNotFound = "Gebruiker niet gevonden.";
+    public const string InvalidCurrentPassword = "Het huidige wachtwoord is onjuist.";
 }

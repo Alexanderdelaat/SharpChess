@@ -304,7 +304,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Register
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -325,6 +325,7 @@ items:
         arguments: []
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: Token waarmee de aanvraag kan worden geannuleerd.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
       description: Een succesvolle response met de aangemaakte gebruiker, of een foutresponse als de registratie mislukt.
@@ -357,7 +358,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Login
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 62
+    startLine: 63
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -373,16 +374,17 @@ items:
     parameters:
     - id: request
       type: SharpChess.Api.Contracts.Auth.LoginRequest
-      description: ''
+      description: De logingegevens van de gebruiker.
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: Token waarmee de aanvraag kan worden geannuleerd.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
-      description: ''
+      description: Een succesvolle loginpoging of een foutresponse als het mislukt.
     content.vb: >-
       <EnableRateLimiting("auth-login")>
 
@@ -419,7 +421,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Refresh
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 79
+    startLine: 80
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -468,7 +470,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Logout
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 92
+    startLine: 93
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -528,7 +530,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: Me
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 107
+    startLine: 108
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers
@@ -582,7 +584,7 @@ items:
       repo: https://github.com/Alexanderdelaat/SharpChess.git
     id: AdminPing
     path: src/SharpChess.Api/Controllers/Authcontroller.cs
-    startLine: 132
+    startLine: 133
   assemblies:
   - SharpChess.Api
   namespace: SharpChess.Api.Controllers

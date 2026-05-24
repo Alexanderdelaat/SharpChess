@@ -116,9 +116,50 @@ jobs:
           kubectl -n sharpchess-validation logs -l app=sharpchess-db --all-containers=true --tail=200 || true
           kubectl -n sharpchess-validation logs -l job-name=sharpchess-api-migrator --all-containers=true --tail=200 || true
 
+  performance_smoke:
+    runs-on: ubuntu-latest
+    needs: build_test
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Start API stack
+        run: docker compose up -d --build
+
+      - name: Wait for API readiness
+        run: |
+          for i in {1..60}; do
+            if curl -fsS http://localhost:8080/health/ready; then
+              exit 0
+            fi
+            sleep 2
+          done
+
+          docker compose logs sharpchess-api sharpchess-db
+          exit 1
+
+      - name: Run smoke performance tests
+        env:
+          PERF_BASE_URL: http://localhost:8080
+        run: dotnet run --project tests/SharpChess.Performance.Tests/SharpChess.Performance.Tests.csproj -c Release
+
+      - name: Collect performance diagnostics
+        if: failure()
+        run: docker compose logs sharpchess-api sharpchess-db
+
+      - name: Stop API stack
+        if: always()
+        run: docker compose down -v
+
   docker:
     runs-on: ubuntu-latest
-    needs: [build_test, k8s_validation]
+    needs: [build_test, k8s_validation, performance_smoke]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     permissions:
       contents: read

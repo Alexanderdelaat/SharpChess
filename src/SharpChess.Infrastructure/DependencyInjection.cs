@@ -41,6 +41,7 @@ public static class DependencyInjection
         services.AddScoped<IPasswordHasher<ApplicationUser>, BcryptPasswordHasher>();
         services.AddScoped<Microsoft.AspNetCore.Identity.IPasswordValidator<ApplicationUser>, IdentityPasswordValidatorAdapter>();
         services.AddScoped<IUserRepository, IdentityUserRepository>();
+        services.AddScoped<IPlayerRepository, IdentityPlayerRepository>();
         services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
         services.AddSingleton<IAccessTokenService, JwtAccessTokenService>();
         services.AddSingleton<IRefreshTokenFactory, RefreshTokenFactory>();

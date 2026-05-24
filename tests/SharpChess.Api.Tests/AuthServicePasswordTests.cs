@@ -156,6 +156,21 @@ public sealed class AuthServicePasswordTests
         {
             return Task.CompletedTask;
         }
+
+        public Task<Result> UpdateEmailAsync(string userId, string newEmail, CancellationToken cancellationToken)
+        {
+            throw new AssertFailedException("UpdateEmailAsync should not be called during registration password tests.");
+        }
+
+        public Task<Result> UpdateUsernameAsync(string userId, string newUsername, CancellationToken cancellationToken)
+        {
+            throw new AssertFailedException("UpdateUsernameAsync should not be called during registration password tests.");
+        }
+
+        public Task<Result> UpdatePasswordAsync(string userId, string currentPassword, string newPassword, CancellationToken cancellationToken)
+        {
+            throw new AssertFailedException("UpdatePasswordAsync should not be called during registration password tests.");
+        }
     }
 
     private sealed class UnexpectedAccessTokenService : IAccessTokenService
